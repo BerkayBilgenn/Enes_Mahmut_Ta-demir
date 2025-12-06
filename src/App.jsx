@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import {
   Scale,
@@ -65,6 +65,7 @@ function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
   useEffect(() => {
@@ -85,20 +86,25 @@ function Header() {
     e.preventDefault();
     setIsMobileMenuOpen(false);
     
-    if (href.startsWith('/#')) {
-      // Hash links - scroll to section
-      if (isHomePage) {
+    setTimeout(() => {
+      if (href.startsWith('/#')) {
+        // Hash links - navigate to home page section
         const id = href.replace('/#', '');
-        setTimeout(() => {
+        if (isHomePage) {
+          // Already on homepage, just scroll
           document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
+        } else {
+          // Navigate to homepage first, then scroll after a delay
+          navigate('/');
+          setTimeout(() => {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+          }, 300);
+        }
       } else {
-        window.location.href = href;
+        // Regular page links like /blog
+        navigate(href);
       }
-    } else {
-      // Regular page links like /blog
-      window.location.href = href;
-    }
+    }, 100);
   };
 
   return (
@@ -138,7 +144,7 @@ function Header() {
 
           <div className="hidden md:block">
             <motion.a
-              href="tel:+905551234567"
+              href="#"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold px-6 py-2.5 rounded-full text-navy font-semibold text-sm hover:shadow-lg hover:shadow-gold/30 transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -176,7 +182,7 @@ function Header() {
                   </a>
                 ))}
                 <a
-                  href="tel:+905551234567"
+                  href="#"
                   className="inline-flex items-center justify-center gap-2 bg-gold px-6 py-3 rounded-full text-navy font-semibold"
                 >
                   <Phone className="w-4 h-4" />
@@ -243,13 +249,13 @@ function Hero() {
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             {/* Primary CTA - Phone */}
             <motion.a 
-              href="tel:+905551234567" 
+              href="#" 
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-gold-600 to-gold px-8 py-5 rounded-full text-navy font-bold text-lg shadow-2xl shadow-gold/30 hover:shadow-gold/50 transition-all" 
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}
             >
               <Phone className="w-6 h-6" />
-              <span>Hemen Ara: 0555 123 45 67</span>
+              <span>Hemen Ara: -------------</span>
             </motion.a>
             
             {/* Secondary CTA */}
@@ -280,12 +286,17 @@ function Hero() {
             </div>
           </motion.div>
         </motion.div>
+      </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} className="w-6 h-10 border-2 border-gold/50 rounded-full flex justify-center">
-            <motion.div className="w-1.5 h-3 bg-gold rounded-full mt-2" />
-          </motion.div>
+      {/* Scroll Indicator - Fixed at bottom */}
+      <motion.div 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ delay: 1.5 }} 
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20"
+      >
+        <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} className="w-6 h-10 border-2 border-gold/50 rounded-full flex justify-center">
+          <motion.div className="w-1.5 h-3 bg-gold rounded-full mt-2" />
         </motion.div>
       </motion.div>
     </section>
@@ -655,7 +666,7 @@ function Contact() {
   const [error, setError] = useState(null);
 
   const contactInfo = [
-    { icon: Phone, label: 'Telefon', value: '+90 555 123 45 67', href: 'tel:+905551234567' },
+    { icon: Phone, label: 'Telefon', value: '-------------', href: '#' },
     { icon: Mail, label: 'E-posta', value: 'info@tasdemirlaw.com', href: 'mailto:info@tasdemirlaw.com' },
     { icon: MapPin, label: 'Adres', value: 'Levent, İstanbul, Türkiye', href: '#' }
   ];
@@ -843,8 +854,8 @@ function Footer() {
           </Link>
           <p className="text-center text-gray-500 text-sm">© {new Date().getFullYear()} Tüm hakları saklıdır.</p>
           <div className="flex justify-center md:justify-end">
-            <motion.a href="tel:+905551234567" className="inline-flex items-center gap-2 text-gold hover:text-gold-400 transition-colors" whileHover={{ x: 5 }}>
-              <Phone className="w-4 h-4" /><span>+90 555 123 45 67</span>
+            <motion.a href="#" className="inline-flex items-center gap-2 text-gold hover:text-gold-400 transition-colors" whileHover={{ x: 5 }}>
+              <Phone className="w-4 h-4" /><span>-------------</span>
             </motion.a>
           </div>
         </div>

@@ -219,7 +219,7 @@ function ServiceDetail() {
                     <span className="text-gold font-medium">Av. Enes Mahmut Taşdemir</span> ile hemen iletişime geçin
                   </p>
                   <a 
-                    href="tel:+905551234567" 
+                    href="#" 
                     className="inline-flex items-center gap-2 text-sm bg-gold/10 text-gold px-4 py-2 rounded-full hover:bg-gold/20 transition-colors"
                   >
                     <Phone className="w-4 h-4" />
@@ -397,7 +397,7 @@ function ServiceDetail() {
                       </div>
                       
                       <a
-                        href="tel:+905551234567"
+                        href="#"
                         className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-gold/30 hover:bg-white/10 transition-all group"
                       >
                         <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center group-hover:bg-gold/30 transition-colors">
@@ -405,7 +405,7 @@ function ServiceDetail() {
                         </div>
                         <div>
                           <p className="text-xs text-gray-400 mb-1">Telefon</p>
-                          <p className="text-white font-medium">+90 555 123 45 67</p>
+                          <p className="text-white font-medium">-------------</p>
                         </div>
                       </a>
                       
