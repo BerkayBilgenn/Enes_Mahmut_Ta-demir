@@ -9,16 +9,23 @@ import {
   Menu,
   X,
   ChevronRight,
+  ChevronDown,
   Award,
   Clock,
   CheckCircle,
   Send,
   Users,
-  Loader2
+  Loader2,
+  BookOpen,
+  Calendar,
+  ArrowRight
 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { servicesData } from './data/servicesData';
+import { blogData } from './data/blogData';
 import ServiceDetail from './components/ServiceDetail';
+import BlogList from './components/BlogList';
+import BlogDetail from './components/BlogDetail';
 
 // Animation Variants
 const fadeInUp = {
@@ -70,16 +77,28 @@ function Header() {
     { name: 'Ana Sayfa', href: '/#hero' },
     { name: 'Hizmetlerimiz', href: '/#services' },
     { name: 'Hakkımızda', href: '/#about' },
+    { name: 'Makaleler', href: '/blog' },
     { name: 'İletişim', href: '/#contact' }
   ];
 
   const handleNavClick = (e, href) => {
-    if (isHomePage && href.startsWith('/#')) {
-      e.preventDefault();
-      const id = href.replace('/#', '');
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    }
+    e.preventDefault();
     setIsMobileMenuOpen(false);
+    
+    if (href.startsWith('/#')) {
+      // Hash links - scroll to section
+      if (isHomePage) {
+        const id = href.replace('/#', '');
+        setTimeout(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        window.location.href = href;
+      }
+    } else {
+      // Regular page links like /blog
+      window.location.href = href;
+    }
   };
 
   return (
@@ -105,15 +124,15 @@ function Header() {
 
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <Link
+              <a
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-medium text-gray-300 hover:text-gold transition-colors relative group"
+                className="text-sm font-medium text-gray-300 hover:text-gold transition-colors relative group cursor-pointer"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" />
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -147,14 +166,14 @@ function Header() {
             >
               <div className="flex flex-col gap-4">
                 {navItems.map((item) => (
-                  <Link
+                  <a
                     key={item.name}
-                    to={item.href}
+                    href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className="text-gray-300 hover:text-gold transition-colors py-2"
+                    className="text-gray-300 hover:text-gold transition-colors py-2 cursor-pointer"
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 ))}
                 <a
                   href="tel:+905551234567"
@@ -180,47 +199,89 @@ function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 animated-gradient" />
-      <div className="absolute inset-0 opacity-10">
+      {/* Background Image with Blur */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2000&auto=format&fit=crop" 
+          alt="Law Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-navy/85 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/50 via-transparent to-navy" />
+      </div>
+      
+      {/* Animated Gradient Overlay */}
+      <div className="absolute inset-0 animated-gradient opacity-40" />
+      
+      {/* Gold Glow Effects */}
+      <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gold/50 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-      </div>
-      <div className="absolute inset-0 opacity-5">
-        <div className="h-full w-full" style={{
-          backgroundImage: 'linear-gradient(rgba(180, 155, 102, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(180, 155, 102, 0.3) 1px, transparent 1px)',
-          backgroundSize: '60px 60px'
-        }} />
       </div>
 
       <motion.div style={{ y, opacity }} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div variants={staggerContainer} initial="initial" animate="animate" className="space-y-8">
-          <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-gold/20 px-4 py-2 rounded-full">
-            <Scale className="w-4 h-4 text-gold" />
-            <span className="text-sm text-gray-300">Profesyonel Hukuki Danışmanlık</span>
+          
+          {/* Badge */}
+          <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-gold/20 backdrop-blur-md border border-gold/30 px-5 py-2.5 rounded-full">
+            <Scale className="w-5 h-5 text-gold" />
+            <span className="text-sm font-medium text-white">15+ Yıllık Deneyim</span>
           </motion.div>
 
-          <motion.h1 variants={fadeInUp} className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            <span className="text-white">Hukuki Süreçlerinizde</span><br />
-            <span className="text-gradient-gold">Güvenilir ve Profesyonel</span><br />
-            <span className="text-white">Çözüm Ortağınız</span>
+          {/* Main Heading */}
+          <motion.h1 variants={fadeInUp} className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+            <span className="text-white">Haklarınız İçin</span><br />
+            <span className="text-gradient-gold">Güçlü Savunma</span>
           </motion.h1>
 
-          <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400">
-            Av. Enes Mahmut Taşdemir güvencesiyle haklarınız emin ellerde.<br className="hidden sm:block" />
-            Her türlü hukuki sorununuzda yanınızdayız.
+          {/* Subheading */}
+          <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-lg sm:text-xl lg:text-2xl text-gray-300">
+            Av. Enes Mahmut Taşdemir güvencesiyle her türlü hukuki uyuşmazlıkta yanınızdayız.
           </motion.p>
 
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.a href="#contact" className="group inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold px-8 py-4 rounded-full text-navy font-semibold text-lg hover:shadow-xl hover:shadow-gold/30 transition-all" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              Ücretsiz Ön Görüşme Yapın
+          {/* CTA Buttons */}
+          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            {/* Primary CTA - Phone */}
+            <motion.a 
+              href="tel:+905551234567" 
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-gold-600 to-gold px-8 py-5 rounded-full text-navy font-bold text-lg shadow-2xl shadow-gold/30 hover:shadow-gold/50 transition-all" 
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }}
+            >
+              <Phone className="w-6 h-6" />
+              <span>Hemen Ara: 0555 123 45 67</span>
+            </motion.a>
+            
+            {/* Secondary CTA */}
+            <motion.a 
+              href="#contact" 
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-5 rounded-full font-semibold text-lg hover:bg-white/20 transition-all" 
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }}
+            >
+              Ücretsiz Danışmanlık
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
-            <motion.a href="#services" className="inline-flex items-center gap-2 border border-gold/50 text-gold px-8 py-4 rounded-full font-medium hover:bg-gold/10 transition-all" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              Hizmetlerimizi Keşfedin
-            </motion.a>
+          </motion.div>
+
+          {/* Trust Indicators */}
+          <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-6 sm:gap-10 pt-8 text-sm text-gray-400">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-gold" />
+              <span>1000+ Başarılı Dava</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-gold" />
+              <span>7/24 Destek</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-gold" />
+              <span>Ücretsiz Ön Görüşme</span>
+            </div>
           </motion.div>
         </motion.div>
 
+        {/* Scroll Indicator */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="absolute bottom-8 left-1/2 -translate-x-1/2">
           <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} className="w-6 h-10 border-2 border-gold/50 rounded-full flex justify-center">
             <motion.div className="w-1.5 h-3 bg-gold rounded-full mt-2" />
@@ -266,8 +327,18 @@ function ServiceCard({ service }) {
 // Services Section
 function Services() {
   return (
-    <section id="services" className="relative py-24 lg:py-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-800 to-navy" />
+    <section id="services" className="relative py-24 lg:py-32 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
+          alt="Services Background"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-navy/90" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial="initial" whileInView="animate" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer} className="text-center mb-16">
@@ -310,8 +381,17 @@ function StatCard({ stat, index }) {
 function About() {
   return (
     <section id="about" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-navy-900" />
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gold/5 to-transparent" />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=2000&auto=format&fit=crop" 
+          alt="About Background"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-navy-900/95" />
+      </div>
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gold/10 to-transparent" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -344,6 +424,219 @@ function About() {
             ))}
           </motion.div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+// FAQ Data
+const faqData = [
+  {
+    question: "İlk görüşme ücretsiz mi?",
+    answer: "Evet, ilk görüşmemiz tamamen ücretsizdir. Bu görüşmede davanızın genel durumunu değerlendirir, hukuki süreç hakkında bilgi verir ve size en uygun çözüm yolunu birlikte belirleriz."
+  },
+  {
+    question: "Dava süreçleri ne kadar sürer?",
+    answer: "Dava süreleri, davanın türüne ve karmaşıklığına göre değişir. Basit davalar birkaç ay içinde sonuçlanabilirken, karmaşık davalar 1-3 yıl sürebilir. Her dava için size tahmini bir süre bildiririz."
+  },
+  {
+    question: "Avukatlık ücretleri nasıl belirlenir?",
+    answer: "Ücretlerimiz, davanın türü, karmaşıklığı ve tahmini iş yüküne göre belirlenir. İlk görüşmede şeffaf bir şekilde ücret bilgisi paylaşılır. Taksitlendirme seçenekleri de sunmaktayız."
+  },
+  {
+    question: "Online danışmanlık hizmeti var mı?",
+    answer: "Evet, video konferans aracılığıyla online danışmanlık hizmeti sunuyoruz. Türkiye'nin her yerinden ve yurt dışından müvekkillerimize bu şekilde hizmet verebiliyoruz."
+  },
+  {
+    question: "Acil durumlarda ulaşabilir miyim?",
+    answer: "Evet, müvekkillerimize 7/24 acil iletişim hattı sunuyoruz. Tutuklama, gözaltı gibi acil durumlarda derhal müdahale ediyoruz."
+  },
+  {
+    question: "Hangi şehirlerde hizmet veriyorsunuz?",
+    answer: "Merkezimiz İstanbul'da olmasına rağmen, Türkiye genelinde tüm illerde dava takibi yapabiliyoruz. Gerektiğinde yerel mahkemelerde sizi temsil ediyoruz."
+  }
+];
+
+// FAQ Item Component
+function FAQItem({ item, isOpen, onClick }) {
+  return (
+    <motion.div 
+      className="border border-gold/10 rounded-xl overflow-hidden bg-navy-800/30 hover:border-gold/20 transition-colors"
+      initial={false}
+    >
+      <button
+        onClick={onClick}
+        className="w-full flex items-center justify-between p-5 text-left"
+      >
+        <span className="font-medium text-white pr-4">{item.question}</span>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+          className="flex-shrink-0"
+        >
+          <ChevronDown className="w-5 h-5 text-gold" />
+        </motion.div>
+      </button>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="px-5 pb-5 text-gray-400 leading-relaxed border-t border-gold/10 pt-4">
+              {item.answer}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
+// FAQ Section
+function FAQ() {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  return (
+    <section id="faq" className="relative py-24 lg:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-800 to-navy" />
+      
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          initial="initial" 
+          whileInView="animate" 
+          viewport={{ once: true }} 
+          variants={staggerContainer} 
+          className="text-center mb-12"
+        >
+          <motion.span variants={fadeInUp} className="inline-block text-gold text-sm font-semibold tracking-wider uppercase mb-4">
+            Sıkça Sorulan Sorular
+          </motion.span>
+          <motion.h2 variants={fadeInUp} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Merak <span className="text-gradient-gold">Edilenler</span>
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-gray-400">
+            Hukuki süreçler hakkında sık sorulan soruların cevaplarını burada bulabilirsiniz.
+          </motion.p>
+        </motion.div>
+
+        <motion.div 
+          initial="initial" 
+          whileInView="animate" 
+          viewport={{ once: true }} 
+          variants={staggerContainer}
+          className="space-y-3"
+        >
+          {faqData.map((item, index) => (
+            <motion.div key={index} variants={fadeInUp}>
+              <FAQItem 
+                item={item} 
+                isOpen={openIndex === index}
+                onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
+// Blog Section
+function Blog() {
+  return (
+    <section id="blog" className="relative py-24 lg:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-navy-900" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          initial="initial" 
+          whileInView="animate" 
+          viewport={{ once: true }} 
+          variants={staggerContainer} 
+          className="text-center mb-12"
+        >
+          <motion.span variants={fadeInUp} className="inline-block text-gold text-sm font-semibold tracking-wider uppercase mb-4">
+            Hukuk Blogu
+          </motion.span>
+          <motion.h2 variants={fadeInUp} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Güncel <span className="text-gradient-gold">Makaleler</span>
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-gray-400">
+            Hukuki konularda bilgilendirici içerikler ve güncel gelişmeler.
+          </motion.p>
+        </motion.div>
+
+        <motion.div 
+          initial="initial" 
+          whileInView="animate" 
+          viewport={{ once: true }} 
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        >
+          {blogData.map((post) => (
+            <motion.article 
+              key={post.id} 
+              variants={fadeInUp}
+              className="group bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-2xl overflow-hidden hover:border-gold/30 transition-all"
+            >
+              <Link to={`/blog/${post.slug}`} className="block">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-gold/90 text-navy text-xs font-semibold px-3 py-1 rounded-full">
+                      {post.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5" />
+                      {new Date(post.date).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-lg font-semibold text-white mb-2 group-hover:text-gold transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-gold text-sm font-medium group-hover:gap-3 transition-all">
+                    Devamını Oku
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </Link>
+            </motion.article>
+          ))}
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <Link 
+            to="/blog" 
+            className="inline-flex items-center gap-2 border border-gold/50 text-gold px-6 py-3 rounded-full font-medium hover:bg-gold/10 transition-all"
+          >
+            <BookOpen className="w-4 h-4" />
+            Tüm Makaleleri Gör
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
@@ -385,8 +678,18 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 lg:py-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy to-navy-900" />
+    <section id="contact" className="relative py-24 lg:py-32 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2000&auto=format&fit=crop" 
+          alt="Contact Background"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-navy/90" />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy-900" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -555,8 +858,10 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <Services />
       <About />
+      <Services />
+      <FAQ />
+      <Blog />
       <Contact />
     </>
   );
@@ -582,6 +887,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/hizmet/:slug" element={<ServiceDetail />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
         </Routes>
       </Layout>
     </BrowserRouter>

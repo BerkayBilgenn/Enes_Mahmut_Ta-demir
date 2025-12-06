@@ -67,6 +67,18 @@ function ServiceDetail() {
         <div className="absolute inset-0 animated-gradient opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-navy/50 to-navy" />
         
+        {/* Background Image */}
+        {service.image && (
+          <div className="absolute inset-0 z-0">
+            <img 
+              src={service.image} 
+              alt={service.title}
+              className="w-full h-full object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/80 to-navy" />
+          </div>
+        )}
+        
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={staggerContainer}
@@ -83,246 +95,338 @@ function ServiceDetail() {
               <span>Ana Sayfaya Dön</span>
             </motion.button>
 
-            {/* Icon */}
-            <motion.div
-              variants={fadeInUp}
-              className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gold/20 to-gold/5 rounded-2xl flex items-center justify-center mb-4 sm:mb-6"
-            >
-              <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-gold" />
-            </motion.div>
+            {/* Hero Content with Image */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Text Content */}
+              <div>
+                {/* Icon */}
+                <motion.div
+                  variants={fadeInUp}
+                  className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gold/20 to-gold/5 rounded-2xl flex items-center justify-center mb-4 sm:mb-6"
+                >
+                  <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-gold" />
+                </motion.div>
 
-            {/* Title */}
-            <motion.h1
-              variants={fadeInUp}
-              className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4"
-            >
-              {service.title}
-            </motion.h1>
+                {/* Title */}
+                <motion.h1
+                  variants={fadeInUp}
+                  className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4"
+                >
+                  {service.title}
+                </motion.h1>
 
-            <motion.p
-              variants={fadeInUp}
-              className="text-lg sm:text-xl text-gray-400 max-w-2xl"
-            >
-              {service.description}
-            </motion.p>
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg sm:text-xl text-gray-400 max-w-2xl"
+                >
+                  {service.description}
+                </motion.p>
+              </div>
+
+              {/* Featured Image - Desktop */}
+              {service.image && (
+                <motion.div
+                  variants={fadeInUp}
+                  className="relative hidden lg:block"
+                >
+                  <div className="relative rounded-2xl overflow-hidden border border-gold/20 shadow-2xl shadow-gold/10">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-[300px] xl:h-[350px] object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
+                  </div>
+                  {/* Decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-gold/10 rounded-full blur-2xl" />
+                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gold/5 rounded-full blur-3xl" />
+                </motion.div>
+              )}
+            </div>
+
+            {/* Mobile Featured Image */}
+            {service.image && (
+              <motion.div
+                variants={fadeInUp}
+                className="lg:hidden mt-8"
+              >
+                <div className="relative rounded-2xl overflow-hidden border border-gold/20 shadow-xl">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-[200px] sm:h-[250px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
+                </div>
+              </motion.div>
+            )}
           </motion.div>
         </div>
       </section>
 
-      {/* Content Section - Improved Grid Layout */}
-      <section className="py-12 sm:py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 lg:gap-12">
-            
-            {/* Main Content - 70% on desktop */}
-            <motion.article
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="lg:col-span-7 order-2 lg:order-1"
-            >
-              {/* Rich Content with Better Typography */}
-              <div className="bg-gradient-to-br from-navy-800/40 to-navy-900/40 backdrop-blur-sm border border-gold/10 rounded-2xl p-6 sm:p-8 lg:p-10">
+      {/* Content Section - Professional Layout */}
+      <section className="py-8 sm:py-12 lg:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Main Content */}
+          <motion.article
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            {/* Professional Content Card */}
+            <div className="bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden">
+              
+              {/* Content Header */}
+              <div className="bg-gradient-to-r from-gold/10 via-gold/5 to-transparent px-6 sm:px-8 lg:px-10 py-5 border-b border-gold/10">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gold/20 rounded-xl flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-gold" />
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-lg sm:text-xl text-white font-semibold">Hizmet Detayları</h2>
+                    <p className="text-xs sm:text-sm text-gray-400">Profesyonel hukuki çözümler</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content Body */}
+              <div className="px-6 sm:px-8 lg:px-10 py-8 sm:py-10">
                 <div 
-                  className="prose prose-lg prose-invert max-w-none
-                    prose-headings:font-serif prose-headings:text-gold prose-headings:font-semibold
-                    prose-h3:text-xl sm:prose-h3:text-2xl prose-h3:mt-0 prose-h3:mb-4 prose-h3:pb-3 prose-h3:border-b prose-h3:border-gold/20
-                    prose-h4:text-lg sm:prose-h4:text-xl prose-h4:mt-8 prose-h4:mb-4 prose-h4:text-white prose-h4:flex prose-h4:items-center prose-h4:gap-2
-                    prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-5 prose-p:text-base
-                    prose-ul:text-gray-300 prose-ul:space-y-2 prose-ul:my-4
-                    prose-li:mb-0 prose-li:pl-2
-                    prose-strong:text-gold prose-strong:font-semibold
-                    [&_h4]:before:content-['◆'] [&_h4]:before:text-gold [&_h4]:before:text-sm [&_h4]:before:mr-2"
+                  className="
+                    [&>h3]:font-serif [&>h3]:text-xl sm:[&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-white [&>h3]:mb-4 [&>h3]:mt-8 first:[&>h3]:mt-0
+                    [&>h3]:flex [&>h3]:items-center [&>h3]:gap-3
+                    [&>h3]:before:content-[''] [&>h3]:before:w-1 [&>h3]:before:h-6 [&>h3]:before:bg-gradient-to-b [&>h3]:before:from-gold [&>h3]:before:to-gold/50 [&>h3]:before:rounded-full
+                    
+                    [&>p]:text-gray-300 [&>p]:leading-[1.8] [&>p]:text-[15px] sm:[&>p]:text-base [&>p]:mb-5
+                    
+                    [&>ul]:my-6 [&>ul]:space-y-3 [&>ul]:pl-0
+                    [&>ul>li]:flex [&>ul>li]:items-start [&>ul>li]:gap-3 [&>ul>li]:text-gray-300 [&>ul>li]:text-[15px] sm:[&>ul>li]:text-base [&>ul>li]:leading-relaxed
+                    [&>ul>li]:bg-white/[0.02] [&>ul>li]:rounded-xl [&>ul>li]:p-4 [&>ul>li]:border [&>ul>li]:border-white/5
+                    [&>ul>li]:before:content-['✓'] [&>ul>li]:before:text-gold [&>ul>li]:before:font-bold [&>ul>li]:before:text-lg
+                    [&>ul>li]:list-none
+                    
+                    [&_strong]:text-gold [&_strong]:font-semibold
+                  "
                   dangerouslySetInnerHTML={{ __html: service.content }}
                 />
               </div>
 
-              {/* Related Services */}
-              <div className="mt-10 sm:mt-16 pt-8 sm:pt-12 border-t border-gold/10">
-                <h3 className="font-serif text-xl sm:text-2xl text-white mb-6">İlgili Hizmetler</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  {servicesData
-                    .filter(s => s.id !== service.id)
-                    .slice(0, 4)
-                    .map((relatedService) => {
-                      const RelatedIcon = relatedService.icon;
-                      return (
-                        <Link
-                          key={relatedService.id}
-                          to={`/hizmet/${relatedService.slug}`}
-                          className="group flex items-center gap-3 sm:gap-4 p-4 bg-navy-800/50 border border-gold/10 rounded-xl hover:border-gold/30 hover:bg-navy-800/70 transition-all"
-                        >
-                          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gold/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
-                            <RelatedIcon className="w-5 h-5 sm:w-6 sm:h-6 text-gold" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-medium text-sm sm:text-base text-white group-hover:text-gold transition-colors truncate">
-                              {relatedService.title}
-                            </h4>
-                          </div>
-                          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gold opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                        </Link>
-                      );
-                    })}
+              {/* Content Footer */}
+              <div className="bg-gradient-to-r from-gold/5 to-transparent px-6 sm:px-8 lg:px-10 py-5 border-t border-white/5">
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <p className="text-sm text-gray-400">
+                    <span className="text-gold font-medium">Av. Enes Mahmut Taşdemir</span> ile hemen iletişime geçin
+                  </p>
+                  <a 
+                    href="tel:+905551234567" 
+                    className="inline-flex items-center gap-2 text-sm bg-gold/10 text-gold px-4 py-2 rounded-full hover:bg-gold/20 transition-colors"
+                  >
+                    <Phone className="w-4 h-4" />
+                    Hemen Ara
+                  </a>
                 </div>
               </div>
-            </motion.article>
+            </div>
 
-            {/* Sticky Sidebar - 30% on desktop */}
-            <motion.aside
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="lg:col-span-3 order-1 lg:order-2"
+            {/* Related Services */}
+            <div className="mt-10 sm:mt-16 pt-8 sm:pt-12 border-t border-gold/10">
+              <h3 className="font-serif text-xl sm:text-2xl text-white mb-6">İlgili Hizmetler</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                {servicesData
+                  .filter(s => s.id !== service.id)
+                  .slice(0, 4)
+                  .map((relatedService) => {
+                    const RelatedIcon = relatedService.icon;
+                    return (
+                      <Link
+                        key={relatedService.id}
+                        to={`/hizmet/${relatedService.slug}`}
+                        className="group flex items-center gap-3 sm:gap-4 p-4 bg-navy-800/50 border border-gold/10 rounded-xl hover:border-gold/30 hover:bg-navy-800/70 transition-all"
+                      >
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gold/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
+                          <RelatedIcon className="w-5 h-5 sm:w-6 sm:h-6 text-gold" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-medium text-sm sm:text-base text-white group-hover:text-gold transition-colors truncate">
+                            {relatedService.title}
+                          </h4>
+                        </div>
+                        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gold opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                      </Link>
+                    );
+                  })}
+              </div>
+            </div>
+
+            {/* Appointment Form Section - Below Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-12 sm:mt-16"
             >
-              <div className="lg:sticky lg:top-24 space-y-6">
-                {/* Appointment Form Card */}
-                <div className="bg-gradient-to-br from-navy-800/80 to-navy-900/80 backdrop-blur-sm border border-gold/20 rounded-2xl p-5 sm:p-6 lg:p-8">
-                  <div className="flex items-center gap-3 mb-5 sm:mb-6">
-                    <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
-                      <Calendar className="w-5 h-5 text-gold" />
+              <div className="bg-gradient-to-br from-gold/10 via-gold/5 to-navy-800/80 backdrop-blur-sm border border-gold/20 rounded-3xl p-6 sm:p-8 lg:p-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                  
+                  {/* Left: Form */}
+                  <div>
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center">
+                        <Calendar className="w-6 h-6 text-gold" />
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-xl sm:text-2xl font-semibold text-white">
+                          Ücretsiz Danışmanlık
+                        </h3>
+                        <p className="text-sm text-gray-400">Hukuki sorununuz için hemen randevu alın</p>
+                      </div>
                     </div>
-                    <h3 className="font-serif text-lg sm:text-xl font-semibold text-white">
-                      Hemen Randevu Al
-                    </h3>
-                  </div>
 
-                  {success ? (
-                    /* Success Message */
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="text-center py-6"
-                    >
+                    {success ? (
+                      /* Success Message */
                       <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
-                        className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="text-center py-8"
                       >
-                        <CheckCircle className="w-8 h-8 text-emerald-400" />
-                      </motion.div>
-                      <h4 className="font-serif text-lg font-semibold text-white mb-2">
-                        Teşekkürler!
-                      </h4>
-                      <p className="text-gray-400 text-sm mb-4">
-                        En kısa sürede sizinle iletişime geçeceğiz.
-                      </p>
-                      <button
-                        onClick={() => setSuccess(false)}
-                        className="text-gold text-sm hover:underline"
-                      >
-                        Yeni mesaj gönder
-                      </button>
-                    </motion.div>
-                  ) : (
-                    /* Contact Form */
-                    <form ref={form} onSubmit={handleSubmit} className="space-y-4">
-                      {/* Error Message */}
-                      {error && (
                         <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-xs sm:text-sm"
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
+                          className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
                         >
-                          {error}
+                          <CheckCircle className="w-10 h-10 text-emerald-400" />
                         </motion.div>
-                      )}
+                        <h4 className="font-serif text-xl font-semibold text-white mb-2">
+                          Teşekkürler!
+                        </h4>
+                        <p className="text-gray-400 mb-4">
+                          En kısa sürede sizinle iletişime geçeceğiz.
+                        </p>
+                        <button
+                          onClick={() => setSuccess(false)}
+                          className="text-gold hover:underline"
+                        >
+                          Yeni mesaj gönder
+                        </button>
+                      </motion.div>
+                    ) : (
+                      /* Contact Form */
+                      <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+                        {/* Error Message */}
+                        {error && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm"
+                          >
+                            {error}
+                          </motion.div>
+                        )}
 
-                      <div>
-                        <input
-                          type="text"
-                          name="name"
-                          placeholder="Ad Soyad"
-                          required
-                          disabled={loading}
-                          className="w-full bg-navy-800/50 border border-gold/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all text-sm disabled:opacity-50"
-                        />
-                      </div>
-                      <div>
-                        <input
-                          type="tel"
-                          name="phone"
-                          placeholder="Telefon"
-                          required
-                          disabled={loading}
-                          className="w-full bg-navy-800/50 border border-gold/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all text-sm disabled:opacity-50"
-                        />
-                      </div>
-                      <div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <input
+                            type="text"
+                            name="name"
+                            placeholder="Ad Soyad"
+                            required
+                            disabled={loading}
+                            className="w-full bg-navy-900/50 border border-gold/20 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all disabled:opacity-50"
+                          />
+                          <input
+                            type="tel"
+                            name="phone"
+                            placeholder="Telefon"
+                            required
+                            disabled={loading}
+                            className="w-full bg-navy-900/50 border border-gold/20 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all disabled:opacity-50"
+                          />
+                        </div>
                         <input
                           type="email"
                           name="email"
                           placeholder="E-posta"
                           required
                           disabled={loading}
-                          className="w-full bg-navy-800/50 border border-gold/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all text-sm disabled:opacity-50"
+                          className="w-full bg-navy-900/50 border border-gold/20 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all disabled:opacity-50"
                         />
-                      </div>
-                      {/* Hidden subject field with service title */}
-                      <input type="hidden" name="subject" value={service.title} />
-                      <div>
+                        {/* Hidden subject field with service title */}
+                        <input type="hidden" name="subject" value={service.title} />
                         <textarea
                           name="message"
                           placeholder="Hukuki sorununuzu kısaca açıklayın..."
                           rows={4}
                           required
                           disabled={loading}
-                          className="w-full bg-navy-800/50 border border-gold/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all resize-none text-sm disabled:opacity-50"
+                          className="w-full bg-navy-900/50 border border-gold/20 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all resize-none disabled:opacity-50"
                         />
-                      </div>
-                      <motion.button
-                        type="submit"
-                        disabled={loading}
-                        whileHover={!loading ? { scale: 1.02 } : {}}
-                        whileTap={!loading ? { scale: 0.98 } : {}}
-                        className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-600 to-gold px-6 py-3 rounded-lg text-navy font-semibold hover:shadow-lg hover:shadow-gold/30 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
-                      >
-                        {loading ? (
-                          <>
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            Gönderiliyor...
-                          </>
-                        ) : (
-                          <>
-                            <Send className="w-4 h-4" />
-                            Gönder
-                          </>
-                        )}
-                      </motion.button>
-                    </form>
-                  )}
-                </div>
+                        <motion.button
+                          type="submit"
+                          disabled={loading}
+                          whileHover={!loading ? { scale: 1.02 } : {}}
+                          whileTap={!loading ? { scale: 0.98 } : {}}
+                          className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-600 to-gold px-6 py-4 rounded-xl text-navy font-semibold text-lg hover:shadow-lg hover:shadow-gold/30 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                        >
+                          {loading ? (
+                            <>
+                              <Loader2 className="w-5 h-5 animate-spin" />
+                              Gönderiliyor...
+                            </>
+                          ) : (
+                            <>
+                              <Send className="w-5 h-5" />
+                              Randevu Talebi Gönder
+                            </>
+                          )}
+                        </motion.button>
+                      </form>
+                    )}
+                  </div>
 
-                {/* Quick Contact Card */}
-                <div className="bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-2xl p-5 sm:p-6">
-                  <h4 className="font-serif text-lg font-semibold text-white mb-4">
-                    Hızlı İletişim
-                  </h4>
-                  <div className="space-y-3">
-                    <a
-                      href="tel:+905551234567"
-                      className="flex items-center gap-3 text-gray-300 hover:text-gold transition-colors group"
-                    >
-                      <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                        <Phone className="w-5 h-5 text-gold" />
+                  {/* Right: Contact Info */}
+                  <div className="flex flex-col justify-center">
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="font-serif text-lg font-semibold text-white mb-4">
+                          Hızlı İletişim
+                        </h4>
+                        <p className="text-gray-400 text-sm mb-6">
+                          Acil hukuki danışmanlık için bizi hemen arayabilir veya e-posta gönderebilirsiniz.
+                        </p>
                       </div>
-                      <span className="text-sm sm:text-base">+90 555 123 45 67</span>
-                    </a>
-                    <a
-                      href="mailto:info@tasdemirlaw.com"
-                      className="flex items-center gap-3 text-gray-300 hover:text-gold transition-colors group"
-                    >
-                      <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                        <Mail className="w-5 h-5 text-gold" />
-                      </div>
-                      <span className="text-sm sm:text-base">info@tasdemirlaw.com</span>
-                    </a>
+                      
+                      <a
+                        href="tel:+905551234567"
+                        className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-gold/30 hover:bg-white/10 transition-all group"
+                      >
+                        <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center group-hover:bg-gold/30 transition-colors">
+                          <Phone className="w-6 h-6 text-gold" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-400 mb-1">Telefon</p>
+                          <p className="text-white font-medium">+90 555 123 45 67</p>
+                        </div>
+                      </a>
+                      
+                      <a
+                        href="mailto:info@tasdemirlaw.com"
+                        className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-gold/30 hover:bg-white/10 transition-all group"
+                      >
+                        <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center group-hover:bg-gold/30 transition-colors">
+                          <Mail className="w-6 h-6 text-gold" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-400 mb-1">E-posta</p>
+                          <p className="text-white font-medium">info@tasdemirlaw.com</p>
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </motion.aside>
-          </div>
+            </motion.div>
+          </motion.article>
         </div>
       </section>
     </div>
