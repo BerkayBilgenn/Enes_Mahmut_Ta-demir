@@ -26,6 +26,9 @@ import { blogData } from './data/blogData';
 import ServiceDetail from './components/ServiceDetail';
 import BlogList from './components/BlogList';
 import BlogDetail from './components/BlogDetail';
+import NotFound from './components/NotFound';
+import LoadingSpinner from './components/LoadingSpinner';
+import CookieConsent from './components/CookieConsent';
 
 // Animation Variants
 const fadeInUp = {
@@ -465,6 +468,30 @@ const faqData = [
   {
     question: "Hangi şehirlerde hizmet veriyorsunuz?",
     answer: "Merkezimiz İstanbul'da olmasına rağmen, Türkiye genelinde tüm illerde dava takibi yapabiliyoruz. Gerektiğinde yerel mahkemelerde sizi temsil ediyoruz."
+  },
+  {
+    question: "Dava açmadan önce arabuluculuk zorunlu mu?",
+    answer: "İş davaları, ticari davalar, tüketici davaları ve bazı kira uyuşmazlıklarında arabuluculuğa başvurmak dava şartıdır. Arabuluculuk sürecinde anlaşma sağlanamazsa dava yoluna gidilebilir."
+  },
+  {
+    question: "İcra takibine nasıl itiraz edilir?",
+    answer: "İcra takibine itiraz, ödeme emrinin tebliğinden itibaren 7 gün içinde yapılmalıdır. Borca, imzaya veya zamanaşımına itiraz gibi farklı itiraz türleri bulunmaktadır."
+  },
+  {
+    question: "Ceza davasında avukat tutmak zorunlu mu?",
+    answer: "Alt sınırı 5 yılı aşan suçlarda ve bazı özel durumlarda (tutuklu yargılama, çocuk sanıklar vb.) müdafi zorunludur. Diğer durumlarda zorunlu olmasa da avukat desteği şiddetle tavsiye edilir."
+  },
+  {
+    question: "İş davalarında zamanaşımı süreleri nedir?",
+    answer: "Kıdem ve ihbar tazminatı alacaklarında 5 yıl, ücret alacaklarında 5 yıl, yıllık izin ücretlerinde 5 yıllık zamanaşımı süresi uygulanır. Süre iş akdinin sona ermesinden itibaren başlar."
+  },
+  {
+    question: "Gayrimenkul satışında nelere dikkat edilmeli?",
+    answer: "Tapu kaydının incelenmesi, ipotek/haciz kontrolü, imar durumu araştırması, belediye borçları ve aidat durumu kontrol edilmelidir. Tapu devri mutlaka resmi şekilde yapılmalıdır."
+  },
+  {
+    question: "Ticaret davalarında yetkili mahkeme nasıl belirlenir?",
+    answer: "Genel yetkili mahkeme davalının yerleşim yeri mahkemesidir. Sözleşmeden doğan davalarda sözleşmenin ifa yeri, haksız fiil davalarında fiilin işlendiği yer mahkemesi de yetkili olabilir."
   }
 ];
 
@@ -885,14 +912,28 @@ function Layout({ children }) {
       <Header />
       <main>{children}</main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 }
 
 // Main App Component
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time for initial page load
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <BrowserRouter>
+      <AnimatePresence mode="wait">
+        {isLoading && <LoadingSpinner />}
+      </AnimatePresence>
       <ScrollToTop />
       <Layout>
         <Routes>
@@ -900,6 +941,7 @@ function App() {
           <Route path="/hizmet/:slug" element={<ServiceDetail />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </BrowserRouter>
@@ -907,3 +949,4 @@ function App() {
 }
 
 export default App;
+

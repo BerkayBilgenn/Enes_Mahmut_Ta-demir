@@ -180,5 +180,392 @@ export const blogData = [
       <h3>Profesyonel Sözleşme Hazırlama</h3>
       <p>Her iki tarafın haklarını koruyan, olası uyuşmazlıkları önleyen profesyonel bir kira sözleşmesi için hukuki destek almanızı öneririz. Avukatımız tarafından hazırlanacak sözleşme ile ileride yaşanabilecek sorunların önüne geçebilirsiniz.</p>
     `
+  },
+  {
+    id: 4,
+    slug: 'mirasta-sakli-pay-tenkis-davasi',
+    title: "Mirasta Saklı Pay ve Tenkis Davası Nedir?",
+    excerpt: "Miras hukukunda saklı paylı mirasçıların hakları ve saklı payın ihlali halinde açılacak tenkis davası hakkında bilmeniz gerekenler.",
+    category: "Miras Hukuku",
+    date: "2024-12-05",
+    readTime: "6 dk",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <h3>Saklı Pay Nedir?</h3>
+      <p>Saklı pay, miras bırakanın ölüme bağlı tasarruflarla (vasiyetname, miras sözleşmesi) veya sağlararası bağışlamalarla bile ortadan kaldıramayacağı, yasal mirasçılara ayrılmış zorunlu miras payıdır. Türk Medeni Kanunu, belirli yakın akrabaları koruma altına almaktadır.</p>
+      
+      <h3>Kimler Saklı Paylı Mirasçıdır?</h3>
+      <ul>
+        <li><strong>Altsoy (Çocuklar, Torunlar):</strong> Yasal miras payının yarısı</li>
+        <li><strong>Anne ve Baba:</strong> Yasal miras payının dörtte biri</li>
+        <li><strong>Sağ Kalan Eş:</strong> Birlikte bulunduğu zümreye göre değişir</li>
+      </ul>
+      
+      <h3>Saklı Pay Oranları</h3>
+      <p>Saklı pay oranları yasal miras payı üzerinden hesaplanır:</p>
+      <ul>
+        <li>Altsoy için: Yasal miras payının 1/2'si</li>
+        <li>Anne-baba için: Yasal miras payının 1/4'ü</li>
+        <li>Eş altsoy ile birlikte: Yasal miras payının tamamı</li>
+        <li>Eş anne-baba ile birlikte: Yasal miras payının tamamı</li>
+      </ul>
+      
+      <h3>Tenkis Davası Nedir?</h3>
+      <p>Tenkis davası, saklı payı ihlal edilen mirasçının, bu ihlali gidermek için açtığı bir davadır. Miras bırakanın tasarruf özgürlüğünü aştığı durumlarda, saklı paylı mirasçılar mahkemeden tasarrufların indirilmesini talep edebilir.</p>
+      
+      <h3>Tenkis Davasının Koşulları</h3>
+      <ul>
+        <li>Miras bırakan tasarruf özgürlüğünü aşmış olmalıdır</li>
+        <li>Davacı saklı paylı mirasçı olmalıdır</li>
+        <li>Saklı pay zedelenmiş olmalıdır</li>
+        <li>Dava süresi içinde açılmış olmalıdır</li>
+      </ul>
+      
+      <h3>Zamanaşımı Süreleri</h3>
+      <ul>
+        <li>Mirasın açılmasından itibaren: 1 yıl</li>
+        <li>Tasarrufun öğrenilmesinden itibaren: 1 yıl</li>
+        <li>Herhalde: Vasiyetname açılmasından itibaren 10 yıl</li>
+      </ul>
+      
+      <h3>Uzman Desteği</h3>
+      <p>Miras davaları duygusal açıdan zorlu ve hukuki açıdan karmaşık süreçlerdir. Haklarınızı korumak ve adil bir miras paylaşımı sağlamak için deneyimli bir miras hukuku avukatından destek alın.</p>
+    `
+  },
+  {
+    id: 5,
+    slug: 'trafik-kazasi-sonrasi-hukuki-surec',
+    title: "Trafik Kazası Sonrası Hukuki Süreç ve Tazminat Hakları",
+    excerpt: "Trafik kazası mağdurlarının bilmesi gereken haklar, tazminat türleri ve dava süreci hakkında kapsamlı rehber.",
+    category: "Tazminat Hukuku",
+    date: "2024-12-03",
+    readTime: "8 dk",
+    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <h3>Trafik Kazası Sonrası İlk Adımlar</h3>
+      <p>Bir trafik kazası geçirdikten sonra yapılması gerekenler:</p>
+      <ul>
+        <li><strong>Güvenlik:</strong> Önce kendi güvenliğinizi sağlayın, ikincil kazaları önleyin</li>
+        <li><strong>Sağlık:</strong> Yaralanma varsa hemen 112'yi arayın</li>
+        <li><strong>Bildirim:</strong> Polisi arayıp kaza tutanağı tutturun</li>
+        <li><strong>Delil:</strong> Kaza yerinin ve araçların fotoğraflarını çekin</li>
+        <li><strong>Tanık:</strong> Varsa tanıkların iletişim bilgilerini alın</li>
+      </ul>
+      
+      <h3>Tazminat Türleri</h3>
+      <p>Trafik kazası sonrası talep edilebilecek tazminatlar:</p>
+      <ul>
+        <li><strong>Maddi Tazminat:</strong> Tedavi masrafları, iş gücü kaybı, araç hasarı</li>
+        <li><strong>Manevi Tazminat:</strong> Acı, elem ve ıstırap karşılığı</li>
+        <li><strong>Destekten Yoksun Kalma:</strong> Ölümlü kazalarda yakınların tazminatı</li>
+        <li><strong>Bakıcı Gideri:</strong> Sürekli bakım gerektiren yaralanmalarda</li>
+      </ul>
+      
+      <h3>Sigorta Şirketinden Tazminat</h3>
+      <p>Karşı tarafın Zorunlu Mali Sorumluluk Sigortası (Trafik Sigortası) kapsamında tazminat talep edilebilir:</p>
+      <ul>
+        <li>Başvuru süresi: Kaza tarihinden itibaren 2 yıl</li>
+        <li>Sigorta şirketi 15 iş günü içinde cevap vermeli</li>
+        <li>Anlaşmazlık halinde Sigorta Tahkim Komisyonu'na başvurulabilir</li>
+      </ul>
+      
+      <h3>Ceza Davası ve Tazminat</h3>
+      <p>Trafik kazası aynı zamanda bir suç teşkil edebilir:</p>
+      <ul>
+        <li>Taksirle yaralama (TCK md. 89)</li>
+        <li>Taksirle öldürme (TCK md. 85)</li>
+        <li>Ceza davasında "şahsi haklar saklı tutularak" tazminat ayrıca talep edilebilir</li>
+      </ul>
+      
+      <h3>Zamanaşımı Süreleri</h3>
+      <ul>
+        <li>Maddi/manevi tazminat: 2 yıl (zarar ve faili öğrenmeden itibaren)</li>
+        <li>Herhalde: 10 yıl (kaza tarihinden itibaren)</li>
+        <li>Ceza zamanaşımı daha uzunsa, tazminat davası da o sürede açılabilir</li>
+      </ul>
+      
+      <h3>Profesyonel Hukuki Destek</h3>
+      <p>Trafik kazası davalarında hak kayıplarını önlemek için bir avukattan destek almanız önemlidir. Ücretsiz ön görüşme için bizimle iletişime geçebilirsiniz.</p>
+    `
+  },
+  {
+    id: 6,
+    slug: 'arabuluculuk-nedir',
+    title: "Arabuluculuk Nedir? Dava Açmadan Uyuşmazlık Çözümü",
+    excerpt: "Arabuluculuk sürecinin nasıl işlediği, avantajları ve hangi davalarda zorunlu olduğu hakkında bilmeniz gerekenler.",
+    category: "Arabuluculuk",
+    date: "2024-11-20",
+    readTime: "5 dk",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <h3>Arabuluculuk Nedir?</h3>
+      <p>Arabuluculuk, uyuşmazlık yaşayan tarafların, bağımsız ve tarafsız bir üçüncü kişinin (arabulucu) yardımıyla kendi çözümlerini üretmelerini sağlayan alternatif uyuşmazlık çözüm yöntemidir.</p>
+      
+      <h3>Arabuluculuğun Avantajları</h3>
+      <ul>
+        <li><strong>Hız:</strong> Mahkeme sürecine göre çok daha hızlı sonuç</li>
+        <li><strong>Maliyet:</strong> Dava masraflarından tasarruf</li>
+        <li><strong>Gizlilik:</strong> Süreç tamamen gizli tutulur</li>
+        <li><strong>Esneklik:</strong> Taraflar kendi çözümlerini üretir</li>
+        <li><strong>İlişki Koruma:</strong> Taraflar arasındaki ilişki korunabilir</li>
+      </ul>
+      
+      <h3>Zorunlu Arabuluculuk Alanları</h3>
+      <p>Bazı davalarda arabuluculuğa başvurmak dava şartıdır:</p>
+      <ul>
+        <li><strong>İş Davaları:</strong> İşe iade, kıdem-ihbar tazminatı, fazla mesai vb.</li>
+        <li><strong>Ticari Davalar:</strong> Ticari uyuşmazlıklar (bazı istisnalar hariç)</li>
+        <li><strong>Tüketici Davaları:</strong> Tüketici işlemlerinden doğan uyuşmazlıklar</li>
+        <li><strong>Kira Davaları:</strong> Kira uyuşmazlıkları (bazı istisnalar hariç)</li>
+      </ul>
+      
+      <h3>Arabuluculuk Süreci</h3>
+      <ul>
+        <li>Arabuluculuk başvurusu yapılır</li>
+        <li>Arabulucu atanır ve tarafları toplantıya çağırır</li>
+        <li>Taraflar birlikte veya ayrı ayrı görüşür</li>
+        <li>Anlaşma sağlanırsa tutanak düzenlenir</li>
+        <li>Anlaşma tutanağı ilam niteliğinde belge sayılır</li>
+      </ul>
+      
+      <h3>Süreler</h3>
+      <ul>
+        <li>İş davalarında: En fazla 3 hafta (+ 1 hafta uzatma)</li>
+        <li>Ticari davalarda: En fazla 6 hafta (+ 2 hafta uzatma)</li>
+        <li>Tüketici davalarında: En fazla 3 hafta (+ 1 hafta uzatma)</li>
+      </ul>
+      
+      <h3>Arabuluculukta Avukat Desteği</h3>
+      <p>Arabuluculuk görüşmelerinde bir avukatla birlikte olmanız haklarınızı korumak açısından önemlidir. Sürecin her aşamasında size destek sağlıyoruz.</p>
+    `
+  },
+  {
+    id: 7,
+    slug: 'e-ticaret-kvkk-uyumu',
+    title: "E-Ticaret Siteleri İçin KVKK Uyum Rehberi",
+    excerpt: "Online satış yapan işletmelerin kişisel verilerin korunması kanununa uyum sağlaması için yapması gerekenler.",
+    category: "Ticaret Hukuku",
+    date: "2024-11-18",
+    readTime: "7 dk",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <h3>E-Ticarette KVKK Neden Önemli?</h3>
+      <p>E-ticaret siteleri, müşterilerinin ad-soyad, adres, telefon, e-posta, ödeme bilgileri gibi pek çok kişisel veriyi işlemektedir. 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) bu verilerin korunmasını zorunlu kılmaktadır.</p>
+      
+      <h3>KVKK Kapsamında Yapılması Gerekenler</h3>
+      <ul>
+        <li><strong>VERBİS Kaydı:</strong> Veri Sorumluları Siciline kayıt yaptırılmalı</li>
+        <li><strong>Aydınlatma Metni:</strong> Web sitesinde yayınlanmalı</li>
+        <li><strong>Gizlilik Politikası:</strong> Detaylı şekilde hazırlanmalı</li>
+        <li><strong>Çerez Politikası:</strong> Çerez kullanımı hakkında bilgilendirme</li>
+        <li><strong>Açık Rıza:</strong> Gerekli durumlarda açık rıza alınmalı</li>
+      </ul>
+      
+      <h3>E-Ticaret Sitesinde Bulunması Gereken Metinler</h3>
+      <ul>
+        <li>KVKK Aydınlatma Metni</li>
+        <li>Gizlilik ve Çerez Politikası</li>
+        <li>Kişisel Veri Sahibi Başvuru Formu</li>
+        <li>Üyelik/Satış Sözleşmesi</li>
+        <li>Mesafeli Satış Sözleşmesi</li>
+        <li>Ön Bilgilendirme Formu</li>
+      </ul>
+      
+      <h3>Veri Güvenliği Önlemleri</h3>
+      <ul>
+        <li>SSL sertifikası kullanımı</li>
+        <li>Güçlü şifreleme yöntemleri</li>
+        <li>Düzenli güvenlik güncellemeleri</li>
+        <li>Yetkilendirme ve erişim kontrolü</li>
+        <li>Veri yedekleme prosedürleri</li>
+      </ul>
+      
+      <h3>KVKK İhlali Yaptırımları</h3>
+      <ul>
+        <li>Aydınlatma yükümlülüğü ihlali: 9.013 TL - 180.264 TL</li>
+        <li>Veri güvenliği ihlali: 27.040 TL - 1.802.641 TL</li>
+        <li>Kurul kararlarına uymama: 45.066 TL - 1.802.641 TL</li>
+        <li>VERBİS'e kayıt ihlali: 36.053 TL - 1.802.641 TL</li>
+      </ul>
+      
+      <h3>Profesyonel Destek</h3>
+      <p>KVKK uyum sürecinde hukuki danışmanlık almak, olası cezai yaptırımlardan korunmanızı sağlar. E-ticaret mevzuatı ve KVKK konusunda size destek veriyoruz.</p>
+    `
+  },
+  {
+    id: 8,
+    slug: 'kidem-tazminati-hesaplama',
+    title: "Kıdem Tazminatı: Hak Kazanma Koşulları ve Hesaplama",
+    excerpt: "İşçilerin kıdem tazminatına ne zaman hak kazandığı ve tazminatın nasıl hesaplandığına dair kapsamlı bilgi.",
+    category: "İş Hukuku",
+    date: "2024-11-15",
+    readTime: "6 dk",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <h3>Kıdem Tazminatı Nedir?</h3>
+      <p>Kıdem tazminatı, işçinin işverene bağlı olarak çalıştığı her tam yıl için 30 günlük ücreti tutarında ödenen bir tazminattır. İş sözleşmesinin belirli koşullarla sona ermesi halinde işçi bu tazminata hak kazanır.</p>
+      
+      <h3>Kıdem Tazminatına Hak Kazanma Koşulları</h3>
+      <ul>
+        <li><strong>Süre:</strong> Aynı işverene bağlı en az 1 yıl çalışmış olmak</li>
+        <li><strong>İşveren Feshi:</strong> İşverenin haksız veya geçerli nedenle feshi</li>
+        <li><strong>İşçi Haklı Fesih:</strong> İşçinin haklı nedenle iş sözleşmesini feshi</li>
+        <li><strong>Emeklilik:</strong> Emeklilik, yaşlılık veya malullük aylığı alma</li>
+        <li><strong>Askerlik:</strong> Muvazzaf askerlik hizmeti nedeniyle ayrılma</li>
+        <li><strong>Evlilik (Kadın İşçi):</strong> Evlenenin 1 yıl içinde ayrılması</li>
+        <li><strong>Ölüm:</strong> İşçinin ölümü halinde mirasçılara ödeme</li>
+      </ul>
+      
+      <h3>Kıdem Tazminatı Hesaplama</h3>
+      <p>Hesaplama formülü:</p>
+      <p><strong>Kıdem Tazminatı = Giydirilmiş Brüt Ücret x Çalışma Yılı</strong></p>
+      <ul>
+        <li>Her tam yıl için 30 günlük brüt ücret</li>
+        <li>Artan süreler de orantılı hesaplanır (6 ay = 15 gün)</li>
+        <li>Giydirilmiş ücrete dahil: Maaş, yemek, yol, ikramiye, prim vb.</li>
+      </ul>
+      
+      <h3>Kıdem Tazminatı Tavanı</h3>
+      <p>Kıdem tazminatı hesabında tavan uygulanır:</p>
+      <ul>
+        <li>2024 yılı için tavan: Memur maaş katsayısına göre belirlenir</li>
+        <li>İşçinin ücreti tavanı aşsa bile tavandan hesaplama yapılır</li>
+        <li>Tavan her yıl güncellenir</li>
+      </ul>
+      
+      <h3>Zamanaşımı</h3>
+      <ul>
+        <li>Kıdem tazminatı alacağında zamanaşımı: 5 yıl</li>
+        <li>Süre, iş sözleşmesinin sona erdiği tarihten başlar</li>
+      </ul>
+      
+      <h3>Hukuki Destek</h3>
+      <p>Kıdem tazminatı hesaplaması ve dava süreci konusunda profesyonel destek almak için bizimle iletişime geçebilirsiniz.</p>
+    `
+  },
+  {
+    id: 9,
+    slug: 'turkiyede-sirket-kurulumu',
+    title: "Türkiye'de Şirket Kuruluşu: Adım Adım Rehber",
+    excerpt: "Türkiye'de şirket kurmak isteyenler için şirket türleri, gerekli belgeler ve süreç hakkında kapsamlı rehber.",
+    category: "Şirketler Hukuku",
+    date: "2024-11-12",
+    readTime: "8 dk",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <h3>Türkiye'de Şirket Türleri</h3>
+      <p>Türk Ticaret Kanunu'na göre kurulabilecek başlıca şirket türleri:</p>
+      <ul>
+        <li><strong>Limited Şirket (Ltd. Şti.):</strong> En yaygın tercih edilen tür, 1-50 ortak</li>
+        <li><strong>Anonim Şirket (A.Ş.):</strong> Büyük ölçekli yatırımlar için ideal</li>
+        <li><strong>Şahıs Şirketi:</strong> Tek kişilik basit yapı</li>
+        <li><strong>Kollektif Şirket:</strong> Gerçek kişiler arasında kurulan ortaklık</li>
+        <li><strong>Komandit Şirket:</strong> Sınırlı ve sınırsız sorumlu ortaklık</li>
+      </ul>
+      
+      <h3>Limited Şirket Kuruluş Maliyetleri (2024)</h3>
+      <ul>
+        <li>Asgari sermaye: 10.000 TL</li>
+        <li>Noter masrafları: ~2.000-3.000 TL</li>
+        <li>Ticaret Sicili harçları: ~1.500-2.000 TL</li>
+        <li>Ticaret Odası kayıt: ~500-1.000 TL</li>
+        <li>Potansiyel defter tasdik: ~500-1.000 TL</li>
+      </ul>
+      
+      <h3>Şirket Kuruluş Adımları</h3>
+      <ul>
+        <li><strong>1. Ticaret Unvanı Belirleme:</strong> Ticaret Sicili'nden unvan sorgulama</li>
+        <li><strong>2. MERSİS Başvurusu:</strong> Online ön kayıt ve randevu alma</li>
+        <li><strong>3. Ana Sözleşme Hazırlama:</strong> Noter onayı veya MERSİS üzerinden</li>
+        <li><strong>4. Sermaye Blokajı:</strong> Bankada sermayenin %25'inin blokesi</li>
+        <li><strong>5. Ticaret Sicili Tescil:</strong> Şirketin resmi olarak kuruluşu</li>
+        <li><strong>6. Vergi Dairesi Kaydı:</strong> Mükellefiyet tesisi</li>
+        <li><strong>7. SGK Kaydı:</strong> İşveren kaydı açılması</li>
+      </ul>
+      
+      <h3>Gerekli Belgeler</h3>
+      <ul>
+        <li>Ortakların kimlik fotokopileri</li>
+        <li>İmza beyannameleri</li>
+        <li>Şirket ana sözleşmesi</li>
+        <li>Rekabet Kurumu harcı dekontu</li>
+        <li>Potansiyel beyanı</li>
+        <li>Sermaye blokaj yazısı</li>
+      </ul>
+      
+      <h3>Yabancı Yatırımcılar İçin</h3>
+      <p>Yabancı gerçek veya tüzel kişiler de Türkiye'de şirket kurabilir:</p>
+      <ul>
+        <li>%100 yabancı sermayeli şirket kurulabilir</li>
+        <li>Vergi numarası alımı gereklidir</li>
+        <li>Apostil/konsolosluk tasdiki gerekebilir</li>
+        <li>Vekalet ile işlem yapılabilir</li>
+      </ul>
+      
+      <h3>Profesyonel Destek</h3>
+      <p>Şirket kuruluşu ve sonrasındaki tüm hukuki süreçlerde yanınızdayız. Detaylı bilgi için bizimle iletişime geçin.</p>
+    `
+  },
+  {
+    id: 10,
+    slug: 'bosanmada-velayet-hakki',
+    title: "Boşanmada Velayet Hakkı ve Çocukla Kişisel İlişki",
+    excerpt: "Boşanma sürecinde çocuğun velayetinin belirlenmesi ve velayet almayan ebeveynin hakları hakkında bilmeniz gerekenler.",
+    category: "Aile Hukuku",
+    date: "2024-11-10",
+    readTime: "6 dk",
+    image: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <h3>Velayet Nedir?</h3>
+      <p>Velayet, küçük çocuğun bakımı, korunması, yetiştirilmesi ve temsili konusunda anne-babaya verilen hak ve yükümlülüklerin bütünüdür. Evlilik birliği içinde velayet anne ve baba tarafından birlikte kullanılır.</p>
+      
+      <h3>Boşanmada Velayet Nasıl Belirlenir?</h3>
+      <p>Hakim velayeti belirlerken çocuğun üstün yararını gözetir:</p>
+      <ul>
+        <li><strong>Çocuğun Yaşı:</strong> Anne bakımına muhtaç yaştaki çocuklar</li>
+        <li><strong>Çocuğun Görüşü:</strong> İdrak gücüne sahip çocuğun tercihi</li>
+        <li><strong>Ebeveynlerin Durumu:</strong> Bakım kapasitesi, yaşam koşulları</li>
+        <li><strong>Kardeşlerin Birliği:</strong> Kardeşlerin ayrılmaması ilkesi</li>
+        <li><strong>Çocuğun Alışkanlıkları:</strong> Okul, arkadaş çevresi, rutinler</li>
+      </ul>
+      
+      <h3>Ortak Velayet</h3>
+      <p>Türk hukukunda ortak velayet:</p>
+      <ul>
+        <li>Boşanmadan sonra ortak velayet kararı verilebilir</li>
+        <li>Ebeveynlerin anlaşması ve işbirliği gereklidir</li>
+        <li>Çocuğun yararına olduğuna hakim karar verir</li>
+        <li>Pratikte henüz çok yaygın değildir</li>
+      </ul>
+      
+      <h3>Kişisel İlişki Kurma Hakkı</h3>
+      <p>Velayeti almayan ebeveynin çocukla kişisel ilişki kurma hakkı vardır:</p>
+      <ul>
+        <li>Hafta sonları ziyaret hakkı</li>
+        <li>Yaz tatili süresince yanında kalma</li>
+        <li>Dini bayramlarda dönüşümlü ziyaret</li>
+        <li>Sömestr tatilinde kişisel ilişki</li>
+      </ul>
+      
+      <h3>Velayet Değişikliği</h3>
+      <p>Velayetin değiştirilmesi talep edilebilir:</p>
+      <ul>
+        <li>Velayet sahibinin görevini ihmal etmesi</li>
+        <li>Çocuğun sağlık veya güvenliğinin tehlikeye düşmesi</li>
+        <li>Koşulların önemli ölçüde değişmesi</li>
+        <li>Çocuğun görüşünün değişmesi</li>
+      </ul>
+      
+      <h3>Nafaka Yükümlülüğü</h3>
+      <ul>
+        <li>Velayeti almayan ebeveyn iştirak nafakası öder</li>
+        <li>Nafaka miktarı ebeveynin gelirine göre belirlenir</li>
+        <li>Çocuk reşit olana veya eğitimini tamamlayana kadar devam eder</li>
+      </ul>
+      
+      <h3>Hukuki Destek</h3>
+      <p>Velayet davaları hassas süreçlerdir. Çocuğunuzun hakları ve sizin haklarınız için deneyimli bir aile hukuku avukatından destek alın.</p>
+    `
   }
 ];
+
