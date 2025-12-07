@@ -18,7 +18,8 @@ import {
   Loader2,
   BookOpen,
   Calendar,
-  ArrowRight
+  ArrowRight,
+  Star
 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { servicesData } from './data/servicesData';
@@ -32,6 +33,7 @@ import CookieConsent from './components/CookieConsent';
 import FloatingCTA from './components/FloatingCTA';
 import ExitPopup from './components/ExitPopup';
 import FAQSchema from './components/FAQSchema';
+import SignatureIntro from './components/SignatureIntro';
 
 // Animation Variants
 const fadeInUp = {
@@ -498,6 +500,260 @@ const faqData = [
   }
 ];
 
+// Testimonials Data - 8 testimonials
+const testimonialsData = [
+  {
+    id: 1,
+    name: "Mehmet Y.",
+    role: "İşadamı",
+    caseType: "Ticaret Hukuku",
+    rating: 5,
+    text: "Şirketimizin ticari davasında gösterdikleri profesyonel yaklaşım sayesinde davayı kazandık. Her aşamada bilgilendirildik ve süreç çok şeffaf yürütüldü.",
+    date: "2024"
+  },
+  {
+    id: 2,
+    name: "Ayşe K.",
+    role: "Öğretmen",
+    caseType: "Aile Hukuku",
+    rating: 5,
+    text: "Boşanma sürecimde hem hukuki hem de insani açıdan büyük destek aldım. Çocuğumun velayeti konusunda haklarımı en iyi şekilde korudular.",
+    date: "2024"
+  },
+  {
+    id: 3,
+    name: "Ali R.",
+    role: "Yazılım Mühendisi",
+    caseType: "İş Hukuku",
+    rating: 5,
+    text: "İş akdimin haksız feshi sonrası açtığımız davada tüm haklarımı aldım. Kıdem ve ihbar tazminatlarım eksiksiz ödendi. Teşekkürler!",
+    date: "2024"
+  },
+  {
+    id: 4,
+    name: "Fatma S.",
+    role: "Ev Hanımı",
+    caseType: "Miras Hukuku",
+    rating: 5,
+    text: "Miras paylaşımı konusunda kardeşlerimle yaşadığımız anlaşmazlıkta arabuluculuk sürecini çok iyi yönettiler. Mahkemeye gitmeden çözüme ulaştık.",
+    date: "2023"
+  },
+  {
+    id: 5,
+    name: "Hasan T.",
+    role: "Şirket Müdürü",
+    caseType: "Gayrimenkul",
+    rating: 5,
+    text: "Gayrimenkul satış işlemlerimizde yaşadığımız hukuki sorunları hızlıca çözdüler. Tapu devir sürecinde çok yardımcı oldular.",
+    date: "2024"
+  },
+  {
+    id: 6,
+    name: "Zeynep A.",
+    role: "Doktor",
+    caseType: "Ceza Hukuku",
+    rating: 5,
+    text: "Malpraktis iddiasıyla karşı karşıya kaldığımda hemen harekete geçtiler. Beraat kararıyla sonuçlanan davada mükemmel bir savunma yaptılar.",
+    date: "2024"
+  },
+  {
+    id: 7,
+    name: "Kemal B.",
+    role: "Emekli",
+    caseType: "İcra Hukuku",
+    rating: 5,
+    text: "Yıllardır tahsil edemediğim alacağımı icra takibi ile kısa sürede aldım. Süreç boyunca her adımda bilgilendirildim.",
+    date: "2023"
+  },
+  {
+    id: 8,
+    name: "Selin D.",
+    role: "Girişimci",
+    caseType: "Şirket Hukuku",
+    rating: 5,
+    text: "Şirket kuruluşundan sözleşme hazırlamaya kadar tüm süreçlerde yanımızda oldular. Yatırımcılarla yapılan anlaşmalarda haklarımızı korudular.",
+    date: "2024"
+  }
+];
+
+// Testimonials Carousel Section
+function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  
+  // Items per page based on screen size
+  const itemsPerPage = typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 2;
+  const totalPages = Math.ceil(testimonialsData.length / itemsPerPage);
+
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % totalPages);
+  };
+
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const goToSlide = (index) => {
+    setDirection(index > currentIndex ? 1 : -1);
+    setCurrentIndex(index);
+  };
+
+  // Get current items
+  const getCurrentItems = () => {
+    const start = currentIndex * itemsPerPage;
+    return testimonialsData.slice(start, start + itemsPerPage);
+  };
+
+  // Auto-play
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [currentIndex]);
+
+  return (
+    <section id="testimonials" className="relative py-24 lg:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy to-navy-900" />
+      
+      {/* Decorative elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          initial="initial" 
+          whileInView="animate" 
+          viewport={{ once: true }} 
+          variants={staggerContainer} 
+          className="text-center mb-12"
+        >
+          <motion.span variants={fadeInUp} className="inline-block text-gold text-sm font-semibold tracking-wider uppercase mb-4">
+            Müvekkil Görüşleri
+          </motion.span>
+          <motion.h2 variants={fadeInUp} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Müvekkillerimiz <span className="text-gradient-gold">Ne Diyor?</span>
+          </motion.h2>
+          <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-gray-400">
+            Başarıyla sonuçlandırdığımız davalardan müvekkillerimizin görüşleri
+          </motion.p>
+        </motion.div>
+
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 z-10 w-10 h-10 md:w-12 md:h-12 bg-navy-800/90 border border-gold/20 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy transition-all"
+            aria-label="Önceki"
+          >
+            <ChevronRight className="w-5 h-5 rotate-180" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 z-10 w-10 h-10 md:w-12 md:h-12 bg-navy-800/90 border border-gold/20 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy transition-all"
+            aria-label="Sonraki"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* Cards Container */}
+          <div className="overflow-hidden px-6 md:px-12">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, x: direction > 0 ? 100 : -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: direction > 0 ? -100 : 100 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              >
+                {getCurrentItems().map((testimonial) => (
+                  <div
+                    key={testimonial.id}
+                    className="bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-2xl p-6 sm:p-8 hover:border-gold/30 transition-all"
+                  >
+                    {/* Header */}
+                    <div className="flex items-start gap-4 mb-4">
+                      {/* Avatar with Initials */}
+                      <div className="w-12 h-12 bg-gradient-to-br from-gold/20 to-gold/10 border border-gold/30 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span className="font-serif font-semibold text-gold text-lg">
+                          {testimonial.name.charAt(0)}
+                        </span>
+                      </div>
+                      
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between flex-wrap gap-2">
+                          <div>
+                            <h4 className="font-semibold text-white">{testimonial.name}</h4>
+                            <p className="text-sm text-gray-500">{testimonial.role}</p>
+                          </div>
+                          <span className="text-xs bg-gold/10 text-gold px-3 py-1 rounded-full">
+                            {testimonial.caseType}
+                          </span>
+                        </div>
+                        
+                        {/* Star Rating */}
+                        <div className="flex items-center gap-1 mt-2">
+                          {[...Array(5)].map((_, i) => (
+                            <Star 
+                              key={i} 
+                              className={`w-4 h-4 ${i < testimonial.rating ? 'text-gold fill-gold' : 'text-gray-600'}`} 
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Quote */}
+                    <blockquote className="text-gray-300 leading-relaxed italic">
+                      "{testimonial.text}"
+                    </blockquote>
+                    
+                    {/* Date */}
+                    <p className="text-xs text-gray-600 mt-4">{testimonial.date}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Dot Indicators */}
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {[...Array(totalPages)].map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all ${
+                  currentIndex === index 
+                    ? 'bg-gold w-8' 
+                    : 'bg-gray-600 hover:bg-gray-500'
+                }`}
+                aria-label={`Sayfa ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Trust Indicator */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <p className="text-gray-500 text-sm">
+            <span className="text-gold font-semibold">500+</span> memnun müvekkil ile çalıştık
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 // FAQ Item Component
 function FAQItem({ item, isOpen, onClick }) {
   return (
@@ -904,6 +1160,7 @@ function HomePage() {
       <Hero />
       <About />
       <Services />
+      <Testimonials />
       <FAQ />
       <Blog />
       <Contact />
@@ -930,7 +1187,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time for initial page load
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1500);

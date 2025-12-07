@@ -85,13 +85,13 @@ function ExitPopup() {
 
           {/* Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: "spring", damping: 25 }}
-            className="fixed inset-4 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-[70] w-auto sm:w-full sm:max-w-md flex items-center justify-center"
+            className="fixed inset-0 z-[70] flex items-center justify-center p-4"
           >
-            <div className="bg-gradient-to-br from-navy-800 to-navy-900 border border-gold/20 rounded-2xl overflow-hidden shadow-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-gradient-to-br from-navy-800 to-navy-900 border border-gold/20 rounded-2xl overflow-hidden shadow-2xl w-full max-w-md max-h-[85vh] overflow-y-auto relative">
               {/* Close Button */}
               <button
                 onClick={handleClose}
