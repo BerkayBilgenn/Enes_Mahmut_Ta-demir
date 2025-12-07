@@ -4,6 +4,8 @@ import { ArrowLeft, Phone, Mail, Calendar, ChevronRight, Send, Loader2, CheckCir
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { servicesData } from '../data/servicesData';
+import SEO from './SEO';
+import Breadcrumb from './Breadcrumb';
 
 // EmailJS Configuration
 const SERVICE_ID = "service_5np4b5k";
@@ -62,6 +64,18 @@ function ServiceDetail() {
 
   return (
     <div className="min-h-screen bg-navy">
+      {/* Dynamic SEO */}
+      <SEO
+        title={service.title}
+        description={service.description}
+        image={service.image}
+        url={`/hizmet/${service.slug}`}
+        schema={{
+          type: 'Service',
+          name: service.title
+        }}
+      />
+      
       {/* Hero Section */}
       <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 animated-gradient opacity-50" />
@@ -72,7 +86,7 @@ function ServiceDetail() {
           <div className="absolute inset-0 z-0">
             <img 
               src={service.image} 
-              alt={service.title}
+              alt={`${service.title} - Hukuki danışmanlık hizmeti görseli`}
               className="w-full h-full object-cover opacity-20"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/80 to-navy" />
@@ -85,15 +99,15 @@ function ServiceDetail() {
             initial="initial"
             animate="animate"
           >
-            {/* Back Button */}
-            <motion.button
-              variants={fadeInUp}
-              onClick={() => navigate('/')}
-              className="inline-flex items-center gap-2 text-gold hover:text-gold-400 mb-6 sm:mb-8 group"
-            >
-              <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-              <span>Ana Sayfaya Dön</span>
-            </motion.button>
+            {/* Breadcrumb Navigation */}
+            <motion.div variants={fadeInUp} className="mb-6">
+              <Breadcrumb 
+                items={[
+                  { name: 'Hizmetler', path: '/#services' },
+                  { name: service.title, path: `/hizmet/${service.slug}` }
+                ]} 
+              />
+            </motion.div>
 
             {/* Hero Content with Image */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -277,7 +291,7 @@ function ServiceDetail() {
                       </div>
                       <div>
                         <h3 className="font-serif text-xl sm:text-2xl font-semibold text-white">
-                          Ücretsiz Danışmanlık
+                          Randevu Talebi
                         </h3>
                         <p className="text-sm text-gray-400">Hukuki sorununuz için hemen randevu alın</p>
                       </div>

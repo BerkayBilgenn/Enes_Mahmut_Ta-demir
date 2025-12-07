@@ -29,6 +29,9 @@ import BlogDetail from './components/BlogDetail';
 import NotFound from './components/NotFound';
 import LoadingSpinner from './components/LoadingSpinner';
 import CookieConsent from './components/CookieConsent';
+import FloatingCTA from './components/FloatingCTA';
+import ExitPopup from './components/ExitPopup';
+import FAQSchema from './components/FAQSchema';
 
 // Animation Variants
 const fadeInUp = {
@@ -268,7 +271,7 @@ function Hero() {
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}
             >
-              Ücretsiz Danışmanlık
+              Hemen İletişime Geçin
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
           </motion.div>
@@ -285,7 +288,7 @@ function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-gold" />
-              <span>Ücretsiz Ön Görüşme</span>
+              <span>Randevu Al</span>
             </div>
           </motion.div>
         </motion.div>
@@ -421,7 +424,7 @@ function About() {
               Modern hukuk dünyasının gerektirdiği yenilikçi yaklaşımlar ile geleneksel değerleri birleştirerek, size özel çözümler üretiyoruz.
             </motion.p>
             <motion.div variants={fadeInUp} className="space-y-4">
-              {['Ücretsiz ön görüşme hizmeti', '7/24 acil hukuki destek', 'Şeffaf ve güvenilir süreç yönetimi', 'Müvekkil memnuniyeti odaklı yaklaşım'].map((feature, index) => (
+              {['Profesyonel hukuki danışmanlık', '7/24 acil hukuki destek', 'Şeffaf ve güvenilir süreç yönetimi', 'Müvekkil memnuniyeti odaklı yaklaşım'].map((feature, index) => (
                 <motion.div key={index} className="flex items-center gap-3" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}>
                   <CheckCircle className="w-5 h-5 text-gold flex-shrink-0" />
                   <span className="text-gray-300">{feature}</span>
@@ -446,8 +449,8 @@ function About() {
 // FAQ Data
 const faqData = [
   {
-    question: "İlk görüşme ücretsiz mi?",
-    answer: "Evet, ilk görüşmemiz tamamen ücretsizdir. Bu görüşmede davanızın genel durumunu değerlendirir, hukuki süreç hakkında bilgi verir ve size en uygun çözüm yolunu birlikte belirleriz."
+    question: "İlk görüşmede ne konuşulur?",
+    answer: "İlk görüşmede davanızın genel durumunu değerlendirir, hukuki süreç hakkında bilgi verir ve size en uygun çözüm yolunu birlikte belirleriz. Bu görüşmede tüm sorularınızı sorabilirsiniz."
   },
   {
     question: "Dava süreçleri ne kadar sürer?",
@@ -539,6 +542,9 @@ function FAQ() {
 
   return (
     <section id="faq" className="relative py-24 lg:py-32 overflow-hidden">
+      {/* FAQ Schema for Google Rich Snippets */}
+      <FAQSchema faqs={faqData} />
+      
       <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-800 to-navy" />
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -912,7 +918,9 @@ function Layout({ children }) {
       <Header />
       <main>{children}</main>
       <Footer />
+      <FloatingCTA />
       <CookieConsent />
+      <ExitPopup />
     </div>
   );
 }

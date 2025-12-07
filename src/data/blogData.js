@@ -52,7 +52,7 @@ export const blogData = [
       </ul>
       
       <h3>Hukuki Destek Alın</h3>
-      <p>Boşanma sürecinde mal paylaşımı konusu oldukça karmaşık olabilir. Haklarınızı korumak ve adil bir paylaşım sağlamak için mutlaka bir avukattan destek almanızı öneririz. Ücretsiz ön görüşme için bizimle iletişime geçebilirsiniz.</p>
+      <p>Boşanma sürecinde mal paylaşımı konusu oldukça karmaşık olabilir. Haklarınızı korumak ve adil bir paylaşım sağlamak için mutlaka bir avukattan destek almanızı öneririz. Detaylı bilgi için bizimle iletişime geçebilirsiniz.</p>
     `
   },
   {
@@ -285,7 +285,7 @@ export const blogData = [
       </ul>
       
       <h3>Profesyonel Hukuki Destek</h3>
-      <p>Trafik kazası davalarında hak kayıplarını önlemek için bir avukattan destek almanız önemlidir. Ücretsiz ön görüşme için bizimle iletişime geçebilirsiniz.</p>
+      <p>Trafik kazası davalarında hak kayıplarını önlemek için bir avukattan destek almanız önemlidir. Detaylı bilgi için bizimle iletişime geçebilirsiniz.</p>
     `
   },
   {

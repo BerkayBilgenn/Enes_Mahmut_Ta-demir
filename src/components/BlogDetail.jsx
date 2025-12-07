@@ -1,7 +1,9 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Clock, ChevronRight, Share2, BookOpen } from 'lucide-react';
+import { Calendar, Clock, ChevronRight, Share2, BookOpen } from 'lucide-react';
 import { blogData } from '../data/blogData';
+import SEO from './SEO';
+import Breadcrumb from './Breadcrumb';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -28,7 +30,6 @@ function BlogDetail() {
             to="/blog"
             className="inline-flex items-center gap-2 bg-gold text-navy px-6 py-3 rounded-full font-semibold hover:bg-gold-400 transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
             Blog'a Dön
           </Link>
         </div>
@@ -36,18 +37,35 @@ function BlogDetail() {
     );
   }
 
-  // Get related posts
-  const relatedPosts = blogData.filter(p => p.id !== post.id).slice(0, 2);
+  // Get related posts - filtered by same category first
+  const relatedPosts = blogData
+    .filter(p => p.id !== post.id)
+    .sort((a, b) => (a.category === post.category ? -1 : 1))
+    .slice(0, 2);
 
   return (
     <div className="min-h-screen bg-navy pt-24">
+      {/* Dynamic SEO */}
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        image={post.image}
+        url={`/blog/${post.slug}`}
+        type="article"
+        article={{
+          date: post.date,
+          category: post.category
+        }}
+      />
+      
       {/* Hero Section */}
       <section className="relative py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src={post.image} 
-            alt={post.title}
+            alt={`${post.title} - ${post.category} hakkında makale görseli`}
             className="w-full h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-navy/90" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
@@ -59,15 +77,14 @@ function BlogDetail() {
             animate="animate"
             variants={staggerContainer}
           >
-            {/* Back Button */}
-            <motion.div variants={fadeInUp} className="mb-8">
-              <button
-                onClick={() => navigate('/blog')}
-                className="inline-flex items-center gap-2 text-gold hover:text-gold-400 transition-colors"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Blog'a Dön
-              </button>
+            {/* Breadcrumb Navigation */}
+            <motion.div variants={fadeInUp} className="mb-6">
+              <Breadcrumb 
+                items={[
+                  { name: 'Blog', path: '/blog' },
+                  { name: post.title, path: `/blog/${post.slug}` }
+                ]} 
+              />
             </motion.div>
 
             {/* Category Badge */}
@@ -198,7 +215,7 @@ function BlogDetail() {
                   Hukuki Danışmanlık Alın
                 </h3>
                 <p className="text-gray-400 mb-6 max-w-md mx-auto">
-                  Bu konuda profesyonel destek almak ister misiniz? Ücretsiz ön görüşme için hemen iletişime geçin.
+                  Bu konuda profesyonel destek almak ister misiniz? Hemen iletişime geçin.
                 </p>
                 <a
                   href="/#contact"

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, ArrowRight, BookOpen, ChevronRight } from 'lucide-react';
 import { blogData } from '../data/blogData';
+import SEO from './SEO';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -16,12 +17,19 @@ const staggerContainer = {
 function BlogList() {
   return (
     <div className="min-h-screen bg-navy pt-24">
+      {/* Dynamic SEO */}
+      <SEO
+        title="Hukuk Blogu - Güncel Makaleler"
+        description="Hukuki konularda bilgilendirici içerikler, güncel gelişmeler ve uzman görüşleri. Aile hukuku, iş hukuku, ticaret hukuku ve daha fazlası."
+        url="/blog"
+      />
+      
       {/* Hero Section */}
       <section className="relative py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2000&auto=format&fit=crop" 
-            alt="Blog Background"
+            alt="Hukuk makaleleri ve blog yazıları arkaplan görseli"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-navy/90" />
@@ -134,7 +142,7 @@ function BlogList() {
               }}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold px-8 py-4 rounded-full text-navy font-semibold text-lg hover:shadow-lg hover:shadow-gold/30 transition-all"
             >
-              Ücretsiz Danışmanlık
+              Hemen İletişime Geçin
               <ChevronRight className="w-5 h-5" />
             </a>
           </motion.div>
