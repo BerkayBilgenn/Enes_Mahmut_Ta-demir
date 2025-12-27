@@ -39,6 +39,7 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 import FAQPage from './pages/FAQPage';
+import LocalBusinessSchema from './components/LocalBusinessSchema';
 
 // Animation Variants
 const fadeInUp = {
@@ -666,6 +667,9 @@ function App() {
 
   return (
     <BrowserRouter>
+      {/* Local Business Schema for Google Maps & Local SEO */}
+      <LocalBusinessSchema />
+      
       <AnimatePresence mode="wait">
         {isLoading && <LoadingSpinner />}
       </AnimatePresence>
