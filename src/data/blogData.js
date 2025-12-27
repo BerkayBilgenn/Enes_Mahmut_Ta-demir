@@ -566,6 +566,264 @@ export const blogData = [
       <h3>Hukuki Destek</h3>
       <p>Velayet davaları hassas süreçlerdir. Çocuğunuzun hakları ve sizin haklarınız için deneyimli bir aile hukuku avukatından destek alın.</p>
     `
+  },
+  {
+    id: 11,
+    slug: 'istanbul-oturma-izni-basvurusu-2024',
+    title: "İstanbul'da Oturma İzni Başvurusu 2024: Kapsamlı Rehber",
+    excerpt: "Yabancıların Türkiye'de oturma izni başvurusu için gereken belgeler, süreç, ücretler ve dikkat edilmesi gerekenler hakkında detaylı bilgi.",
+    category: "Yabancılar Hukuku",
+    date: "2024-12-15",
+    readTime: "12 dk",
+    image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <h3>2024 Yılı Oturma İzni Başvurusu</h3>
+      <p>Türkiye'de yaşamak isteyen yabancılar için oturma izni zorunludur. 2024 yılı itibarıyla güncellenen yönetmelikler ve değişen ücretler ile birlikte oturma izni başvuru sürecini detaylı olarak inceliyoruz.</p>
+      
+      <h3>Oturma İzni Türleri</h3>
+      <p>6458 sayılı Yabancılar ve Uluslararası Koruma Kanunu'na göre farklı oturma izni türleri bulunmaktadır:</p>
+      <ul>
+        <li><strong>Kısa Dönem Oturma İzni:</strong> En fazla 2 yıl süreli, çalışma izni gerektirmeyenler için ideal. Tek seferlik başvuruda en fazla 1 yıl verilebilir.</li>
+        <li><strong>Aile İkamet İzni:</strong> Türk vatandaşı veya oturma izinli yabancı ile evli olanlar, Türk vatandaşının yabancı çocuğu için başvurulabilir.</li>
+        <li><strong>Öğrenci İkamet İzni:</strong> Türkiye'de yükseköğrenim gören yabancı öğrenciler için. Eğitim süresi boyunca geçerlidir.</li>
+        <li><strong>Uzun Dönem İkamet İzni:</strong> Kesintisiz 8 yıl Türkiye'de yasayan yabancılar başvurabilir. Süresiz oturma hakkı sağlar.</li>
+        <li><strong>İnsani İkamet İzni:</strong> Sağlık, ailevi şiddet, insan ticareti mağduru gibi insani nedenlerle verilebilir.</li>
+        <li><strong>Çalışma İzni Muafiyeti Kapsamında İkamet İzni:</strong> Mavi Kart sahipleri, bazı özel durumlar için.</li>
+      </ul>
+      
+      <h3>Başvuru İçin Gerekli Belgeler</h3>
+      <p>2024 yılı güncel belge listesi:</p>
+      <ul>
+        <li>Başvuru Formu (e-İkamet sisteminden alınmalı)</li>
+        <li>Pasaport (aslı ve fotokopisi, en az 60 gün geçerlilik süresi olmalı)</li>
+        <li>4 Adet Biyometrik Fotoğraf (son 6 ay içinde çekilmiş)</li>
+        <li>İkamet Adresi Belgesi (kira sözleşmesi, tapu, noter tasdikli ikamet taahhütnamesi)</li>
+        <li>Sağlık Sigortası (en az 30.000 Euro teminat, tüm başvuru süresi + 1 yıl)</li>
+        <li>Gelir Belgesi (banka hesap özeti, gelir beyanı, emekli maaşı belgesi vb.)</li>
+        <li>Sabıka Kaydı (ülkesinden apostil/konsolosluk tasdikli)</li>
+        <li>Başvuru Harcı Dekontları</li>
+        <li>Varsa Evlilik Cüzdanı (aile ikamet izni için)</li>
+        <li>Varsa Öğrenci Belgesi (öğrenci ikamet izni için)</li>
+      </ul>
+      
+      <h3>e-İkamet Sistemi Üzerinden Başvuru Adımları</h3>
+      <p>Tüm başvurular artık online yapılmaktadır:</p>
+      <ul>
+        <li><strong>1. Adım:</strong> https://e-ikamet.goc.gov.tr adresinden kayıt olun ve sisteme giriş yapın</li>
+        <li><strong>2. Adım:</strong> "Başvuru Yap" menüsünden uygun türü seçin</li>
+        <li><strong>3. Adım:</strong> Formu eksiksiz doldurun, bilgilerinizi kontrol edin</li>
+        <li><strong>4. Adım:</strong> Gerekli belgeleri PDF formatında yükleyin (her dosya max 2 MB)</li>
+        <li><strong>5. Adım:</strong> Randevu alın (İstanbul'da en yakın PDKS - Göç İdaresi Müdürlüğü)</li>
+        <li><strong>6. Adım:</strong> Randevu gününde tüm belgelerle birlikte müdürlüğe gidin</li>
+        <li><strong>7. Adım:</strong> Biyometrik verileriniz alınır (parmak izi, fotoğraf)</li>
+        <li><strong>8. Adım:</strong> Dosya incelemeye alınır, eksik varsa tamamlama istenir</li>
+      </ul>
+      
+      <h3>2024 Yılı Harç Ücretleri</h3>
+      <p>Güncel harç tutarları (Ocak 2024):</p>
+      <ul>
+        <li>Kısa Dönem (1 yıl): 1.118,70 TL</li>
+        <li>Aile İkamet İzni (2 yıl): 1.677,67 TL</li>
+        <li>Öğrenci İkamet İzni: 559,35 TL</li>
+        <li>Uzun Dönem: 2.795,87 TL</li>
+        <li>Çalışma İzni Muafiyeti: 1.118,70 TL</li>
+        <li>Kart Basım Ücreti: 182,85 TL (her türde)</li>
+        <li>Not: Harçlar her yıl ocak ayında g üncellenir</li>
+      </ul>
+      
+      <h3>İnceleme Süresi ve Sonuç</h3>
+      <ul>
+        <li>Normal şartlarda 30-60 gün içinde sonuçlanır</li>
+        <li>Yoğun dönemlerde (yaz ayları) 90 güne kadar uzayabilir</li>
+        <li>Eksik belge varsa süre uzar, tamamlama için 30 gün süre verilir</li>
+        <li>Sonuç e-İkamet sisteminden ve SMS ile bildirilir</li>
+        <li>Onaylanan başvurularda ikamet kartı kargoya verilir</li>
+        <li>Red durumunda sebep belirtilir ve itiraz hakkı vardır</li>
+      </ul>
+      
+      <h3>İstanbul'da Başvuru Yapılacak Yerler</h3>
+      <p>İstanbul'da İl Göç İdaresi Müdürlükleri:</p>
+      <ul>
+        <li><strong>Fatih PDKS:</strong> Merkez lokasyon, en yoğun şube</li>
+        <li><strong>Zeytinburnu PDKS:</strong> Avrupa yakası için uygun</li>
+        <li><strong>Ümraniye PDKS:</strong> Anadolu yakası için</li>
+        <li><strong>Başakşehir PDKS:</strong> Yeni ve daha az yoğun</li>
+        <li>Not: Randevu sisteminde en yakın uygun yeri seçebilirsiniz</li>
+      </ul>
+      
+      <h3>Sık Yapılan Hatalar ve Çözümleri</h3>
+      <ul>
+        <li><strong>Pasaport Süresi:</strong> En az 60 günlük geçerlilik şart, daha fazlası önerilir</li>
+        <li><strong>Sağlık Sigortası:</strong> Türkiye'de geçerli olmayan poliçe kabul edilmez</li>
+        <li><strong>Adres Belgesi:</strong> Noter tasdikli olmalı, eski belgeler geçersiz</li>
+        <li><strong>Fotoğraf:</strong> Biyometrik standartlara uygun olmalı (beyaz zemin, gözlük yok)</li>
+        <li><strong>Apostil:</strong> Yabancı belgelerde mutlaka olmalı</li>
+      </ul>
+      
+      <h3>Red Sebepleri ve İtiraz</h3>
+      <p>Başvurunuz reddedilirse:</p>
+      <ul>
+        <li>Red sebebi yazılı olarak bildirilir</li>
+        <li>60 gün içinde itiraz hakkınız vardır</li>
+        <li>İtiraz dilekçesi ve ek belgelerle başvuru yapılır</li>
+        <li>İtiraz da reddedilirse idari yargıya başvurulabilir</li>
+        <li>Avukat desteği almanız önerilir</li>
+      </ul>
+      
+      <h3>Oturma İzni Uzatma</h3>
+      <ul>
+        <li>İkamet izniniz bitmeden en geç 60 gün önce başvuru yapın</li>
+        <li>Uzatma başvurusu da e-İkamet üzerinden yapılır</li>
+        <li>Aynı belgeler tekrar istenebilir (güncel tarihli olmalı)</li>
+        <li>İlk başvurudan daha hızlı sonuçlanır (15-30 gün)</li>
+      </ul>
+      
+      <h3>Profesyonel Destek Alın</h3>
+      <p>Oturma izni başvurusu karmaşık bir süreçtir. Yabancılar hukuku konusunda deneyimli avukat desteği ile:</p>
+      <ul>
+        <li>Doğru belgeleri hazırlayın</li>
+        <li>Eksik bırakmayın, red riskini azaltın</li>
+        <li>İtiraz süreçlerinde haklarınızı koruyun</li>
+        <li>Vatandaşlık başvurusuna hazırlık yapın</li>
+      </ul>
+      <p>Özellikle İstanbul'da yabancı yoğunluğu fazla olduğu için işlemler zaman alabilir. Profesyonel destek sürecinizi hızlandırır.</p>
+    `
+  },
+  {
+    id: 12,
+    slug: 'haksiz-fesih-davasi-nasil-acilir',
+    title: "Haksız Fesih Davası Nasıl Açılır? İşe İade Talebi Rehberi 2024",
+    excerpt: "İş sözleşmeniz haksız feshedildiyse işe iade davası açma süreci, gerekli belgeler, tazminat hakları ve süreç hakkında kapsamlı bilgi.",
+    category: "İş Hukuku",
+    date: "2024-12-18",
+    readTime: "10 dk",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <h3>Haksız Fesih Nedir?</h3>
+      <p>4857 sayılı İş Kanunu'na göre, işveren geçerli bir sebep göstermeden veya usulüne uygun olmayan bir şekilde iş sözleşmesini feshederse bu "haksız fesih" olarak kabul edilir. İşçi bu durumda işe iade davası açma hakkına sahiptir.</p>
+      
+      <h3>İşe İade Davası Açma Koşulları</h3>
+      <p>İşe iade davası açabilmek için aşağıdaki koşulların tamamının sağlanması gerekir:</p>
+      <ul>
+        <li><strong>İşyeri Şartı:</strong> İşyerinde en az 30 işçi çalışıyor olmalıdır (tüm işyerleri toplamı, şube sayılmazsa her işyeri ayrı sayılır)</li>
+        <li><strong>Kıdem Şartı:</strong> İşçi en az 6 ay kıdeme sahip olmalıdır (deneme süresi hariç)</li>
+        <li><strong>Sigortalılık:</strong> İşçi 4/a kapsamında sigortalı olmalıdır</li>
+        <li><strong>Fesih Türü:</strong> İşveren tarafından yazılı olarak bildirimli fesih yapılmış olmalıdır</li>
+        <li>Not: Belirli süreli iş sözleşmeleri ve deneme süresi fesihleri kapsam dışıdır</li>
+      </ul>
+      
+      <h3>Haksız Fesih Halleri</h3>
+      <p>İşveren feshi geçersiz sayılabilecek durumlar:</p>
+      <ul>
+        <li><strong>Geçersiz Fesih Nedeni:</strong> Hastalık, hamilelik, sendikal faaliyet, şikayet yapmak gibi yasak nedenler</li>
+        <li><strong>Geçerli Sebep Yok:</strong> Performans düşüklüğü, ekonomik kriz gibi gerekçeler somut delillerle kanıtlanamamış</li>
+        <li><strong>Prosedür İhlali:</strong> Savunma alınmamış, yazılı bildirim yapılmamış</li>
+        <li><strong>Ayrımcılık:</strong> Cinsiyet, ırk, din, siyasi görüş ayrımcılığı</li>
+        <li><strong>İntikam:</strong> İşçinin haklarını kullanmasına karşı misilleme</li>
+      </ul>
+      
+      <h3>Dava Süreci Adım Adım</h3>
+      <p>İşe iade davası şu aşamalardan geçer:</p>
+      
+      <h3>1. Zorunlu Arabuluculuk (6 İş Günü İçinde)</h3>
+      <ul>
+        <li>Fesih ihbarından itibaren 6 iş günü içinde arabulucuya başvuru zorunludur</li>
+        <li>Arabuluculuk Daire Başkanlığı'na (İş Mahkemesi bünyesinde) başvuru yapılır</li>
+        <li>Başvuru formu ve fesih bildirimi eklenirkompleks başvuru yapılır</li>
+        <li>Arabulucu 3 hafta içinde tarafları toplantıya çağırır</li>
+        <li>Anlaşma olursa tutanak düzenlenir ve kesinleşir</li>
+        <li>Anlaşma olmazsa "Son Tutanak" ile dava yoluna gidilir</li>
+      </ul>
+      
+      <h3>2. İş Mahkemesinde Dava (1 Ay İçinde)</h3>
+      <ul>
+        <li>Arabuluculukta anlaşma olmazsa son tutanak tarihinden itibaren 1 ay içinde dava açılmalıdır</li>
+        <li>Yetkili mahkeme: İşyerinin veya işçinin yerleşim yeri iş mahkemesi</li>
+        <li>Dava dilekçesi: Feshin geçersiz olduğu, işe iadenin istendiği belirtilir</li>
+        <li>Nispi harca tabidir (talep edilen tutara göre harç hesaplanır)</li>
+      </ul>
+      
+      <h3>3. Mahkeme İncelemesi</h3>
+      <ul>
+        <li>İşveren geçerli fesih sebebi olduğunu ispat etmek zorundadır (ispat yükü işverendedir)</li>
+        <li>Tanık dinlenir, belgeler incelenir</li>
+        <li>Duruşmalar genellikle hızlı (2-3 ay) sonuçlanır</li>
+        <li>İlk derece mahkemesi kararı kesin değildir, temyiz edilebilir</li>
+      </ul>
+      
+      <h3>4. Karar Sonrası</h3>
+      <p>Mahkeme işçi lehine karar verirse:</p>
+      <ul>
+        <li><strong>İşe İade Kararı:</strong> İşveren işçiyi 1 ay içinde işe başlatmalıdır</li>
+        <li><strong>Boşta Geçen Süre Ücreti:</strong> Fesihten işe başlamaya kadar olan sürenin ücreti ödenir (en fazla 4 aylık)</li>
+        <li><strong>Kıdem-İhbar Tazminatı:</strong> İşçi döndüğü için ödemez, ancak işveren işe başlatmazsa ödenir</li>
+      </ul>
+      
+      <h3>İşveren İşe İade Kararına Uymazsa</h3>
+      <p>İşveren karardan sonra işe başlatmaz veya başlattıktan sonra 6 ay içinde tekrar feshederse:</p>
+      <ul>
+        <li>4-8 aylık brüt ücret tutarında tazminat öder</li>
+        <li>İşçinin kıdemi kesilmez, tazminat hakkı devam eder</li>
+        <li>İşçi yeni iş bulmuşsa da tazminat ödenir</li>
+      </ul>
+      
+      <h3>İşçinin İşe Dönmek İstemediği Durum</h3>
+      <ul>
+        <li>İşçi işe iade kararına rağmen işe dönmek istemezse yazılı bildirim yapmalıdır</li>
+        <li>Bu durumda kıdem ve ihbar tazminatı hakkı doğar</li>
+        <li>İşveren 30 gün içinde ödemeli, ödememezse itirazıısız icra takibi başlatılabilir</li>
+      </ul>
+      
+      <h3>Gerekli Belgeler</h3>
+      <p>İşe iade davası için toplanması gereken belgeler:</p>
+      <ul>
+        <li>İş Sözleşmesi (varsa yazılı)</li>
+        <li>Fesih Bildirimi (yazılı olmalı, sebep belirtilmiş olmalı)</li>
+        <li>SGK Çıkış Bildirimi</li>
+        <li>Bordro/Ücret Belgeleri</li>
+        <li>E-posta, Mesaj Kayıtları (ispat için)</li>
+        <li>Tanık Bilgileri</li>
+        <li>Savunma İsteme Yazıları (varsa)</li>
+        <li>Arabuluculuk Son Tutanağı</li>
+      </ul>
+      
+      <h3>Dava Masrafları ve Avukat Ücreti</h3>
+      <ul>
+        <li>Harç: Talep edilen tutarın yaklaşık %6,83'ü</li>
+        <li>Avukat Vekalet Ücreti: Tarifeli, daванın sonucuna göre karşı taraf öder</li>
+        <li>Kaybeden taraf tüm masrafları karşılar</li>
+        <li>İşçi lehine karar çıkarsa, işveren tüm masrafları öder</li>
+      </ul>
+      
+      <h3>İşe İade Davasında Dikkat Edilmesi Gerekenler</h3>
+      <ul>
+        <li>6 iş günü süresi çok kısadır, hemen harekete geçin</li>
+        <li>Arabuluculuk başvurusunu kaçırmayın, aksi halde dava hakkı düşer</li>
+        <li>Fesih bildiriminde sebep yoksa mutлака belirtilmesini isteyin</li>
+        <li>İşyerinde 30 işçi olup olmadığını kontrol edin (SGK verileri önemli)</li>
+        <li>Kıdem hesabınızı doğru yapın (deneme süresi sayılmaz)</li>
+      </ul>
+      
+      <h3>Alternatif: Kıdem-İhbar Tazminatı Davası</h3>
+      <p>İşe iaде koşulları yoksa veya işe dönmek istemiyorsanız:</p>
+      <ul>
+        <li>Kıdem tazminatı davası açabilirsiniz</li>
+        <li>İhbar tazminatı (bildириmsiz fesihte)</li>
+        <li>Yıllık izin alacağı</li>
+        <li>Fazla mesai alacakları</li>
+      </ul>
+      
+      <h3>Profesyonel Hukuki Destek</h3>
+      <p>İşe iade davaları teknik ve süre hassas davalardır. Bir iş hukuku avukatı ile çalışmak:</p>
+      <ul>
+        <li>Süreleri kaçırmaz</li>
+        <li>Doğru belgeleri toplar</li>
+        <li>İşverenle müzakerede güçlü pozisyon sağlar</li>
+        <li>Mahkemede profesyonel temsil edilirsiniz</li>
+        <li>Haklarınızın tamamını alırsınız</li>
+      </ul>
+      <p>Haksız feshe uğradıysanız hemen bizimle iletişime geçin. Haklarınızı koruyalım.</p>
+    `
   }
 ];
 
