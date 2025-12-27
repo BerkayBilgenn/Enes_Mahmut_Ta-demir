@@ -21,6 +21,7 @@ export const servicesData = [
     id: 1,
     slug: 'yabancilar-ve-vatandaslik',
     title: 'Yabancılar ve Vatandaşlık Hukuku',
+    description: 'Oturma izni, çalışma izni, Türk vatandaşlığı başvuruları ve deport işlemlerinde hukuki destek.',
     icon: Globe,
     image: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -55,6 +56,7 @@ export const servicesData = [
     id: 2,
     slug: 'fikri-mulkiyet',
     title: 'Fikri Mülkiyet Hukuku',
+    description: 'Marka, patent, telif hakları ve tasarım tescili ile fikri varlıklarınızın korunması.',
     icon: BookOpen,
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -88,6 +90,7 @@ export const servicesData = [
     id: 3,
     slug: 'sozlesmeler',
     title: 'Sözleşmeler Hukuku',
+    description: 'Her türlü ticari ve bireysel sözleşmelerin hazırlanması, incelenmesi ve uyuşmazlık çözümü.',
     icon: FileText,
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -117,6 +120,7 @@ export const servicesData = [
     id: 4,
     slug: 'is-ve-sosyal-guvenlik',
     title: 'İş ve Sosyal Güvenlik Hukuku',
+    description: 'İşçi ve işveren hakları, tazminat davaları, SGK uyuşmazlıkları ve iş davalarında temsil.',
     icon: Users,
     image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -145,6 +149,7 @@ export const servicesData = [
     id: 5,
     slug: 'sirketler-ve-ticaret',
     title: 'Şirketler ve Ticaret Hukuku',
+    description: 'Şirket kuruluşu, birleşme-devralma, ticari uyuşmazlıklar ve kurumsal danışmanlık.',
     icon: Building2,
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -179,6 +184,7 @@ export const servicesData = [
     id: 6,
     slug: 'rekabet',
     title: 'Rekabet Hukuku',
+    description: 'Rekabet uyum programları, Rekabet Kurumu süreçleri ve haksız rekabet davaları.',
     icon: Scale,
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -212,6 +218,7 @@ export const servicesData = [
     id: 7,
     slug: 'basin-ve-medya',
     title: 'Basın ve Medya Hukuku',
+    description: 'Yayın hakları, kişilik hakları koruması, RTÜK süreçleri ve medya sözleşmeleri.',
     icon: Newspaper,
     image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -245,6 +252,7 @@ export const servicesData = [
     id: 8,
     slug: 'tuketici',
     title: 'Tüketici Hukuku',
+    description: 'Ayıplı mal/hizmet, tüketici kredileri, hakem heyeti başvuruları ve tüketici davaları.',
     icon: HandCoins,
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -279,6 +287,7 @@ export const servicesData = [
     id: 9,
     slug: 'ceza-ve-infaz',
     title: 'Ceza ve İnfaz Hukuku',
+    description: 'Ceza davalarında savunma, soruşturma takibi, tutukluluk itirazları ve temyiz başvuruları.',
     icon: Gavel,
     image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -312,6 +321,7 @@ export const servicesData = [
     id: 10,
     slug: 'insan-haklari',
     title: 'İnsan Hakları Hukuku',
+    description: 'AİHM başvuruları, Anayasa Mahkemesi bireysel başvuru ve temel hakların korunması.',
     icon: Heart,
     image: 'https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -340,6 +350,7 @@ export const servicesData = [
     id: 11,
     slug: 'idare-ve-vergi',
     title: 'İdare ve Vergi Hukuku',
+    description: 'İdari davalar, vergi uyuşmazlıkları, kamulaştırma ve imar hukuku konularında destek.',
     icon: Landmark,
     image: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -374,6 +385,7 @@ export const servicesData = [
     id: 12,
     slug: 'dernekler-ve-vakiflar',
     title: 'Dernekler ve Vakıflar Hukuku',
+    description: 'STK kuruluşu, yönetim danışmanlığı, bağış kampanyaları ve sivil toplum hukuku.',
     icon: UserCheck,
     image: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -408,6 +420,7 @@ export const servicesData = [
     id: 13,
     slug: 'gayrimenkul',
     title: 'Gayrimenkul Hukuku',
+    description: 'Tapu işlemleri, kira uyuşmazlıkları, kat mülkiyeti ve gayrimenkul yatırım danışmanlığı.',
     icon: Home,
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -442,6 +455,7 @@ export const servicesData = [
     id: 14,
     slug: 'aile',
     title: 'Aile Hukuku',
+    description: 'Boşanma davaları, velayet, nafaka, mal paylaşımı ve aile hukuku uyuşmazlıkları.',
     icon: Heart,
     image: 'https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -475,6 +489,7 @@ export const servicesData = [
     id: 15,
     slug: 'icra-ve-iflas',
     title: 'İcra ve İflas Hukuku',
+    description: 'Alacak takibi, icra işlemleri, haciz, iflas ve konkordato süreçleri.',
     icon: Briefcase,
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop',
     content: `
@@ -495,8 +510,8 @@ export const servicesData = [
       <p>Takip kesinleştikten sonra alacağın tahsili için haciz aşamasına geçilir:</p>
       <ul>
         <li>Menkul ve gayrimenkul hacizi</li>
-        <li>Maaş ve banka hesabı haczi</li>
-        <li>Üçüncü şahıslarda hak ve alacak haczi</li>
+        <li>Maaş ve banka hesabı hacizi</li>
+        <li>Üçüncü şahıslarda hak ve alacak hacizi</li>
         <li>Hacizli malların satışı (açık artırma)</li>
         <li>Paraların paylaştırılması (sıra cetveli)</li>
       </ul>
@@ -509,6 +524,7 @@ export const servicesData = [
     id: 16,
     slug: 'tazminat',
     title: 'Tazminat Hukuku',
+    description: 'Trafik kazası, iş kazası, malpraktis ve haksız fiil tazminat davaları.',
     icon: Shield,
     image: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1200&auto=format&fit=crop',
     content: `

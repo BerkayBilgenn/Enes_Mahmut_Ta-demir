@@ -34,6 +34,11 @@ import FloatingCTA from './components/FloatingCTA';
 import ExitPopup from './components/ExitPopup';
 import FAQSchema from './components/FAQSchema';
 import SignatureIntro from './components/SignatureIntro';
+// New Page Imports
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
+import FAQPage from './pages/FAQPage';
 
 // Animation Variants
 const fadeInUp = {
@@ -51,12 +56,12 @@ const scaleIn = {
   animate: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
 };
 
-// Stats Data
-const stats = [
-  { number: "15+", label: "Yıllık Deneyim", icon: Award },
-  { number: "1000+", label: "Başarılı Dava", icon: CheckCircle },
-  { number: "500+", label: "Mutlu Müvekkil", icon: Users },
-  { number: "24/7", label: "Destek", icon: Clock }
+// Trust Guarantees Data
+const guarantees = [
+  { label: "Profesyonel Yaklaşım", icon: Award },
+  { label: "Şeffaf Süreç Yönetimi", icon: CheckCircle },
+  { label: "Müvekkil Odaklı Hizmet", icon: Users },
+  { label: "Hızlı Geri Dönüş", icon: Clock }
 ];
 
 // ScrollToTop Component
@@ -74,7 +79,6 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -83,11 +87,12 @@ function Header() {
   }, []);
 
   const navItems = [
-    { name: 'Ana Sayfa', href: '/#hero' },
-    { name: 'Hizmetlerimiz', href: '/#services' },
-    { name: 'Hakkımızda', href: '/#about' },
+    { name: 'Ana Sayfa', href: '/' },
+    { name: 'Hakkımızda', href: '/hakkimizda' },
+    { name: 'Hizmetlerimiz', href: '/hizmetlerimiz' },
     { name: 'Makaleler', href: '/blog' },
-    { name: 'İletişim', href: '/#contact' }
+    { name: 'SSS', href: '/sss' },
+    { name: 'İletişim', href: '/iletisim' }
   ];
 
   const handleNavClick = (e, href) => {
@@ -95,23 +100,7 @@ function Header() {
     setIsMobileMenuOpen(false);
     
     setTimeout(() => {
-      if (href.startsWith('/#')) {
-        // Hash links - navigate to home page section
-        const id = href.replace('/#', '');
-        if (isHomePage) {
-          // Already on homepage, just scroll
-          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          // Navigate to homepage first, then scroll after a delay
-          navigate('/');
-          setTimeout(() => {
-            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-          }, 300);
-        }
-      } else {
-        // Regular page links like /blog
-        navigate(href);
-      }
+      navigate(href);
     }, 100);
   };
 
@@ -130,29 +119,32 @@ function Header() {
             <Link to="/" className="flex items-center gap-2">
               <Scale className="w-8 h-8 text-gold" />
               <div className="hidden sm:block">
-                <span className="font-serif text-xl font-semibold text-white">Av. Enes Mahmut</span>
-                <span className="font-serif text-xl font-semibold text-gold ml-1">Taşdemir</span>
+                <span className="font-serif text-xl font-semibold text-white">Taşdemir</span>
+                <span className="font-serif text-xl font-semibold text-gold ml-1">Hukuk</span>
               </div>
             </Link>
           </motion.div>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-medium text-gray-300 hover:text-gold transition-colors relative group cursor-pointer"
+                to={item.href}
+                className={`text-sm font-medium transition-colors relative group cursor-pointer ${
+                  location.pathname === item.href ? 'text-gold' : 'text-gray-300 hover:text-gold'
+                }`}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" />
-              </a>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${
+                  location.pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} />
+              </Link>
             ))}
           </div>
 
           <div className="hidden md:block">
             <motion.a
-              href="#"
+              href="tel:+902121234567"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold px-6 py-2.5 rounded-full text-navy font-semibold text-sm hover:shadow-lg hover:shadow-gold/30 transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -164,7 +156,7 @@ function Header() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white p-2"
+            className="lg:hidden text-white p-2"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -176,22 +168,26 @@ function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 pb-4"
+              className="lg:hidden mt-4 pb-4"
             >
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className="text-gray-300 hover:text-gold transition-colors py-2 cursor-pointer"
+                    to={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`py-3 px-4 rounded-lg transition-colors ${
+                      location.pathname === item.href 
+                        ? 'text-gold bg-gold/10' 
+                        : 'text-gray-300 hover:text-gold hover:bg-gold/5'
+                    }`}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
                 <a
-                  href="#"
-                  className="inline-flex items-center justify-center gap-2 bg-gold px-6 py-3 rounded-full text-navy font-semibold"
+                  href="tel:+902121234567"
+                  className="inline-flex items-center justify-center gap-2 bg-gold px-6 py-3 rounded-full text-navy font-semibold mt-2"
                 >
                   <Phone className="w-4 h-4" />
                   Hemen Ara
@@ -239,7 +235,7 @@ function Hero() {
           {/* Badge */}
           <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-gold/20 backdrop-blur-md border border-gold/30 px-5 py-2.5 rounded-full">
             <Scale className="w-5 h-5 text-gold" />
-            <span className="text-sm font-medium text-white">15+ Yıllık Deneyim</span>
+            
           </motion.div>
 
           {/* Main Heading */}
@@ -250,47 +246,47 @@ function Hero() {
 
           {/* Subheading */}
           <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-lg sm:text-xl lg:text-2xl text-gray-300">
-            Av. Enes Mahmut Taşdemir güvencesiyle her türlü hukuki uyuşmazlıkta yanınızdayız.
+            Taşdemir Hukuk güvencesiyle her türlü hukuki uyuşmazlıkta yanınızdayız.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             {/* Primary CTA - Phone */}
             <motion.a 
-              href="#" 
+              href="tel:+902121234567" 
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-gold-600 to-gold px-8 py-5 rounded-full text-navy font-bold text-lg shadow-2xl shadow-gold/30 hover:shadow-gold/50 transition-all" 
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}
             >
               <Phone className="w-6 h-6" />
-              <span>Hemen Ara: -------------</span>
+              <span>Hemen Ara</span>
             </motion.a>
             
             {/* Secondary CTA */}
-            <motion.a 
-              href="#contact" 
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-5 rounded-full font-semibold text-lg hover:bg-white/20 transition-all" 
-              whileHover={{ scale: 1.05 }} 
-              whileTap={{ scale: 0.95 }}
-            >
-              Hemen İletişime Geçin
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link 
+                to="/iletisim" 
+                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-5 rounded-full font-semibold text-lg hover:bg-white/20 transition-all"
+              >
+                Hemen İletişime Geçin
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Trust Indicators */}
           <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-6 sm:gap-10 pt-8 text-sm text-gray-400">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-gold" />
-              <span>1000+ Başarılı Dava</span>
+              <span>Profesyonel Hizmet</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-gold" />
-              <span>7/24 Destek</span>
+              <span>Şeffaf Süreç</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-gold" />
-              <span>Randevu Al</span>
+              <span>Ücretsiz İlk Görüşme</span>
             </div>
           </motion.div>
         </motion.div>
@@ -343,11 +339,12 @@ function ServiceCard({ service }) {
   );
 }
 
-// Services Section
-function Services() {
+// Quick Services Preview Section for HomePage
+function QuickServices() {
+  const featuredServices = servicesData.slice(0, 6);
+  
   return (
-    <section id="services" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background Image */}
+    <section className="relative py-24 lg:py-32 overflow-hidden">
       <div className="absolute inset-0">
         <img 
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
@@ -370,37 +367,49 @@ function Services() {
           </motion.p>
         </motion.div>
 
-        <motion.div initial="initial" whileInView="animate" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
-          {servicesData.map((service) => (
+        <motion.div initial="initial" whileInView="animate" viewport={{ once: true, margin: "-50px" }} variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+          {featuredServices.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
+        </motion.div>
+
+        {/* View All Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <Link
+            to="/hizmetlerimiz"
+            className="inline-flex items-center gap-2 border border-gold/50 text-gold px-8 py-4 rounded-full font-semibold hover:bg-gold/10 transition-all"
+          >
+            Tüm Hizmetlerimizi Görün
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </motion.div>
       </div>
     </section>
   );
 }
 
-// Stat Card
-function StatCard({ stat, index }) {
-  const Icon = stat.icon;
+// Guarantee Card
+function GuaranteeCard({ guarantee, index }) {
+  const Icon = guarantee.icon;
   return (
     <motion.div variants={scaleIn} className="text-center p-6">
       <motion.div className="inline-flex items-center justify-center w-16 h-16 bg-gold/10 rounded-full mb-4" whileHover={{ scale: 1.1, rotate: 5 }}>
         <Icon className="w-8 h-8 text-gold" />
       </motion.div>
-      <motion.div className="font-serif text-4xl lg:text-5xl font-bold text-gradient-gold mb-2" initial={{ opacity: 0, scale: 0.5 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.1, duration: 0.5 }}>
-        {stat.number}
-      </motion.div>
-      <p className="text-gray-400 font-medium">{stat.label}</p>
+      <p className="text-white font-medium">{guarantee.label}</p>
     </motion.div>
   );
 }
 
-// About Section
-function About() {
+// Quick About Section for HomePage
+function QuickAbout() {
   return (
-    <section id="about" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background Image */}
+    <section className="relative py-24 lg:py-32 overflow-hidden">
       <div className="absolute inset-0">
         <img 
           src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=2000&auto=format&fit=crop" 
@@ -420,25 +429,35 @@ function About() {
               Güven, <span className="text-gradient-gold">Tecrübe</span> ve Başarı
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-gray-400 mb-6 leading-relaxed">
-              Av. Enes Mahmut Taşdemir olarak, yılların verdiği deneyim ve bilgi birikimimizi müvekkillerimizin hizmetine sunuyoruz.
+              Taşdemir Hukuk olarak, yılların verdiği deneyim ve bilgi birikimimizi müvekkillerimizin hizmetine sunuyoruz.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-gray-400 mb-8 leading-relaxed">
               Modern hukuk dünyasının gerektirdiği yenilikçi yaklaşımlar ile geleneksel değerleri birleştirerek, size özel çözümler üretiyoruz.
             </motion.p>
             <motion.div variants={fadeInUp} className="space-y-4">
-              {['Profesyonel hukuki danışmanlık', '7/24 acil hukuki destek', 'Şeffaf ve güvenilir süreç yönetimi', 'Müvekkil memnuniyeti odaklı yaklaşım'].map((feature, index) => (
+              {['Profesyonel hukuki danışmanlık', 'Hızlı geri dönüş ve iletişim', 'Şeffaf ve güvenilir süreç yönetimi', 'Müvekkil memnuniyeti odaklı yaklaşım'].map((feature, index) => (
                 <motion.div key={index} className="flex items-center gap-3" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}>
                   <CheckCircle className="w-5 h-5 text-gold flex-shrink-0" />
                   <span className="text-gray-300">{feature}</span>
                 </motion.div>
               ))}
             </motion.div>
+            
+            <motion.div variants={fadeInUp} className="mt-8">
+              <Link
+                to="/hakkimizda"
+                className="inline-flex items-center gap-2 text-gold font-semibold hover:gap-4 transition-all"
+              >
+                Daha Fazla Bilgi
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </motion.div>
           </motion.div>
 
           <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={staggerContainer} className="grid grid-cols-2 gap-4">
-            {stats.map((stat, index) => (
-              <motion.div key={stat.label} variants={scaleIn} className="bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-2xl p-6 hover:border-gold/30 transition-all">
-                <StatCard stat={stat} index={index} />
+            {guarantees.map((guarantee, index) => (
+              <motion.div key={guarantee.label} variants={scaleIn} className="bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-2xl p-6 hover:border-gold/30 transition-all">
+                <GuaranteeCard guarantee={guarantee} index={index} />
               </motion.div>
             ))}
           </motion.div>
@@ -448,681 +467,57 @@ function About() {
   );
 }
 
-// FAQ Data
-const faqData = [
-  {
-    question: "İlk görüşmede ne konuşulur?",
-    answer: "İlk görüşmede davanızın genel durumunu değerlendirir, hukuki süreç hakkında bilgi verir ve size en uygun çözüm yolunu birlikte belirleriz. Bu görüşmede tüm sorularınızı sorabilirsiniz."
-  },
-  {
-    question: "Dava süreçleri ne kadar sürer?",
-    answer: "Dava süreleri, davanın türüne ve karmaşıklığına göre değişir. Basit davalar birkaç ay içinde sonuçlanabilirken, karmaşık davalar 1-3 yıl sürebilir. Her dava için size tahmini bir süre bildiririz."
-  },
-  {
-    question: "Avukatlık ücretleri nasıl belirlenir?",
-    answer: "Ücretlerimiz, davanın türü, karmaşıklığı ve tahmini iş yüküne göre belirlenir. İlk görüşmede şeffaf bir şekilde ücret bilgisi paylaşılır. Taksitlendirme seçenekleri de sunmaktayız."
-  },
-  {
-    question: "Online danışmanlık hizmeti var mı?",
-    answer: "Evet, video konferans aracılığıyla online danışmanlık hizmeti sunuyoruz. Türkiye'nin her yerinden ve yurt dışından müvekkillerimize bu şekilde hizmet verebiliyoruz."
-  },
-  {
-    question: "Acil durumlarda ulaşabilir miyim?",
-    answer: "Evet, müvekkillerimize 7/24 acil iletişim hattı sunuyoruz. Tutuklama, gözaltı gibi acil durumlarda derhal müdahale ediyoruz."
-  },
-  {
-    question: "Hangi şehirlerde hizmet veriyorsunuz?",
-    answer: "Merkezimiz İstanbul'da olmasına rağmen, Türkiye genelinde tüm illerde dava takibi yapabiliyoruz. Gerektiğinde yerel mahkemelerde sizi temsil ediyoruz."
-  },
-  {
-    question: "Dava açmadan önce arabuluculuk zorunlu mu?",
-    answer: "İş davaları, ticari davalar, tüketici davaları ve bazı kira uyuşmazlıklarında arabuluculuğa başvurmak dava şartıdır. Arabuluculuk sürecinde anlaşma sağlanamazsa dava yoluna gidilebilir."
-  },
-  {
-    question: "İcra takibine nasıl itiraz edilir?",
-    answer: "İcra takibine itiraz, ödeme emrinin tebliğinden itibaren 7 gün içinde yapılmalıdır. Borca, imzaya veya zamanaşımına itiraz gibi farklı itiraz türleri bulunmaktadır."
-  },
-  {
-    question: "Ceza davasında avukat tutmak zorunlu mu?",
-    answer: "Alt sınırı 5 yılı aşan suçlarda ve bazı özel durumlarda (tutuklu yargılama, çocuk sanıklar vb.) müdafi zorunludur. Diğer durumlarda zorunlu olmasa da avukat desteği şiddetle tavsiye edilir."
-  },
-  {
-    question: "İş davalarında zamanaşımı süreleri nedir?",
-    answer: "Kıdem ve ihbar tazminatı alacaklarında 5 yıl, ücret alacaklarında 5 yıl, yıllık izin ücretlerinde 5 yıllık zamanaşımı süresi uygulanır. Süre iş akdinin sona ermesinden itibaren başlar."
-  },
-  {
-    question: "Gayrimenkul satışında nelere dikkat edilmeli?",
-    answer: "Tapu kaydının incelenmesi, ipotek/haciz kontrolü, imar durumu araştırması, belediye borçları ve aidat durumu kontrol edilmelidir. Tapu devri mutlaka resmi şekilde yapılmalıdır."
-  },
-  {
-    question: "Ticaret davalarında yetkili mahkeme nasıl belirlenir?",
-    answer: "Genel yetkili mahkeme davalının yerleşim yeri mahkemesidir. Sözleşmeden doğan davalarda sözleşmenin ifa yeri, haksız fiil davalarında fiilin işlendiği yer mahkemesi de yetkili olabilir."
-  }
-];
-
-// Testimonials Data - 8 testimonials
-const testimonialsData = [
-  {
-    id: 1,
-    name: "Mehmet Y.",
-    role: "İşadamı",
-    caseType: "Ticaret Hukuku",
-    rating: 5,
-    text: "Şirketimizin ticari davasında gösterdikleri profesyonel yaklaşım sayesinde davayı kazandık. Her aşamada bilgilendirildik ve süreç çok şeffaf yürütüldü.",
-    date: "2024"
-  },
-  {
-    id: 2,
-    name: "Ayşe K.",
-    role: "Öğretmen",
-    caseType: "Aile Hukuku",
-    rating: 5,
-    text: "Boşanma sürecimde hem hukuki hem de insani açıdan büyük destek aldım. Çocuğumun velayeti konusunda haklarımı en iyi şekilde korudular.",
-    date: "2024"
-  },
-  {
-    id: 3,
-    name: "Ali R.",
-    role: "Yazılım Mühendisi",
-    caseType: "İş Hukuku",
-    rating: 5,
-    text: "İş akdimin haksız feshi sonrası açtığımız davada tüm haklarımı aldım. Kıdem ve ihbar tazminatlarım eksiksiz ödendi. Teşekkürler!",
-    date: "2024"
-  },
-  {
-    id: 4,
-    name: "Fatma S.",
-    role: "Ev Hanımı",
-    caseType: "Miras Hukuku",
-    rating: 5,
-    text: "Miras paylaşımı konusunda kardeşlerimle yaşadığımız anlaşmazlıkta arabuluculuk sürecini çok iyi yönettiler. Mahkemeye gitmeden çözüme ulaştık.",
-    date: "2023"
-  },
-  {
-    id: 5,
-    name: "Hasan T.",
-    role: "Şirket Müdürü",
-    caseType: "Gayrimenkul",
-    rating: 5,
-    text: "Gayrimenkul satış işlemlerimizde yaşadığımız hukuki sorunları hızlıca çözdüler. Tapu devir sürecinde çok yardımcı oldular.",
-    date: "2024"
-  },
-  {
-    id: 6,
-    name: "Zeynep A.",
-    role: "Doktor",
-    caseType: "Ceza Hukuku",
-    rating: 5,
-    text: "Malpraktis iddiasıyla karşı karşıya kaldığımda hemen harekete geçtiler. Beraat kararıyla sonuçlanan davada mükemmel bir savunma yaptılar.",
-    date: "2024"
-  },
-  {
-    id: 7,
-    name: "Kemal B.",
-    role: "Emekli",
-    caseType: "İcra Hukuku",
-    rating: 5,
-    text: "Yıllardır tahsil edemediğim alacağımı icra takibi ile kısa sürede aldım. Süreç boyunca her adımda bilgilendirildim.",
-    date: "2023"
-  },
-  {
-    id: 8,
-    name: "Selin D.",
-    role: "Girişimci",
-    caseType: "Şirket Hukuku",
-    rating: 5,
-    text: "Şirket kuruluşundan sözleşme hazırlamaya kadar tüm süreçlerde yanımızda oldular. Yatırımcılarla yapılan anlaşmalarda haklarımızı korudular.",
-    date: "2024"
-  }
-];
-
-// Testimonials Carousel Section
-function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
-  
-  // Items per page based on screen size
-  const itemsPerPage = typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 2;
-  const totalPages = Math.ceil(testimonialsData.length / itemsPerPage);
-
-  const nextSlide = () => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % totalPages);
-  };
-
-  const prevSlide = () => {
-    setDirection(-1);
-    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
-  };
-
-  const goToSlide = (index) => {
-    setDirection(index > currentIndex ? 1 : -1);
-    setCurrentIndex(index);
-  };
-
-  // Get current items
-  const getCurrentItems = () => {
-    const start = currentIndex * itemsPerPage;
-    return testimonialsData.slice(start, start + itemsPerPage);
-  };
-
-  // Auto-play
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [currentIndex]);
-
+// CTA Section for HomePage
+function CTASection() {
   return (
-    <section id="testimonials" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy to-navy-900" />
+    <section className="relative py-20 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900" />
       
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true }} 
-          variants={staggerContainer} 
-          className="text-center mb-12"
-        >
-          <motion.span variants={fadeInUp} className="inline-block text-gold text-sm font-semibold tracking-wider uppercase mb-4">
-            Müvekkil Görüşleri
-          </motion.span>
-          <motion.h2 variants={fadeInUp} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Müvekkillerimiz <span className="text-gradient-gold">Ne Diyor?</span>
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-gray-400">
-            Başarıyla sonuçlandırdığımız davalardan müvekkillerimizin görüşleri
-          </motion.p>
-        </motion.div>
-
-        {/* Carousel Container */}
-        <div className="relative">
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 z-10 w-10 h-10 md:w-12 md:h-12 bg-navy-800/90 border border-gold/20 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy transition-all"
-            aria-label="Önceki"
-          >
-            <ChevronRight className="w-5 h-5 rotate-180" />
-          </button>
-          
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 z-10 w-10 h-10 md:w-12 md:h-12 bg-navy-800/90 border border-gold/20 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy transition-all"
-            aria-label="Sonraki"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-
-          {/* Cards Container */}
-          <div className="overflow-hidden px-6 md:px-12">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0, x: direction > 0 ? 100 : -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction > 0 ? -100 : 100 }}
-                transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-6"
-              >
-                {getCurrentItems().map((testimonial) => (
-                  <div
-                    key={testimonial.id}
-                    className="bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-2xl p-6 sm:p-8 hover:border-gold/30 transition-all"
-                  >
-                    {/* Header */}
-                    <div className="flex items-start gap-4 mb-4">
-                      {/* Avatar with Initials */}
-                      <div className="w-12 h-12 bg-gradient-to-br from-gold/20 to-gold/10 border border-gold/30 rounded-full flex items-center justify-center flex-shrink-0">
-                        <span className="font-serif font-semibold text-gold text-lg">
-                          {testimonial.name.charAt(0)}
-                        </span>
-                      </div>
-                      
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between flex-wrap gap-2">
-                          <div>
-                            <h4 className="font-semibold text-white">{testimonial.name}</h4>
-                            <p className="text-sm text-gray-500">{testimonial.role}</p>
-                          </div>
-                          <span className="text-xs bg-gold/10 text-gold px-3 py-1 rounded-full">
-                            {testimonial.caseType}
-                          </span>
-                        </div>
-                        
-                        {/* Star Rating */}
-                        <div className="flex items-center gap-1 mt-2">
-                          {[...Array(5)].map((_, i) => (
-                            <Star 
-                              key={i} 
-                              className={`w-4 h-4 ${i < testimonial.rating ? 'text-gold fill-gold' : 'text-gray-600'}`} 
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Quote */}
-                    <blockquote className="text-gray-300 leading-relaxed italic">
-                      "{testimonial.text}"
-                    </blockquote>
-                    
-                    {/* Date */}
-                    <p className="text-xs text-gray-600 mt-4">{testimonial.date}</p>
-                  </div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Dot Indicators */}
-          <div className="flex items-center justify-center gap-2 mt-8">
-            {[...Array(totalPages)].map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  currentIndex === index 
-                    ? 'bg-gold w-8' 
-                    : 'bg-gray-600 hover:bg-gray-500'
-                }`}
-                aria-label={`Sayfa ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Trust Indicator */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
-          <p className="text-gray-500 text-sm">
-            <span className="text-gold font-semibold">500+</span> memnun müvekkil ile çalıştık
-          </p>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-// FAQ Item Component
-function FAQItem({ item, isOpen, onClick }) {
-  return (
-    <motion.div 
-      className="border border-gold/10 rounded-xl overflow-hidden bg-navy-800/30 hover:border-gold/20 transition-colors"
-      initial={false}
-    >
-      <button
-        onClick={onClick}
-        className="w-full flex items-center justify-between p-5 text-left"
-      >
-        <span className="font-medium text-white pr-4">{item.question}</span>
-        <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="flex-shrink-0"
-        >
-          <ChevronDown className="w-5 h-5 text-gold" />
-        </motion.div>
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="px-5 pb-5 text-gray-400 leading-relaxed border-t border-gold/10 pt-4">
-              {item.answer}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-}
-
-// FAQ Section
-function FAQ() {
-  const [openIndex, setOpenIndex] = useState(0);
-
-  return (
-    <section id="faq" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* FAQ Schema for Google Rich Snippets */}
-      <FAQSchema faqs={faqData} />
-      
-      <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-800 to-navy" />
-      
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true }} 
-          variants={staggerContainer} 
-          className="text-center mb-12"
-        >
-          <motion.span variants={fadeInUp} className="inline-block text-gold text-sm font-semibold tracking-wider uppercase mb-4">
-            Sıkça Sorulan Sorular
-          </motion.span>
-          <motion.h2 variants={fadeInUp} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Merak <span className="text-gradient-gold">Edilenler</span>
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-gray-400">
-            Hukuki süreçler hakkında sık sorulan soruların cevaplarını burada bulabilirsiniz.
-          </motion.p>
-        </motion.div>
-
-        <motion.div 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true }} 
-          variants={staggerContainer}
-          className="space-y-3"
-        >
-          {faqData.map((item, index) => (
-            <motion.div key={index} variants={fadeInUp}>
-              <FAQItem 
-                item={item} 
-                isOpen={openIndex === index}
-                onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-// Blog Section
-function Blog() {
-  return (
-    <section id="blog" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-navy-900" />
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true }} 
-          variants={staggerContainer} 
-          className="text-center mb-12"
-        >
-          <motion.span variants={fadeInUp} className="inline-block text-gold text-sm font-semibold tracking-wider uppercase mb-4">
-            Hukuk Blogu
-          </motion.span>
-          <motion.h2 variants={fadeInUp} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Güncel <span className="text-gradient-gold">Makaleler</span>
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-gray-400">
-            Hukuki konularda bilgilendirici içerikler ve güncel gelişmeler.
-          </motion.p>
-        </motion.div>
-
-        <motion.div 
-          initial="initial" 
-          whileInView="animate" 
-          viewport={{ once: true }} 
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-        >
-          {blogData.map((post) => (
-            <motion.article 
-              key={post.id} 
-              variants={fadeInUp}
-              className="group bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-2xl overflow-hidden hover:border-gold/30 transition-all"
-            >
-              <Link to={`/blog/${post.slug}`} className="block">
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-gold/90 text-navy text-xs font-semibold px-3 py-1 rounded-full">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5" />
-                      {new Date(post.date).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' })}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5" />
-                      {post.readTime}
-                    </span>
-                  </div>
-                  <h3 className="font-serif text-lg font-semibold text-white mb-2 group-hover:text-gold transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                    {post.excerpt}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-gold text-sm font-medium group-hover:gap-3 transition-all">
-                    Devamını Oku
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </div>
-              </Link>
-            </motion.article>
-          ))}
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <Link 
-            to="/blog" 
-            className="inline-flex items-center gap-2 border border-gold/50 text-gold px-6 py-3 rounded-full font-medium hover:bg-gold/10 transition-all"
-          >
-            <BookOpen className="w-4 h-4" />
-            Tüm Makaleleri Gör
-          </Link>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-// EmailJS Configuration
-const SERVICE_ID = "service_5np4b5k";
-const TEMPLATE_ID = "template_odrnj08";
-const PUBLIC_KEY = "EerUN7AXx0_VD65pV";
-
-// Contact Section
-function Contact() {
-  const form = useRef();
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(null);
-
-  const contactInfo = [
-    { icon: Phone, label: 'Telefon', value: '-------------', href: '#' },
-    { icon: Mail, label: 'E-posta', value: 'info@tasdemirlaw.com', href: 'mailto:info@tasdemirlaw.com' },
-    { icon: MapPin, label: 'Adres', value: 'Levent, İstanbul, Türkiye', href: '#' }
-  ];
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-
-    try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY);
-      setSuccess(true);
-      form.current.reset();
-    } catch (err) {
-      console.error('EmailJS Error:', err);
-      setError('Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyin.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <section id="contact" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2000&auto=format&fit=crop" 
-          alt="Contact Background"
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-navy/90" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy-900" />
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={staggerContainer} className="text-center mb-16">
-          <motion.span variants={fadeInUp} className="text-gold text-sm font-semibold tracking-wider uppercase">Bizimle İletişime Geçin</motion.span>
-          <motion.h2 variants={fadeInUp} className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 mb-4">
-            Hukuki <span className="text-gradient-gold">Danışmanlık</span> İçin
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-gray-400">
-            Size yardımcı olmaktan mutluluk duyarız. Formu doldurun veya doğrudan bizi arayın.
-          </motion.p>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-5 gap-12">
-          <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={fadeInUp} className="lg:col-span-3">
-            {success ? (
-              /* Success Message Card */
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border-2 border-emerald-500/50 rounded-2xl p-12 text-center"
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            Hukuki Danışmanlık İçin Bizimle İletişime Geçin
+          </h2>
+          
+          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+            Uzman kadromuz ile her türlü hukuki sorununuzda yanınızdayız. İlk görüşme ücretsizdir.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/iletisim"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold px-8 py-4 rounded-full text-navy font-semibold text-lg shadow-xl shadow-gold/20 hover:shadow-gold/40 transition-all"
               >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                  className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6"
-                >
-                  <CheckCircle className="w-10 h-10 text-emerald-400" />
-                </motion.div>
-                <h3 className="font-serif text-2xl font-bold text-white mb-3">
-                  Mesajınız Başarıyla İletildi!
-                </h3>
-                <p className="text-gray-400 mb-6">
-                  En kısa sürede sizinle iletişime geçeceğiz.
-                </p>
-                <motion.button
-                  onClick={() => setSuccess(false)}
-                  className="inline-flex items-center gap-2 border border-gold/50 text-gold px-6 py-3 rounded-full font-medium hover:bg-gold/10 transition-all"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Yeni Mesaj Gönder
-                </motion.button>
-              </motion.div>
-            ) : (
-              /* Contact Form */
-              <form ref={form} onSubmit={handleSubmit} className="bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-2xl p-8">
-                {/* Error Message */}
-                {error && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm"
-                  >
-                    {error}
-                  </motion.div>
-                )}
-
-                <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Ad Soyad</label>
-                    <input type="text" id="name" name="name" className="w-full bg-navy-800/50 border border-gold/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all" placeholder="Adınız Soyadınız" required disabled={loading} />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">Telefon</label>
-                    <input type="tel" id="phone" name="phone" className="w-full bg-navy-800/50 border border-gold/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all" placeholder="+90 5XX XXX XX XX" required disabled={loading} />
-                  </div>
-                </div>
-                <div className="mb-6">
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">E-posta</label>
-                  <input type="email" id="email" name="email" className="w-full bg-navy-800/50 border border-gold/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all" placeholder="ornek@email.com" required disabled={loading} />
-                </div>
-                <div className="mb-6">
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">Konu</label>
-                  <select id="subject" name="subject" className="w-full bg-navy-800/50 border border-gold/20 rounded-lg px-4 py-3 text-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all" required disabled={loading}>
-                    <option value="">Konu Seçiniz</option>
-                    {servicesData.slice(0, 8).map((service) => (<option key={service.id} value={service.title}>{service.title}</option>))}
-                    <option value="other">Diğer</option>
-                  </select>
-                </div>
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">Mesajınız</label>
-                  <textarea id="message" name="message" rows={5} className="w-full bg-navy-800/50 border border-gold/20 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all resize-none" placeholder="Hukuki sorununuzu kısaca açıklayın..." required disabled={loading} />
-                </div>
-                <motion.button 
-                  type="submit" 
-                  disabled={loading}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-gold-600 to-gold px-8 py-4 rounded-lg text-navy font-semibold text-lg hover:shadow-xl hover:shadow-gold/30 transition-all disabled:opacity-70 disabled:cursor-not-allowed" 
-                  whileHover={!loading ? { scale: 1.02 } : {}} 
-                  whileTap={!loading ? { scale: 0.98 } : {}}
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
-                      Gönderiliyor...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      Gönder
-                    </>
-                  )}
-                </motion.button>
-              </form>
-            )}
-          </motion.div>
-
-          <motion.div initial="initial" whileInView="animate" viewport={{ once: true }} variants={staggerContainer} className="lg:col-span-2 space-y-6">
-            {contactInfo.map((info) => {
-              const Icon = info.icon;
-              return (
-                <motion.a key={info.label} href={info.href} variants={fadeInUp} className="flex items-start gap-4 bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-xl p-6 hover:border-gold/30 transition-all group" whileHover={{ x: 5 }}>
-                  <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-gold/20 transition-colors">
-                    <Icon className="w-6 h-6 text-gold" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-400 mb-1">{info.label}</h4>
-                    <p className="text-white font-medium group-hover:text-gold transition-colors">{info.value}</p>
-                  </div>
-                </motion.a>
-              );
-            })}
-            <motion.div variants={fadeInUp} className="bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-xl p-6">
-              <h4 className="text-lg font-serif font-semibold text-white mb-4">Çalışma Saatleri</h4>
-              <div className="space-y-2 text-gray-400">
-                <div className="flex justify-between"><span>Pazartesi - Cuma</span><span className="text-gold">09:00 - 18:00</span></div>
-                <div className="flex justify-between"><span>Cumartesi</span><span className="text-gold">10:00 - 14:00</span></div>
-                <div className="flex justify-between"><span>Pazar</span><span className="text-gray-500">Kapalı</span></div>
-              </div>
+                İletişime Geç
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </motion.div>
-          </motion.div>
-        </div>
+            
+            <motion.a
+              href="tel:+902121234567"
+              className="inline-flex items-center gap-2 border border-gold/50 text-gold px-8 py-4 rounded-full font-semibold hover:bg-gold/10 transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Phone className="w-5 h-5" />
+              Hemen Ara
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -1130,22 +525,101 @@ function Contact() {
 
 // Footer
 function Footer() {
+  const footerLinks = {
+    hizmetler: [
+      { name: 'Yabancılar Hukuku', href: '/hizmet/yabancilar-ve-vatandaslik' },
+      { name: 'Ticaret Hukuku', href: '/hizmet/sirketler-ve-ticaret' },
+      { name: 'Aile Hukuku', href: '/hizmet/aile' },
+      { name: 'Ceza Hukuku', href: '/hizmet/ceza-ve-infaz' },
+    ],
+    kurumsal: [
+      { name: 'Hakkımızda', href: '/hakkimizda' },
+      { name: 'SSS', href: '/sss' },
+      { name: 'Makaleler', href: '/blog' },
+    ],
+  };
+
   return (
-    <footer className="relative bg-navy-950 py-12 border-t border-gold/10">
+    <footer className="relative bg-navy-950 py-16 border-t border-gold/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
-          <Link to="/" className="flex items-center gap-2 justify-center md:justify-start">
-            <Scale className="w-8 h-8 text-gold" />
-            <div>
-              <span className="font-serif text-lg font-semibold text-white">Av. Enes Mahmut</span>
-              <span className="font-serif text-lg font-semibold text-gold ml-1">Taşdemir</span>
-            </div>
-          </Link>
-          <p className="text-center text-gray-500 text-sm">© {new Date().getFullYear()} Tüm hakları saklıdır.</p>
-          <div className="flex justify-center md:justify-end">
-            <motion.a href="#" className="inline-flex items-center gap-2 text-gold hover:text-gold-400 transition-colors" whileHover={{ x: 5 }}>
-              <Phone className="w-4 h-4" /><span>-------------</span>
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <Link to="/" className="flex items-center gap-2 mb-4">
+              <Scale className="w-8 h-8 text-gold" />
+              <div>
+                <span className="font-serif text-lg font-semibold text-white">Taşdemir</span>
+                <span className="font-serif text-lg font-semibold text-gold ml-1">Hukuk</span>
+              </div>
+            </Link>
+            <p className="text-gray-500 text-sm mb-4">
+              Güvenilir ve profesyonel hukuki danışmanlık hizmeti.
+            </p>
+            <motion.a 
+              href="tel:+902121234567" 
+              className="inline-flex items-center gap-2 text-gold hover:text-gold-400 transition-colors" 
+              whileHover={{ x: 5 }}
+            >
+              <Phone className="w-4 h-4" />
+              <span>Hemen Ara</span>
             </motion.a>
+          </div>
+
+          {/* Hizmetler */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Hizmetlerimiz</h4>
+            <ul className="space-y-2">
+              {footerLinks.hizmetler.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-gray-500 hover:text-gold transition-colors text-sm">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Kurumsal */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Kurumsal</h4>
+            <ul className="space-y-2">
+              {footerLinks.kurumsal.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-gray-500 hover:text-gold transition-colors text-sm">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* İletişim */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">İletişim</h4>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-gold mt-0.5" />
+                <span className="text-gray-500 text-sm">Levent, İstanbul, Türkiye</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail className="w-4 h-4 text-gold mt-0.5" />
+                <span className="text-gray-500 text-sm">info@tasdemirlaw.com</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="w-4 h-4 text-gold mt-0.5" />
+                <span className="text-gray-500 text-sm">Pzt-Cum: 09:00 - 18:00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="pt-8 border-t border-gold/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Taşdemir Hukuk. Tüm hakları saklıdır.</p>
+          <div className="flex gap-6">
+            <Link to="/iletisim" className="text-gray-500 hover:text-gold transition-colors text-sm">
+              İletişim
+            </Link>
           </div>
         </div>
       </div>
@@ -1153,17 +627,14 @@ function Footer() {
   );
 }
 
-// HomePage Component
+// HomePage Component - Simplified with preview sections
 function HomePage() {
   return (
     <>
       <Hero />
-      <About />
-      <Services />
-      <Testimonials />
-      <FAQ />
-      <Blog />
-      <Contact />
+      <QuickAbout />
+      <QuickServices />
+      <CTASection />
     </>
   );
 }
@@ -1202,6 +673,10 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/hakkimizda" element={<AboutPage />} />
+          <Route path="/hizmetlerimiz" element={<ServicesPage />} />
+          <Route path="/iletisim" element={<ContactPage />} />
+          <Route path="/sss" element={<FAQPage />} />
           <Route path="/hizmet/:slug" element={<ServiceDetail />} />
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
@@ -1213,4 +688,3 @@ function App() {
 }
 
 export default App;
-

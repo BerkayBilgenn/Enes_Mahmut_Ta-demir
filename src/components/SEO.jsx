@@ -20,7 +20,7 @@ function SEO({
   article = null,
   schema = null
 }) {
-  const siteName = 'Av. Enes Mahmut Taşdemir Hukuk Bürosu';
+  const siteName = 'Taşdemir Hukuk';
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
   const baseUrl = 'https://tasdemirlaw.com';
   const fullUrl = url ? `${baseUrl}${url}` : baseUrl;
@@ -54,7 +54,7 @@ function SEO({
     "dateModified": article.date,
     "author": {
       "@type": "Person",
-      "name": "Av. Enes Mahmut Taşdemir"
+      "name": "Taşdemir Hukuk"
     },
     "publisher": {
       "@type": "Organization",
@@ -113,7 +113,7 @@ function SEO({
       {article && (
         <>
           <meta property="article:published_time" content={article.date} />
-          <meta property="article:author" content="Av. Enes Mahmut Taşdemir" />
+          <meta property="article:author" content="Taşdemir Hukuk" />
           <meta property="article:section" content={article.category} />
         </>
       )}
