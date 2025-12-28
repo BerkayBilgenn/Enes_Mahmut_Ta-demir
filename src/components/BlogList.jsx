@@ -46,7 +46,7 @@ function BlogList() {
               <span className="text-sm font-medium text-white">Hukuk Blogu</span>
             </motion.div>
             
-            <motion.h1 variants={fadeInUp} className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <motion.h1 variants={fadeInUp} className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Güncel <span className="text-gradient-gold">Makaleler</span>
             </motion.h1>
             
@@ -87,10 +87,10 @@ function BlogList() {
                       </span>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                  <div className="p-5 md:p-6">
+                    <div className="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-500 mb-3">
                       <span className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
+                        <Calendar className="w-3.5 h-3.5 md:w-4 md:h-4" />
                         {new Date(post.date).toLocaleDateString('tr-TR', { 
                           day: 'numeric', 
                           month: 'long', 
@@ -98,11 +98,11 @@ function BlogList() {
                         })}
                       </span>
                       <span className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
+                        <Clock className="w-3.5 h-3.5 md:w-4 md:h-4" />
                         {post.readTime}
                       </span>
                     </div>
-                    <h2 className="font-serif text-xl font-semibold text-white mb-3 group-hover:text-gold transition-colors line-clamp-2">
+                    <h2 className="font-serif text-lg md:text-xl font-semibold text-white mb-3 group-hover:text-gold transition-colors line-clamp-2">
                       {post.title}
                     </h2>
                     <p className="text-gray-400 text-sm mb-4 line-clamp-3">

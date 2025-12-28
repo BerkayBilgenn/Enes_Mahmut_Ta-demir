@@ -56,7 +56,7 @@ function BlogDetail() {
       />
 
       {/* Cinematic Hero */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden">
         {/* Parallax Background */}
         <motion.div 
           className="absolute inset-0"
@@ -91,7 +91,7 @@ function BlogDetail() {
         </div>
 
         {/* Content */}
-        <div className="relative h-full flex items-end pb-20 z-10">
+        <div className="relative h-full flex items-end pb-12 md:pb-16 lg:pb-20 z-10">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 60 }}
@@ -121,7 +121,7 @@ function BlogDetail() {
 
               {/* Title */}
               <motion.h1 
-                className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] max-w-5xl"
+                className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 md:mb-8 leading-tight lg:leading-[1.1] max-w-5xl"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -131,18 +131,18 @@ function BlogDetail() {
 
               {/* Meta Info */}
               <motion.div 
-                className="flex flex-wrap items-center gap-8"
+                className="flex flex-wrap items-center gap-4 md:gap-8"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-gold to-gold-600 rounded-full flex items-center justify-center shadow-xl shadow-gold/30">
-                    <User className="w-6 h-6 text-navy" />
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-gold to-gold-600 rounded-full flex items-center justify-center shadow-xl shadow-gold/30">
+                    <User className="w-5 h-5 md:w-6 md:h-6 text-navy" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold">Taşdemir Hukuk</div>
-                    <div className="text-gray-400 text-sm">Hukuk Danışmanı</div>
+                    <div className="text-white font-semibold text-sm md:text-base">EMT Hukuk</div>
+                    <div className="text-gray-400 text-xs md:text-sm">Hukuk Danışmanı</div>
                   </div>
                 </div>
               </motion.div>
@@ -184,10 +184,10 @@ function BlogDetail() {
                   {/* Top Accent */}
                   <div className="h-1 bg-gradient-to-r from-transparent via-gold to-transparent" />
                   
-                  <div className="p-8 sm:p-12 lg:p-16">
+                  <div className="p-6 sm:p-8 md:p-10 lg:p-16">
                     {/* Excerpt */}
                     <div className="mb-12 pb-12 border-b border-white/10">
-                      <p className="text-2xl text-gray-200 leading-relaxed font-light italic">
+                      <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed font-light italic">
                         {post.excerpt}
                       </p>
                     </div>
@@ -217,7 +217,7 @@ function BlogDetail() {
                   </div>
 
                   {/* Social Sharing Footer */}
-                  <div className="bg-gradient-to-r from-gold/5 via-gold/10 to-gold/5 px-8 sm:px-12 lg:px-16 py-8 border-t border-white/10">
+                  <div className="bg-gradient-to-r from-gold/5 via-gold/10 to-gold/5 px-6 sm:px-8 md:px-10 lg:px-16 py-6 md:py-8 border-t border-white/10">
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                       <div>
                         <p className="text-sm text-gray-400 mb-3 font-medium">Bu makaleyi paylaşın:</p>
@@ -264,7 +264,7 @@ function BlogDetail() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="sticky top-24 space-y-8">
+              <div className="lg:sticky top-24 space-y-8 mt-12 lg:mt-0">
                 {/* CTA Card */}
                 <motion.div 
                   className="relative group"
