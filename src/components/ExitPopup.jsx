@@ -233,7 +233,7 @@ function ExitPopup() {
                     <Phone className="w-4 h-4" />
                     Hemen Ara
                   </a>
-                  <a href="mailto:info@tasdemirlaw.com" className="flex items-center gap-2 text-gray-400 hover:text-gold transition-colors">
+                  <a href="mailto:emtasdemirhukuk@gmail.com" className="flex items-center gap-2 text-gray-400 hover:text-gold transition-colors">
                     <Mail className="w-4 h-4" />
                     E-posta Gönder
                   </a>

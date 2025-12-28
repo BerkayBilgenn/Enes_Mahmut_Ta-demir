@@ -12,14 +12,14 @@ function LocalBusinessSchema() {
     "image": "https://tasdemirlaw.com/logo.png",
     "url": "https://tasdemirlaw.com",
     "telephone": "+905388539944",
-    "email": "info@tasdemirlaw.com",
+    "email": "emtasdemirhukuk@gmail.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "İstanbul",
-      "addressLocality": "İstanbul",
+      "streetAddress": "Çağlayan Mah. Vatan Cad. No:8 D:12 Orhan Pınar İş Merkezi",
+      "addressLocality": "Kağıthane",
       "addressRegion": "İstanbul",
-      "postalCode": "34000",
+      "postalCode": "34410",
       "addressCountry": "TR"
     },
     "geo": {
@@ -27,20 +27,7 @@ function LocalBusinessSchema() {
       "latitude": 41.0082,
       "longitude": 28.9784
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "10:00",
-        "closes": "14:00"
-      }
-    ],
+
     "sameAs": [
       "https://www.facebook.com/tasdemirlaw",
       "https://www.linkedin.com/company/tasdemirlaw",

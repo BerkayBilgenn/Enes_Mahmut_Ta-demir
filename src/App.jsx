@@ -149,7 +149,7 @@ function Header() {
 
           <div className="hidden md:block">
             <motion.a
-              href="tel:+902121234567"
+              href="tel:+905388539944"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold px-6 py-2.5 rounded-full text-navy font-semibold text-sm hover:shadow-lg hover:shadow-gold/30 transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -191,7 +191,7 @@ function Header() {
                   </Link>
                 ))}
                 <a
-                  href="tel:+902121234567"
+                  href="tel:+905388539944"
                   className="inline-flex items-center justify-center gap-2 bg-gold px-6 py-3 rounded-full text-navy font-semibold mt-2"
                 >
                   <Phone className="w-4 h-4" />
@@ -258,7 +258,7 @@ function Hero() {
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             {/* Primary CTA - Phone */}
             <motion.a 
-              href="tel:+902121234567" 
+              href="tel:+905388539944" 
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-gold-600 to-gold px-8 py-5 rounded-full text-navy font-bold text-lg shadow-2xl shadow-gold/30 hover:shadow-gold/50 transition-all" 
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}
@@ -513,7 +513,7 @@ function CTASection() {
             </motion.div>
             
             <motion.a
-              href="tel:+902121234567"
+              href="tel:+905388539944"
               className="inline-flex items-center gap-2 border border-gold/50 text-gold px-8 py-4 rounded-full font-semibold hover:bg-gold/10 transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -565,7 +565,7 @@ function Footer() {
               Güvenilir ve profesyonel hukuki danışmanlık hizmeti.
             </p>
             <motion.a 
-              href="tel:+902121234567" 
+              href="tel:+905388539944" 
               className="inline-flex items-center gap-2 text-gold hover:text-gold-400 transition-colors" 
               whileHover={{ x: 5 }}
             >
@@ -608,16 +608,13 @@ function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold mt-0.5" />
-                <span className="text-gray-500 text-sm">Levent, İstanbul, Türkiye</span>
+                <span className="text-gray-500 text-sm">Çağlayan Mah. Vatan Cad. No:8 D:12 Orhan Pınar İş Merkezi Kağıthane/ İstanbul</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-gold mt-0.5" />
-                <span className="text-gray-500 text-sm">info@tasdemirlaw.com</span>
+                <span className="text-gray-500 text-sm">emtasdemirhukuk@gmail.com</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Clock className="w-4 h-4 text-gold mt-0.5" />
-                <span className="text-gray-500 text-sm">Pzt-Cum: 09:00 - 18:00</span>
-              </li>
+
             </ul>
           </div>
         </div>

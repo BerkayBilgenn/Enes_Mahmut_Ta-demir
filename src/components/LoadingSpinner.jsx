@@ -49,7 +49,7 @@ function LoadingSpinner() {
           className="text-center"
         >
           <h2 className="font-serif text-xl text-white mb-2">
-            Taşdemir <span className="text-gold">Hukuk</span>
+            EMT <span className="text-gold">Hukuk</span>
           </h2>
           <div className="flex items-center gap-2 text-gray-400">
             <span>Yükleniyor</span>

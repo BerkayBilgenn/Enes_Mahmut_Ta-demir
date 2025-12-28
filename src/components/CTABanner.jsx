@@ -6,7 +6,7 @@ export default function CTABanner({
   title = "Hukuki Danışmanlık İçin Bizimle İletişime Geçin",
   subtitle = "Uzman kadromuz ile her türlü hukuki sorununuzda yanınızdayız.",
   primaryButton = { text: "İletişime Geç", href: "/iletisim" },
-  secondaryButton = { text: "Hemen Ara", href: "tel:+902121234567" },
+  secondaryButton = { text: "Hemen Ara", href: "tel:+905388539944" },
   variant = "default" // default, compact
 }) {
   return (

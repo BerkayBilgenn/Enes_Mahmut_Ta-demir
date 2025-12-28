@@ -33,7 +33,7 @@ function SEO({
     "description": description,
     "url": fullUrl,
     "telephone": "+905388539944",
-    "email": "info@tasdemirlaw.com",
+    "email": "emtasdemirhukuk@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "İstanbul",

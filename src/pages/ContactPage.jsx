@@ -21,15 +21,9 @@ const staggerContainer = {
 };
 
 const contactInfo = [
-  { icon: Phone, label: 'Telefon', value: '-------------', href: '#' },
-  { icon: Mail, label: 'E-posta', value: 'info@tasdemirlaw.com', href: 'mailto:info@tasdemirlaw.com' },
-  { icon: MapPin, label: 'Adres', value: 'Levent, İstanbul, Türkiye', href: '#' }
-];
-
-const workingHours = [
-  { day: 'Pazartesi - Cuma', hours: '09:00 - 18:00' },
-  { day: 'Cumartesi', hours: '10:00 - 14:00' },
-  { day: 'Pazar', hours: 'Kapalı' }
+  { icon: Phone, label: 'Telefon', value: '+90 538 853 99 44', href: 'tel:+905388539944' },
+  { icon: Mail, label: 'E-posta', value: 'emtasdemirhukuk@gmail.com', href: 'mailto:emtasdemirhukuk@gmail.com' },
+  { icon: MapPin, label: 'Adres', value: 'Çağlayan Mah. Vatan Cad. No:8 D:12 Orhan Pınar İş Merkezi Kağıthane/ İstanbul', href: '#' }
 ];
 
 export default function ContactPage() {
@@ -265,28 +259,6 @@ export default function ContactPage() {
                 );
               })}
 
-              {/* Working Hours */}
-              <motion.div
-                variants={fadeInUp}
-                className="bg-gradient-to-br from-navy-800/60 to-navy-900/60 backdrop-blur-sm border border-gold/10 rounded-xl p-6"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gold/10 rounded-lg flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-gold" />
-                  </div>
-                  <h4 className="text-lg font-serif font-semibold text-white">Çalışma Saatleri</h4>
-                </div>
-                <div className="space-y-3">
-                  {workingHours.map((item) => (
-                    <div key={item.day} className="flex justify-between text-sm">
-                      <span className="text-gray-400">{item.day}</span>
-                      <span className={item.hours === 'Kapalı' ? 'text-gray-500' : 'text-gold'}>
-                        {item.hours}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
 
               {/* Quick Call CTA */}
               <motion.div

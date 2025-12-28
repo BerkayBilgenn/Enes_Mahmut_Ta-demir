@@ -424,7 +424,7 @@ function ServiceDetail() {
                       </a>
                       
                       <a
-                        href="mailto:info@tasdemirlaw.com"
+                        href="mailto:emtasdemirhukuk@gmail.com"
                         className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-gold/30 hover:bg-white/10 transition-all group"
                       >
                         <div className="w-12 h-12 bg-gold/20 rounded-xl flex items-center justify-center group-hover:bg-gold/30 transition-colors">
@@ -432,7 +432,7 @@ function ServiceDetail() {
                         </div>
                         <div>
                           <p className="text-xs text-gray-400 mb-1">E-posta</p>
-                          <p className="text-white font-medium">info@tasdemirlaw.com</p>
+                          <p className="text-white font-medium">emtasdemirhukuk@gmail.com</p>
                         </div>
                       </a>
                     </div>
