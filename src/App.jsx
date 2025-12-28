@@ -117,8 +117,12 @@ function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <motion.div whileHover={{ scale: 1.02 }}>
-            <Link to="/" className="flex items-center gap-2">
-              <Scale className="w-8 h-8 text-gold" />
+            <Link to="/" className="flex items-center gap-3">
+              <img 
+                src="/logo.png" 
+                alt="Taşdemir Hukuk Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <div className="hidden sm:block">
                 <span className="font-serif text-xl font-semibold text-white">Taşdemir</span>
                 <span className="font-serif text-xl font-semibold text-gold ml-1">Hukuk</span>
