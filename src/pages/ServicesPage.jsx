@@ -131,42 +131,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="relative py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900" />
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-        
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-4">
-              Neden <span className="text-gradient-gold">Bizi Tercih Etmelisiniz?</span>
-            </h3>
-            <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-              15+ yıllık deneyimimiz, 1000+ başarılı dava geçmişimiz ve müvekkil odaklı yaklaşımımızla 
-              hukuki süreçlerinizde en güvenilir partneriniz oluyoruz.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="flex items-center gap-2 bg-navy-800/50 border border-gold/10 rounded-full px-4 py-2">
-                <span className="text-gold font-semibold">15+</span>
-                <span className="text-gray-400 text-sm">Yıllık Deneyim</span>
-              </div>
-              <div className="flex items-center gap-2 bg-navy-800/50 border border-gold/10 rounded-full px-4 py-2">
-                <span className="text-gold font-semibold">1000+</span>
-                <span className="text-gray-400 text-sm">Başarılı Dava</span>
-              </div>
-              <div className="flex items-center gap-2 bg-navy-800/50 border border-gold/10 rounded-full px-4 py-2">
-                <span className="text-gold font-semibold">500+</span>
-                <span className="text-gray-400 text-sm">Mutlu Müvekkil</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* CTA */}
       <CTABanner 
         title="İhtiyacınıza Uygun Hizmet mi Arıyorsunuz?"
