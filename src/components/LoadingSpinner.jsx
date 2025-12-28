@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Scale } from 'lucide-react';
 
 function LoadingSpinner() {
   return (
@@ -15,31 +14,19 @@ function LoadingSpinner() {
       </div>
 
       <div className="relative flex flex-col items-center">
-        {/* Spinning Ring */}
-        <div className="relative w-24 h-24 mb-6">
-          {/* Outer Ring */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 rounded-full border-2 border-transparent border-t-gold border-r-gold/50"
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="mb-6"
+        >
+          <img 
+            src="/logo-transparent.png" 
+            alt="EMT Hukuk Logo" 
+            className="h-24 w-auto object-contain"
           />
-          
-          {/* Inner Ring */}
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-2 rounded-full border-2 border-transparent border-b-gold/70 border-l-gold/30"
-          />
-
-          {/* Scale Icon */}
-          <motion.div
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute inset-0 flex items-center justify-center"
-          >
-            <Scale className="w-10 h-10 text-gold" />
-          </motion.div>
-        </div>
+        </motion.div>
 
         {/* Loading Text */}
         <motion.div
