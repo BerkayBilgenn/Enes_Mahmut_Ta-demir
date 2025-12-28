@@ -170,7 +170,7 @@ export default function ServicesPage() {
       {/* CTA */}
       <CTABanner 
         title="İhtiyacınıza Uygun Hizmet mi Arıyorsunuz?"
-        subtitle="Hukuki danışmanlık için bizimle iletişime geçin. İlk görüşme ücretsizdir."
+        subtitle="Hukuki danışmanlık için bizimle iletişime geçin."
       />
     </>
   );

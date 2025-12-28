@@ -262,7 +262,7 @@ export const servicesData = [
       <h3>Ayıplı Mal ve Hizmet</h3>
       <p>Satın aldığınız ürün veya hizmetteki ayıplar nedeniyle doğan haklarınızın takibi konusunda destek sağlıyoruz:</p>
       <ul>
-        <li><strong>Ücretsiz Onarım:</strong> Ayıbın giderilmesi talebi</li>
+        <li><strong>Onarım Hakkı:</strong> Ayıbın giderilmesi talebi</li>
         <li><strong>Ürün Değişimi:</strong> Ayıpsız misliyle değiştirme</li>
         <li><strong>Bedel İadesi:</strong> Sözleşmeden dönme hakkı</li>
         <li><strong>Ayıp Oranında İndirim:</strong> Ayıpla orantılı fiyat indirimi</li>

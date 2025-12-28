@@ -287,7 +287,7 @@ function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-gold" />
-              <span>Ücretsiz İlk Görüşme</span>
+              <span>İlk Görüşme</span>
             </div>
           </motion.div>
         </motion.div>
@@ -494,7 +494,7 @@ function CTASection() {
           </h2>
           
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-            Uzman kadromuz ile her türlü hukuki sorununuzda yanınızdayız. İlk görüşme ücretsizdir.
+            Uzman kadromuz ile her türlü hukuki sorununuzda yanınızdayız.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
