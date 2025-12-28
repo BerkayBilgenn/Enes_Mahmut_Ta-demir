@@ -8,7 +8,7 @@ function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Taşdemir Hukuk",
+    "name": "EMT Hukuk",
     "image": "https://tasdemirlaw.com/logo.png",
     "url": "https://tasdemirlaw.com",
     "telephone": "+905388539944",

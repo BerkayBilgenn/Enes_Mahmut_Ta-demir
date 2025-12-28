@@ -20,7 +20,7 @@ function SEO({
   article = null,
   schema = null
 }) {
-  const siteName = 'Taşdemir Hukuk';
+  const siteName = 'EMT Hukuk';
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
   const baseUrl = 'https://tasdemirlaw.com';
   const fullUrl = url ? `${baseUrl}${url}` : baseUrl;
@@ -54,7 +54,7 @@ function SEO({
     "dateModified": article.date,
     "author": {
       "@type": "Person",
-      "name": "Taşdemir Hukuk"
+      "name": "EMT Hukuk"
     },
     "publisher": {
       "@type": "Organization",
@@ -113,7 +113,7 @@ function SEO({
       {article && (
         <>
           <meta property="article:published_time" content={article.date} />
-          <meta property="article:author" content="Taşdemir Hukuk" />
+          <meta property="article:author" content="EMT Hukuk" />
           <meta property="article:section" content={article.category} />
         </>
       )}

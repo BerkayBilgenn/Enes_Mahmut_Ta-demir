@@ -251,7 +251,7 @@ function Hero() {
 
           {/* Subheading */}
           <motion.p variants={fadeInUp} className="max-w-2xl mx-auto text-lg sm:text-xl lg:text-2xl text-gray-300">
-            Taşdemir Hukuk güvencesiyle her türlü hukuki uyuşmazlıkta yanınızdayız.
+            EMT Hukuk güvencesiyle her türlü hukuki uyuşmazlıkta yanınızdayız.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -434,7 +434,7 @@ function QuickAbout() {
               Güven, <span className="text-gradient-gold">Tecrübe</span> ve Başarı
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-gray-400 mb-6 leading-relaxed">
-              Taşdemir Hukuk olarak, yılların verdiği deneyim ve bilgi birikimimizi müvekkillerimizin hizmetine sunuyoruz.
+              EMT Hukuk olarak, yılların verdiği deneyim ve bilgi birikimimizi müvekkillerimizin hizmetine sunuyoruz.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-gray-400 mb-8 leading-relaxed">
               Modern hukuk dünyasının gerektirdiği yenilikçi yaklaşımlar ile geleneksel değerleri birleştirerek, size özel çözümler üretiyoruz.
@@ -550,10 +550,14 @@ function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <Scale className="w-8 h-8 text-gold" />
+            <Link to="/" className="flex items-center gap-3 mb-4">
+              <img 
+                src="/logo-transparent.png" 
+                alt="EMT Hukuk" 
+                className="h-10 w-auto object-contain"
+              />
               <div>
-                <span className="font-serif text-lg font-semibold text-white">Taşdemir</span>
+                <span className="font-serif text-lg font-semibold text-white">EMT</span>
                 <span className="font-serif text-lg font-semibold text-gold ml-1">Hukuk</span>
               </div>
             </Link>
@@ -620,7 +624,7 @@ function Footer() {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-gold/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">© {new Date().getFullYear()} Taşdemir Hukuk. Tüm hakları saklıdır.</p>
+          <p className="text-gray-500 text-sm">© {new Date().getFullYear()} EMT Hukuk. Tüm hakları saklıdır.</p>
           <div className="flex gap-6">
             <Link to="/iletisim" className="text-gray-500 hover:text-gold transition-colors text-sm">
               İletişim
