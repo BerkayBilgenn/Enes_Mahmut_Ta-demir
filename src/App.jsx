@@ -118,11 +118,13 @@ function Header() {
         <div className="flex items-center justify-between">
           <motion.div whileHover={{ scale: 1.02 }}>
             <Link to="/" className="flex items-center gap-3">
-              <img 
-                src="/logo.jpg" 
-                alt="Taşdemir Hukuk Logo" 
-                className="w-10 h-10 object-contain"
-              />
+              <div className="w-10 h-10 bg-white rounded-lg p-1.5 shadow-sm">
+                <img 
+                  src="/logo.jpg" 
+                  alt="Taşdemir Hukuk Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <div className="hidden sm:block">
                 <span className="font-serif text-xl font-semibold text-white">Taşdemir</span>
                 <span className="font-serif text-xl font-semibold text-gold ml-1">Hukuk</span>
