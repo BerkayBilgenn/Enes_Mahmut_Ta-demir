@@ -120,11 +120,11 @@ function Header() {
             <Link to="/" className="flex items-center gap-3">
               <img 
                 src="/logo-transparent.png" 
-                alt="Taşdemir Hukuk" 
+                alt="EMT Hukuk" 
                 className="h-10 w-auto object-contain"
               />
               <div>
-                <span className="font-serif text-xl font-semibold text-white">Taşdemir</span>
+                <span className="font-serif text-xl font-semibold text-white">EMT</span>
                 <span className="font-serif text-xl font-semibold text-gold ml-1">Hukuk</span>
               </div>
             </Link>
