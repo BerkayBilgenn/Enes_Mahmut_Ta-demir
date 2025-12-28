@@ -121,11 +121,11 @@ function Header() {
               <img 
                 src="/logo-transparent.png" 
                 alt="EMT Hukuk" 
-                className="h-10 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
               <div>
-                <span className="font-serif text-xl font-semibold text-white">EMT</span>
-                <span className="font-serif text-xl font-semibold text-gold ml-1">Hukuk</span>
+                <span className="font-serif text-2xl font-semibold text-white">EMT</span>
+                <span className="font-serif text-2xl font-semibold text-gold ml-1">Hukuk</span>
               </div>
             </Link>
           </motion.div>
@@ -554,11 +554,11 @@ function Footer() {
               <img 
                 src="/logo-transparent.png" 
                 alt="EMT Hukuk" 
-                className="h-10 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
               <div>
-                <span className="font-serif text-lg font-semibold text-white">EMT</span>
-                <span className="font-serif text-lg font-semibold text-gold ml-1">Hukuk</span>
+                <span className="font-serif text-xl font-semibold text-white">EMT</span>
+                <span className="font-serif text-xl font-semibold text-gold ml-1">Hukuk</span>
               </div>
             </Link>
             <p className="text-gray-500 text-sm mb-4">
