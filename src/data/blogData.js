@@ -824,6 +824,219 @@ export const blogData = [
       </ul>
       <p>Haksız feshe uğradıysanız hemen bizimle iletişime geçin. Haklarınızı koruyalım.</p>
     `
+  },
+  {
+    id: 13,
+    slug: 'bosanma-davasi-sureci-2024-istanbul',
+    title: "Boşanma Davası Süreci 2024: İstanbul'da Adım Adım Rehber",
+    excerpt: "Boşanma davası nasıl açılır, ne kadar sürer, hangi belgeler gerekir? 2024 yılı güncel bilgilerle İstanbul'da boşanma süreci hakkında bilmeniz gereken her şey.",
+    category: "Aile Hukuku",
+    date: "2024-12-20",
+    readTime: "15 dk",
+    image: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?q=80&w=1200&auto=format&fit=crop",
+    content: `
+      <h3>Boşanma Davası Açma Kararı</h3>
+      <p>Boşanma kararı, hayat�nızın en önemli kararlarından biridir. Türk Medeni Kanunu'na göre boşanma davası açmadan önce mutlaka bir aile hukuku avukatından profesyonel destek almanızı öneririz. Boşanma süreci sadece hukuki bir işlem değil, aynı zamanda duygusal ve ekonomik boyutları olan karmaşık bir süreçtir.</p>
+      
+      <h3>Boşanma Türleri</h3>
+      <p>Türk hukuk sisteminde iki tür boşanma mevcuttur:</p>
+      <ul>
+        <li><strong>Anlaşmalı Boşanma (TMK m. 166/3):</strong> Eşler boşanma konusunda anlaşmışsa ve evlilik en az 1 yıl sürmüşse başvurulabilir. En hızlı ve ekonomik yöntemdir.</li>
+        <li><strong>Çekişmeli Boşanma:</strong> Eşlerden biri boşanmak istemiyorsa veya anlaşamıyorlarsa açılan davadır. Evlilik birliğinin sarsılması (TMK m. 166/1) veya özel boşanma sebepleri (TMK m. 161-165) nedeniyle açılabilir.</li>
+      </ul>
+      
+      <h3>Anlaşmalı Boşanma Şartları</h3>
+      <ul>
+        <li>Evliliğin en az 1 yıl sürmüş olması (deneme süresi değil, resmi evlilik tarihi)</li>
+        <li>Her iki eşin de boşanmaya razı olması</li>
+        <li>Mali konularda anlaşmış olmaları (mal paylaşımı, tazminat, nafaka)</li>
+        <li>Varsa çocukların velayeti, kişisel ilişki düzenlenmesi ve nafakası konusunda anlaşma</li>
+      </ul>
+      
+      <h3>Çekişmeli Boşanma Sebepleri</h3>
+      <p>Özel Boşanma Sebepleri:</p>
+      <ul>
+        <li><strong>Zina (TMK m. 161):</strong> Eşlerden birinin bir başkasıyla cinsel ilişkiye girmesi</li>
+        <li><strong>Hayata Kast, Pek Kötü Muamele (TMK m. 162):</strong> Fiziksel veya psikolojik şiddet</li>
+        <li><strong>Onur Kırıcı Suç (TMK m. 163):</strong> Haysiyetsiz hayat sürme, terk</li>
+        <li><strong>Terk (TMK m. 164):</strong> En az 6 ay haber vermeden ayrılma</li>
+        <li><strong>Akıl Hastalığı (TMK m. 165):</strong> En az 3 yıl süren, birliği çekilmez hale getiren hastalık</li>
+      </ul>
+      
+      <p>Genel Boşanma Sebebi:</p>
+      <ul>
+        <li><strong>Evlilik Birliğinin Sarsılması (TMK m. 166/1):</strong> Ortak hayatın çekilmez hale gelmesi. Sürekli kavgalar, ayrı yaşama, sadakatsizlik, ekonomik sorunlar, aile içi şiddet gibi nedenler</li>
+      </ul>
+      
+      <h3>Dava Açma Süreci Adım Adım</h3>
+      
+      <h3>1. Avukat Tutma (Zorunlu Değil Ama Şiddetle Tavsiye Edilir)</h3>
+      <p>Boşanma davalarında avukat tutma zorunluluğu yoktur ancak hukuki hakların ve 1990 yıllarındaki sürecin karmaşıklığı nedeniyle mutlaka bir aile hukuku avukatı ile çalışmanızı öneririz.</p>
+      
+      <h3>2. Gerekli Belgelerin Toplan ması</h3>
+      <ul>
+        <li>Nüfus cüzdanı fotokopisi (her iki eş)</li>
+        <li>Evlilik cüzdanı aslı veya sureti</li>
+        <li>Varsa çocukların nüfus kayıt örneği</li>
+        <li>İkametgah belgesi</li>
+        <li>Tanık bilgileri (çekişmeli davada 2 tanık gereklidir)</li>
+        <li>Delil niteliğindeki belgeler (mesajlar, fotoğraflar, hastane raporları vb.)</li>
+        <li>Mal varlığı belgeleri (tapu, araç, banka hesap bilgileri)</li>
+        <li>Gelir belgeleri (maaş bordrosu, gelir beyannamesi - nafaka için)</li>
+      </ul>
+      
+      <h3>3. Yetkili ve Görevli Mahkeme</h3>
+      <p>Boşanma davaları <strong>Aile Mahkemesi</strong>'nde açılır.</p>
+      
+      <p><strong>Yetkili Mahkeme:</strong></p>
+      <ul>
+        <li>Eşlerin son birlikte oturdukları yer mahkemesi</li>
+        <li>Davalı eşin yerleşim yeri mahkemesi</li>
+        <li>Davacı eşin yerleşim yeri mahkemesi (sadece anlaşmalı boşanmada veya davalının Türkiye'de yerleşim yeri yoksa)</li>
+      </ul>
+      
+      <p>İstanbul'da birden fazla Aile Mahkemesi bulunduğundan, genellikle eşlerden birinin İstanbul'da ikamet etmesi halinde İstanbul Aile Mahkemeleri yetkilidir.</p>
+      
+      <h3>4. Dava Dilekçesinin Hazırlanması ve Verilmesi</h3>
+      <p>Dava dilekçesinde olması gerekenler:</p>
+      <ul>
+        <li>Tarafların kimlik bilgileri</li>
+        <li>Evlilik tarihi ve süresi</li>
+        <li>Varsa çocuklar ve doğum tarihleri</li>
+        <li>Boşanma sebebi detaylı anlatımı</li>
+        <li>Talepler (boşanma, nafaka, vel ayet, mal paylaşımı, maddi-manevi tazminat)</li>
+        <li>Delillerin listesi</li>
+        <li>Tanıkların ad-soyad-adresleri</li>
+      </ul>
+      
+      <p>Dilekçe mahkemeye elden veya posta yoluyla verilebilir. E-kura sistemi ile elektronik olarak da verilebilir (avukat için).</p>
+      
+      <h3>5. Dava Harcı ve Masraflar (2024 Güncel)</h3>
+      <ul>
+        <li><strong>Anlaşmalı Boşanma Harcı:</strong> Sabit harç (2024'te yaklaşık 1.500 TL)</li>
+        <li><strong>Çekişmeli Boşanma Harcı:</strong> Nispi harç + sabit harç (talep edilen tutara göre değişir, genelde 3.000-10.000 TL arası)</li>
+        <li><strong>Avukat Ücreti:</strong> 15.000 TL - 50.000 TL arası (davanın karmaşıklığına göre)</li>
+        <li><strong>Bilirkişi Ücreti:</strong> Mal paylaşımı varsa 5.000-20.000 TL</li>
+        <li><strong>Tanık Dinleme:</strong> Genelde ek ücret yok</li>
+      </ul>
+      
+      <h3>Boşanma Davası Süreci ve Süreler</h3>
+      
+      <h3>Anlaşmalı Boşanma Süresi</h3>
+      <ul>
+        <li><strong>İlk Duruşma:</strong> Dilekçe verildikten 2-4 hafta sonra</li>
+        <li><strong>İkinci Duruşma (Düşünme Süresi):</strong> İlk duruşmadan minimum 2 hafta sonra, maximum 3 ay sonra</li>
+        <li><strong>Karar:</strong> İkinci duruşmada anlaşma devam ederse hemen karar</li>
+        <li><strong>Kesinleşme:</strong> Karardan 15 gün sonra (itiraz edilmezse)</li>
+        <li><strong>Toplam Süre:</strong> 2-4 ay</li>
+      </ul>
+      
+      <h3>Çekişmeli Boşanma Süresi</h3>
+      <ul>
+        <li><strong>İlk Duruşma:</strong> 1-2 ay sonra</li>
+        <li><strong>Cevap Dilekçesi Süresi:</strong> Davalıya 2 hafta</li>
+        <li><strong>Duruşma Sayısı:</strong> 3-10 duruşma (delillere göre)</li>
+        <li><strong>Tanık Dinleme:</strong> 1-2 duruşma</li>
+        <li><strong>Bilirkişi İncelemesi:</strong> Varsa 2-6 ay</li>
+        <li><strong>Karar:</strong> Son duruşmadan 1-2 hafta sonra</li>
+        <li><strong>Temyiz:</strong> 2 hafta içinde başvuru, Yargıtay'da 6-18 ay</li>
+        <li><strong>Toplam Süre:</strong> 8-18 ay (temyizsiz), 2-3 yıl (temyizli)</li>
+      </ul>
+      
+      <h3>Duruşma Süreci</h3>
+      
+      <h3>Anlaşmalı Boşanma Duruşması</h3>
+      <ul>
+        <li>Her iki eş mahkemeye bizzat gelmek zorunda</li>
+        <li>Hakim eşlere boşanma kararlarının kesin olup olmadığını sorar</li>
+        <li>Anlaşma protokolünü inceler (nafaka, velayet, mal paylaşımı)</li>
+        <li>Düşünme süresi verir (min 2 hafta, max 3 ay)</li>
+        <li> İkinci duruşmada anlaşma devam ederse boşanmaya karar verir</li>
+      </ul>
+      
+      <h3>Çekişmeli Boşanma Duruşması</h3>
+      <ul>
+        <li>Davacı veya avukatı iddiaları anlatır</li>
+        <li>Davalı veya avukatı savunma yapar</li>
+        <li>Tanıklar dinlenir (her taraf 2 tanık)</li>
+        <li>Deliller incelenir (mesajlar, fotoğraflar, videolar, belgeler)</li>
+        <li>Gerekirse bilirkişi görevlendirilir (mal paylaşımı, çocuğun menfaati için)</li>
+        <li>Hakim karar verir veya sulh için teşebbüste bulunur</li>
+      </ul>
+      
+      <h3>Boşanma Kararının Sonuçları</h3>
+      
+      <h3>Soyadı Değişikliği</h3>
+      <ul>
+        <li>Kadın, evlenmeden önceki soyadına dönebilir (talep etmesi gerekir)</li>
+        <li>Eşinin soyadını kullanmaya devam edebilir</li>
+        <li>Karardan sonra nüfus müdürlüğüne başvurarak değiştirebilir</li>
+      </ul>
+      
+      <h3>Mal Paylaşımı</h3>
+      <ul>
+        <li>Edinilmiş mallara katılma rejimi uygulanır (evlilik sözleşmesi yoksa)</li>
+        <li>Evlilik süresince edinilen malların yarısı paylaşılır</li>
+        <li>Kişisel mallar (evlilik öncesi, miras, hediye) paylaşılmaz</li>
+        <li>Katılma alacağı hesaplanır ve ödeme yapılır</li>
+      </ul>
+      
+      <h3>Nafaka</h3>
+      <ul>
+        <li><strong>Yoksulluk Nafakası:</strong> Boşanmadan yoksulluğa düşen kusursuz/daha az kusurlu eş alabilir (ömür boyu veya yeniden evlenene kadar)</li>
+        <li><strong>Tedbir Nafakası:</strong> Dava süreci boyunca</li>
+        <li><strong>İştirak Nafakası:</strong> Velayeti almayan eş, çocuk için öder (çocuk 18 yaşına veya eğitimi bitene kadar)</li>
+      </ul>
+      
+      <h3>Velayet</h3>
+      <ul>
+        <li>Çocuklar varsa velayet davanın en önemli konusudur</li>
+        <li>Hakim çocuğun yüksek yararını gözetir</li>
+        <li>12 yaşını doldurmuş çocuğun görüşü alınır</li>
+        <li>Velayet genelde anneye verilir (özellikle küçük çocuklarda)</li>
+        <li>Kişisel ilişki düzenlenir (diğer ebeveynle görüşme)</li>
+      </ul>
+      
+      <h3>Maddi ve Manevi Tazminat</h3>
+      <ul>
+        <li><strong>Maddi Tazminat:</strong> Boşanma nedeniyle maddi zarara uğrayan kusursuz eş talep edebilir</li>
+        <li><strong>Manevi Tazminat:</strong> Kişilik haklarına saldırı nedeniyle kusursuz eş talep edebilir (zina, şiddet, hakaret vb.)</li>
+        <li>Miktar mahkeme tarafından belirlenir (genelde 20.000-150.000 TL arası)</li>
+      </ul>
+      
+      <h3>Boşanma Davasında Dikkat Edilmesi Gerekenler</h3>
+      <ul>
+        <li><strong>Delil Toplama:</strong> Mesajlar, e-postalar, fotoğraflar, ses kayıtları, tanıklar çok önemlidir. Hepsini saklayın.</li>
+        <li><strong>Mal Kaçırma:</strong> Eşiniz malları gizliyorsa tedbir kararı alın. Banka hesaplar ı, taşınmazlar, araçlar üzerine ihtiyati tedbir konulabilir.</li>
+        <li><strong>Çocuğun Psikolojisi:</strong> Çocukları sürecin dışında tutun, onlara doğrudan sorular sormayın.</li>
+        <li><strong>Sulh Görüşmeleri:</strong> Anlaşma her zaman daha hızlı ve ekonomiktir. Avukatınızla sulh şansını değerlendirin.</li>
+        <li><strong>Sosyal Medya:</strong> Davanız sürerken sosyal medyada paylaşımlarınıza dikkat edin. Karşı taraf delil olarak kullanabilir.</li>
+        <li><strong>Yazışmalar:</strong> Eşinizle olan tüm yazışmaları saklayın (WhatsApp, SMS, e-posta)</li>
+      </ul>
+      
+      <h3>Boşanma Sonrası Süreç</h3>
+      <ul>
+        <li>Karar kesinleştikten sonra nüfus müdürlüğüne bildirim yapılır</li>
+        <li>Soyadı değişikliği (istenirse)</li>
+        <li>Mal paylaşımı icrası</li>
+        <li>Nafaka ödemesi başlar</li>
+        <li>Velayet ve kişisel ilişki düzenlemesi uygulanır</li>
+      </ul>
+      
+      <h3>İstanbul'da Boşanma Davası İçin Avukat Seçimi</h3>
+      <p>İstanbul'da onlarca aile hukuku avukatı bulunmaktadır. Doğru avukatı seçmek için:</p>
+      <ul>
+        <li>Aile hukuku konusunda deneyimli olmalı</li>
+        <li>Benzer davalar almış olmalı</li>
+        <li>İletişimi güçlü olmalı (sizi süreçte bilgilendirmeli)</li>
+        <li>Şeffaf ücretlendirme yapmalı</li>
+        <li>Mahkeme deneyimi olmalı</li>
+      </ul>
+      
+      <h3>Profesyonel Hukuki Destek Alın</h3>
+      <p>Boşanma davası hayatınızın en önemli hukuki süreçlerinden biridir. Haklarınızı korumak, sürecin hızlı ilerlemesini sağlamak ve en iyi sonucu almak için mutlaka deneyimli bir aile hukuku avukatı ile çalışmalısınız.</p>
+      <p>İstanbul'da boşanma davası konusunda 10 yılı aşkın deneyime sahip ekibimiz, anlaşmalı veya çekişmeli tüm boşanma davalarında yanınızdadır. Ücretsiz ön görüşme için bugün bizimle iletişime geçin.</p>
+    `
   }
 ];
 
