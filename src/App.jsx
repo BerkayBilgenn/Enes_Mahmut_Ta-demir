@@ -662,39 +662,13 @@ function Layout({ children }) {
 // Main App Component
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [showIntro, setShowIntro] = useState(false);
 
   useEffect(() => {
-    console.log("App initialized, starting loading timer...");
     const timer = setTimeout(() => {
-      console.log("Initial loading complete.");
       setIsLoading(false);
-      
-      try {
-        const hasSeenIntro = sessionStorage.getItem('hasSeenIntro');
-        if (!hasSeenIntro) {
-          console.log("First visit detected, showing intro signature.");
-          setShowIntro(true);
-        } else {
-          console.log("Intro already seen, skipping to app content.");
-        }
-      } catch (e) {
-        console.error("Session storage error:", e);
-        // Fallback: don't block the app if storage is broken
-      }
     }, 1500);
     return () => clearTimeout(timer);
   }, []);
-
-  const handleIntroComplete = () => {
-    console.log("Intro signature complete, showing main content.");
-    setShowIntro(false);
-    try {
-      sessionStorage.setItem('hasSeenIntro', 'true');
-    } catch (e) {
-      console.error("Could not save seen intro state:", e);
-    }
-  };
 
   return (
     <BrowserRouter>
@@ -704,14 +678,10 @@ function App() {
       <ScrollToTop />
       
       <AnimatePresence mode="wait">
-        {isLoading ? (
-          <LoadingSpinner key="loader" />
-        ) : showIntro ? (
-          <SignatureIntro key="intro" onComplete={handleIntroComplete} />
-        ) : null}
+        {isLoading && <LoadingSpinner key="loader" />}
       </AnimatePresence>
 
-      {!isLoading && !showIntro && (
+      {!isLoading && (
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
