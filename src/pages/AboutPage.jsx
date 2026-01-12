@@ -58,7 +58,7 @@ export default function AboutPage() {
       <PageHero
         subtitle="Hakkımızda"
         title="Güven, Tecrübe ve Başarı"
-        description="Taşdemir Hukuk olarak, yılların verdiği deneyim ve bilgi birikimimizi müvekkillerimizin hizmetine sunuyoruz."
+        description="EMT Hukuk olarak, yılların verdiği deneyim ve bilgi birikimimizi müvekkillerimizin hizmetine sunuyoruz."
         breadcrumbs={[{ label: "Hakkımızda" }]}
         backgroundImage="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=2000&auto=format&fit=crop"
       />
@@ -94,7 +94,7 @@ export default function AboutPage() {
                 variants={fadeInUp}
                 className="text-gray-400 mb-6 leading-relaxed"
               >
-                Taşdemir Hukuk olarak, müvekkillerimize en kaliteli hizmeti sunmayı hedefliyoruz. Modern hukuk dünyasının gerektirdiği yenilikçi yaklaşımlar ile geleneksel değerleri birleştirerek, size özel çözümler üretiyoruz.
+                EMT Hukuk olarak, müvekkillerimize en kaliteli hizmeti sunmayı hedefliyoruz. Modern hukuk dünyasının gerektirdiği yenilikçi yaklaşımlar ile geleneksel değerleri birleştirerek, size özel çözümler üretiyoruz.
               </motion.p>
               
               <motion.p 

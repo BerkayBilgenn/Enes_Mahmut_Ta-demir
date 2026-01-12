@@ -729,7 +729,7 @@ export const blogData = [
       <ul>
         <li>Fesih ihbarından itibaren 6 iş günü içinde arabulucuya başvuru zorunludur</li>
         <li>Arabuluculuk Daire Başkanlığı'na (İş Mahkemesi bünyesinde) başvuru yapılır</li>
-        <li>Başvuru formu ve fesih bildirimi eklenirkompleks başvuru yapılır</li>
+        <li>Başvuru formu ve fesih bildirimi eklenir.</li>
         <li>Arabulucu 3 hafta içinde tarafları toplantıya çağırır</li>
         <li>Anlaşma olursa tutanak düzenlenir ve kesinleşir</li>
         <li>Anlaşma olmazsa "Son Tutanak" ile dava yoluna gidilir</li>

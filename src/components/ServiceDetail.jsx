@@ -230,7 +230,7 @@ function ServiceDetail() {
               <div className="bg-gradient-to-r from-gold/5 to-transparent px-6 sm:px-8 lg:px-10 py-5 border-t border-white/5">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <p className="text-sm text-gray-400">
-                    <span className="text-gold font-medium">Taşdemir Hukuk</span> ile hemen iletişime geçin
+                    <span className="text-gold font-medium">EMT Hukuk</span> ile hemen iletişime geçin
                   </p>
                   <a 
                     href="#" 
