@@ -22,7 +22,7 @@ function SEO({
 }) {
   const siteName = 'EMT Hukuk';
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
-  const baseUrl = 'https://tasdemirlaw.com';
+  const baseUrl = 'https://www.emtasdemirhukuk.com';
   const fullUrl = url ? `${baseUrl}${url}` : baseUrl;
 
   // Default schema for the site

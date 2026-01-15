@@ -8,7 +8,7 @@ import { ChevronRight, Home } from 'lucide-react';
  */
 function Breadcrumb({ items = [] }) {
   const location = useLocation();
-  const baseUrl = 'https://tasdemirlaw.com';
+  const baseUrl = 'https://www.emtasdemirhukuk.com';
 
   // Default home item
   const breadcrumbItems = [

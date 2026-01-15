@@ -9,8 +9,8 @@ function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LegalService",
     "name": "EMT Hukuk",
-    "image": "https://tasdemirlaw.com/logo.png",
-    "url": "https://tasdemirlaw.com",
+    "image": "https://www.emtasdemirhukuk.com/logo.jpg",
+    "url": "https://www.emtasdemirhukuk.com",
     "telephone": "+905388539944",
     "email": "emtasdemirhukuk@gmail.com",
     "priceRange": "$$",
@@ -29,9 +29,7 @@ function LocalBusinessSchema() {
     },
 
     "sameAs": [
-      "https://www.facebook.com/tasdemirlaw",
-      "https://www.linkedin.com/company/tasdemirlaw",
-      "https://twitter.com/tasdemirlaw"
+      
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
