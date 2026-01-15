@@ -9,7 +9,7 @@ function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LegalService",
     "name": "EMT Hukuk",
-    "image": "https://www.emtasdemirhukuk.com/logo.jpg",
+    "image": "https://www.emtasdemirhukuk.com/logo-transparent.png",
     "url": "https://www.emtasdemirhukuk.com",
     "telephone": "+905388539944",
     "email": "emtasdemirhukuk@gmail.com",
