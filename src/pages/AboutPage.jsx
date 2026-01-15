@@ -57,8 +57,8 @@ export default function AboutPage() {
     <>
       <PageHero
         subtitle="Hakkımızda"
-        title="Güven, Tecrübe ve Başarı"
-        description="EMT Hukuk olarak, yılların verdiği deneyim ve bilgi birikimimizi müvekkillerimizin hizmetine sunuyoruz."
+        title="EMT Hukuk: Güven ve Tecrübe"
+        description="İstanbul Barosu'na kayıtlı Avukat Enes Mahmut Taşdemir önderliğindeki EMT Hukuk & Danışmanlık, yılların verdiği deneyimi müvekkillerine sunmaktadır."
         breadcrumbs={[{ label: "Hakkımızda" }]}
         backgroundImage="https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=2000&auto=format&fit=crop"
       />
@@ -87,14 +87,14 @@ export default function AboutPage() {
                 variants={fadeInUp}
                 className="font-serif text-3xl sm:text-4xl font-bold text-white mt-4 mb-6"
               >
-                Modern Hukuk Anlayışı ile <span className="text-gradient-gold">Geleneksel Değerler</span>
+                EMT Hukuk: <span className="text-gradient-gold">Modern Hukuk Anlayışı</span>
               </motion.h2>
               
               <motion.p 
                 variants={fadeInUp}
                 className="text-gray-400 mb-6 leading-relaxed"
               >
-                EMT Hukuk olarak, müvekkillerimize en kaliteli hizmeti sunmayı hedefliyoruz. Modern hukuk dünyasının gerektirdiği yenilikçi yaklaşımlar ile geleneksel değerleri birleştirerek, size özel çözümler üretiyoruz.
+                EMT Hukuk & Danışmanlık olarak, İstanbul Çağlayan'daki ofisimizde müvekkillerimize en kaliteli hizmeti sunmayı hedefliyoruz. Kurucumuz Avukat Enes Mahmut Taşdemir önderliğinde, modern hukuk dünyasının yenilikçi yaklaşımlarını benimsiyoruz.
               </motion.p>
               
               <motion.p 

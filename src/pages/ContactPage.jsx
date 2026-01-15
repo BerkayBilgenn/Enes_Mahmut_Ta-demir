@@ -23,7 +23,7 @@ const staggerContainer = {
 const contactInfo = [
   { icon: Phone, label: 'Telefon', value: '+90 538 853 99 44', href: 'tel:+905388539944' },
   { icon: Mail, label: 'E-posta', value: 'emtasdemirhukuk@gmail.com', href: 'mailto:emtasdemirhukuk@gmail.com' },
-  { icon: MapPin, label: 'Adres', value: 'Çağlayan Mah. Vatan Cad. No:8 D:12 Orhan Pınar İş Merkezi Kağıthane/ İstanbul', href: '#' }
+  { icon: MapPin, label: 'Adres', value: 'Çağlayan Mah. Vatan Cad. No:8 D:12 Orhan Pınar İş Merkezi (Çağlayan Adliyesi Karşısı) Kağıthane/ İstanbul', href: '#' }
 ];
 
 export default function ContactPage() {
@@ -53,8 +53,8 @@ export default function ContactPage() {
     <>
       <PageHero
         subtitle="İletişim"
-        title="Bizimle İletişime Geçin"
-        description="Size yardımcı olmaktan mutluluk duyarız. Formu doldurun veya doğrudan bizi arayın."
+        title="İstanbul Çağlayan Hukuk Ofisimiz"
+        description="İstanbul Çağlayan Adliyesi'ne yürüme mesafesindeki ofisimizde sizi ağırlamaktan mutluluk duyarız."
         breadcrumbs={[{ label: "İletişim" }]}
         backgroundImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2000&auto=format&fit=crop"
       />

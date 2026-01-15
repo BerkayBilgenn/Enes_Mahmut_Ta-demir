@@ -20,8 +20,8 @@ function SEO({
   article = null,
   schema = null
 }) {
-  const siteName = 'EMT Hukuk';
-  const fullTitle = title ? `${title} | ${siteName}` : siteName;
+  const siteName = 'EMT Hukuk & Danışmanlık | Avukat Enes Mahmut Taşdemir';
+  const fullTitle = title ? `${title} | EMT Hukuk` : siteName;
   const baseUrl = 'https://www.emtasdemirhukuk.com';
   const fullUrl = url ? `${baseUrl}${url}` : baseUrl;
 
@@ -29,8 +29,8 @@ function SEO({
   const defaultSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": siteName,
-    "description": description,
+    "name": "EMT Hukuk - Avukat Enes Mahmut Taşdemir",
+    "description": description || "İstanbul Çağlayan Adliyesi yakınında profesyonel avukatlık ve hukuki danışmanlık hizmetleri.",
     "url": fullUrl,
     "telephone": "+905388539944",
     "email": "emtasdemirhukuk@gmail.com",

@@ -66,8 +66,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         subtitle="Hizmetlerimiz"
-        title="Hukuki Hizmetlerimiz"
-        description="Geniş bir yelpazede sunduğumuz profesyonel hukuki danışmanlık hizmetleri ile her türlü ihtiyacınıza çözüm üretiyoruz."
+        title="Hukuk ve Danışmanlık Hizmetlerimiz"
+        description="EMT Hukuk & Danışmanlık olarak İstanbul Çağlayan'da; Ceza, Aile, İş ve Gayrimenkul gibi geniş bir yelpazede profesyonel hukuk hizmeti sunuyoruz. Avukat Enes Mahmut Taşdemir."
         breadcrumbs={[{ label: "Hizmetlerimiz" }]}
         backgroundImage="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop"
       />

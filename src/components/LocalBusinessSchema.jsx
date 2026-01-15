@@ -8,7 +8,8 @@ function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "EMT Hukuk",
+    "name": "EMT Hukuk & Danışmanlık",
+    "alternateName": ["EMT", "EMT Hukuk", "Avukat Enes", "Enes Mahmut Taşdemir"],
     "image": "https://www.emtasdemirhukuk.com/logo-transparent.png",
     "url": "https://www.emtasdemirhukuk.com",
     "telephone": "+905388539944",
@@ -52,7 +53,13 @@ function LocalBusinessSchema() {
       "Ceza Hukuku",
       "İş Hukuku",
       "Gayrimenkul Hukuku",
-      "Miras Hukuku"
+      "Miras Hukuku",
+      "İcra ve İflas Hukuku",
+      "Tazminat Davaları",
+      "Anlaşmalı Boşanma",
+      "Ağır Ceza",
+      "İşçi Alacakları",
+      "Kurumsal Hukuk Danışmanlığı"
     ]
   };
 
