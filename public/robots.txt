@@ -1,23 +1,29 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for https://www.emtasdemirhukuk.com
+# Allow all bots to crawl the entire site
+
 User-agent: *
 Allow: /
 
-# Yavaş tarayan botları sınırla
+# Google bot specific settings
 User-agent: Googlebot
+Allow: /
 Crawl-delay: 0
 
+# Bing bot
 User-agent: Bingbot
+Allow: /
 Crawl-delay: 1
 
-# Kötü niyetli botları engelle
-User-agent: AhrefsBot
-Disallow: /
+# Yandex bot
+User-agent: Yandex
+Allow: /
 
-User-agent: SemrushBot
-Disallow: /
+# Block bad bots (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# Disallow: /
 
-User-agent: MJ12bot
-Disallow: /
+# User-agent: SemrushBot
+# Disallow: /
 
-# Sitemap konumu
-Sitemap: https://tasdemirlaw.com/sitemap.xml
+# Sitemap location - IMPORTANT for Google indexing
+Sitemap: https://www.emtasdemirhukuk.com/sitemap.xml

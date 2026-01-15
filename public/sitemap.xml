@@ -3,225 +3,225 @@
   
   <!-- Ana Sayfa -->
   <url>
-    <loc>https://tasdemirlaw.com/</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Hakkımızda -->
   <url>
-    <loc>https://tasdemirlaw.com/hakkimizda</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hakkimizda</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Hizmetler -->
   <url>
-    <loc>https://tasdemirlaw.com/hizmetlerimiz</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmetlerimiz</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- İletişim -->
   <url>
-    <loc>https://tasdemirlaw.com/iletisim</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/iletisim</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- SSS -->
   <url>
-    <loc>https://tasdemirlaw.com/sss</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/sss</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <!-- Blog -->
   <url>
-    <loc>https://tasdemirlaw.com/blog</loc>
-    <lastmod>2024-12-10</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/blog</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Hizmet Detayları -->
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/yabancilar-ve-vatandaslik</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/yabancilar-ve-vatandaslik</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/sirketler-ve-ticaret</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/sirketler-ve-ticaret</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/aile</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/aile</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/ceza-ve-infaz</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/ceza-ve-infaz</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/is-ve-sosyal-guvenlik</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/is-ve-sosyal-guvenlik</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/gayrimenkul</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/gayrimenkul</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/miras</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/miras</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/icra-iflas</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/icra-iflas</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/sigorta</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/sigorta</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/tuketici</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/tuketici</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/kisisel-verilerin-korunmasi</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/kisisel-verilerin-korunmasi</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/fikri-sinai-mulkiyet</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/fikri-sinai-mulkiyet</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/idare-vergi</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/idare-vergi</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/bilisim</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/bilisim</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/arabuluculuk</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/arabuluculuk</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/hizmet/tazminat</loc>
-    <lastmod>2024-12-27</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/hizmet/tazminat</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Blog Makaleleri -->
   <url>
-    <loc>https://tasdemirlaw.com/blog/bosanma-davalarinda-mal-paylasimi</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/bosanma-davalarinda-mal-paylasimi</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/is-kazasi-tazminati-hesaplama</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/is-kazasi-tazminati-hesaplama</loc>
     <lastmod>2024-11-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/kira-sozlesmesi-hazirlama</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/kira-sozlesmesi-hazirlama</loc>
     <lastmod>2024-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/mirasta-sakli-pay-tenkis-davasi</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/mirasta-sakli-pay-tenkis-davasi</loc>
     <lastmod>2024-12-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/trafik-kazasi-sonrasi-hukuki-surec</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/trafik-kazasi-sonrasi-hukuki-surec</loc>
     <lastmod>2024-12-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/arabuluculuk-nedir</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/arabuluculuk-nedir</loc>
     <lastmod>2024-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/e-ticaret-kvkk-uyumu</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/e-ticaret-kvkk-uyumu</loc>
     <lastmod>2024-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/kidem-tazminati-hesaplama</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/kidem-tazminati-hesaplama</loc>
     <lastmod>2024-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/turkiyede-sirket-kurulumu</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/turkiyede-sirket-kurulumu</loc>
     <lastmod>2024-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/bosanmada-velayet-hakki</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/bosanmada-velayet-hakki</loc>
     <lastmod>2024-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/istanbul-oturma-izni-basvurusu-2024</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/istanbul-oturma-izni-basvurusu-2024</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/haksiz-fesih-davasi-nasil-acilir</loc>
-    <lastmod>2024 -12-18</lastmod>
+    <loc>https://www.emtasdemirhukuk.com/blog/haksiz-fesih-davasi-nasil-acilir</loc>
+    <lastmod>2024-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tasdemirlaw.com/blog/bosanma-davasi-sureci-2024-istanbul</loc>
+    <loc>https://www.emtasdemirhukuk.com/blog/bosanma-davasi-sureci-2024-istanbul</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
