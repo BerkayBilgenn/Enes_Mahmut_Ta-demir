@@ -61,7 +61,7 @@ function SEO({
       "name": siteName,
       "logo": {
         "@type": "ImageObject",
-        "url": `${baseUrl}/logo.png`
+        "url": `${baseUrl}/logo-transparent.png`
       }
     },
     "mainEntityOfPage": {
@@ -121,6 +121,16 @@ function SEO({
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
+      </script>
+      
+      {/* Search Result Logo & Site Name */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "EMT Hukuk & Danışmanlık",
+          "url": baseUrl
+        })}
       </script>
     </Helmet>
   );

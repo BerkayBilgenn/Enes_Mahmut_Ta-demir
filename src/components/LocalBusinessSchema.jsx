@@ -8,6 +8,7 @@ function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
+    "@id": "https://www.emtasdemirhukuk.com/#organization",
     "name": "EMT Hukuk & Danışmanlık",
     "alternateName": ["EMT", "EMT Hukuk", "Avukat Enes", "Enes Mahmut Taşdemir"],
     "image": "https://www.emtasdemirhukuk.com/logo-transparent.png",
@@ -20,18 +21,15 @@ function LocalBusinessSchema() {
       "streetAddress": "Çağlayan Mah. Vatan Cad. No:8 D:12 Orhan Pınar İş Merkezi",
       "addressLocality": "Kağıthane",
       "addressRegion": "İstanbul",
-      "postalCode": "34410",
+      "postalCode": "34413",
       "addressCountry": "TR"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 41.0082,
-      "longitude": 28.9784
+      "latitude": 41.0637,
+      "longitude": 28.9738
     },
-
-    "sameAs": [
-      
-    ],
+    "sameAs": [],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",

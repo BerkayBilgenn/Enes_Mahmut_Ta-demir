@@ -1,29 +1,9 @@
 # robots.txt for https://www.emtasdemirhukuk.com
-# Allow all bots to crawl the entire site
+# Allowing all crawlers for maximum visibility
 
 User-agent: *
 Allow: /
+Allow: /logo-transparent.png
 
-# Google bot specific settings
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-# Bing bot
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-# Yandex bot
-User-agent: Yandex
-Allow: /
-
-# Block bad bots (optional - uncomment if needed)
-# User-agent: AhrefsBot
-# Disallow: /
-
-# User-agent: SemrushBot
-# Disallow: /
-
-# Sitemap location - IMPORTANT for Google indexing
+# Sitemap location
 Sitemap: https://www.emtasdemirhukuk.com/sitemap.xml
