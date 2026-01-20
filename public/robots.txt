@@ -4,6 +4,7 @@
 User-agent: *
 Allow: /
 Allow: /logo-transparent.png
+Allow: /favicon-square.png
 
 # Sitemap location
 Sitemap: https://www.emtasdemirhukuk.com/sitemap.xml
