@@ -34,6 +34,7 @@ import FloatingCTA from './components/FloatingCTA';
 import ExitPopup from './components/ExitPopup';
 import FAQSchema from './components/FAQSchema';
 import SignatureIntro from './components/SignatureIntro';
+import WarningPopup from './components/WarningPopup';
 // New Page Imports
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
@@ -676,6 +677,8 @@ function App() {
       <LocalBusinessSchema />
       
       <ScrollToTop />
+
+      <WarningPopup />
       
       <AnimatePresence mode="wait">
         {isLoading && <LoadingSpinner key="loader" />}
