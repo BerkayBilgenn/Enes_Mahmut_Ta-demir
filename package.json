@@ -1,40 +1,16 @@
 {
-    "name": "lawyer-landing-page",
-    "private": true,
-    "version": "0.0.0",
-    "type": "module",
-    "engines": {
-        "node": ">=18.0.0"
-    },
-    "scripts": {
-        "dev": "vite",
-        "build": "npx vite build",
-        "vercel-build": "npx vite build",
-        "lint": "eslint .",
-        "preview": "vite preview"
-    },
-    "dependencies": {
-        "@emailjs/browser": "^4.4.1",
-        "framer-motion": "^11.12.0",
-        "lucide-react": "^0.460.0",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-helmet-async": "^2.0.5",
-        "react-router-dom": "^7.10.1"
-    },
-    "devDependencies": {
-        "@eslint/js": "^9.15.0",
-        "@types/react": "^18.3.12",
-        "@types/react-dom": "^18.3.1",
-        "@vitejs/plugin-react": "^4.3.4",
-        "autoprefixer": "^10.4.20",
-        "eslint": "^9.15.0",
-        "eslint-plugin-react": "^7.37.2",
-        "eslint-plugin-react-hooks": "^5.0.0",
-        "eslint-plugin-react-refresh": "^0.4.14",
-        "globals": "^15.12.0",
-        "postcss": "^8.4.49",
-        "tailwindcss": "^3.4.15",
-        "vite": "^6.0.1"
-    }
+  "name": "emt-hukuk",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs --watch",
+    "build": "node scripts/build.mjs",
+    "vercel-build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
 }
