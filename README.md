@@ -15,7 +15,7 @@ npm run dev
 
 Development serves http://localhost:4173 and rebuilds source changes. Refresh the page after rebuilding. Change the port using the PORT environment variable. Preview a completed build using `npm run preview`.
 
-If local servers are unavailable, `node scripts/file-preview.mjs` creates a local `.preview` folder whose links open directly as files in an ordinary browser. Do not deploy that folder; it contains local file URLs. Production output is `dist`.
+If local servers are unavailable, `node scripts/file-preview.mjs` creates a portable `preview` folder whose relative links open directly as files in an ordinary browser. Do not deploy that folder; production output is `dist`.
 
 ## Content and structure
 

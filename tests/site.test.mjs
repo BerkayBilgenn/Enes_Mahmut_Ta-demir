@@ -88,3 +88,12 @@ test('FAQ schema contains exactly the questions visible on its page', () => {
     assert.ok(html.includes(item.acceptedAnswer.text));
   }
 });
+
+test('reading and listing pages expose a sequential heading outline', () => {
+  for (const route of ['hizmetlerimiz', 'blog', 'hizmet/aile', 'blog/bosanma-davalarinda-mal-paylasimi']) {
+    const levels = [...htmlAt(route).matchAll(/<h([1-6])\b/g)].map(match => Number(match[1]));
+    for (let index = 1; index < levels.length; index++) {
+      assert.ok(levels[index] <= levels[index - 1] + 1, route + ': skipped heading level');
+    }
+  }
+});

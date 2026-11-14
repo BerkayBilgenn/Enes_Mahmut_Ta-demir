@@ -1,8 +1,8 @@
 import { cp, readFile, writeFile, readdir } from 'node:fs/promises';
-import { resolve, join, relative, extname } from 'node:path';
+import { resolve, join, relative, extname, dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
 const root = resolve(import.meta.dirname, '..');
-const destination = join(root, '.preview');
+const destination = join(root, 'preview');
 await cp(join(root, 'dist'), destination, { recursive: true });
 async function walk(dir) {
   for (const item of await readdir(dir, { withFileTypes: true })) {
@@ -12,7 +12,7 @@ async function walk(dir) {
     const source = await readFile(path, 'utf8');
     const preview = source.replace(/(href|src)="(\/[^"#?]*)([^"]*)"/g, (match, attribute, target, suffix) => {
       const file = target === '/' ? 'index.html' : target.slice(1) + (extname(target) ? '' : '.html');
-      return attribute + '="' + pathToFileURL(join(destination, file)).href + suffix + '"';
+      return attribute + '="' + relative(dirname(path), join(destination, file)).split('\\').join('/') + suffix + '"';
     });
     await writeFile(path, preview);
   }
