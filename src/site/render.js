@@ -281,7 +281,16 @@ const bootScript = `(()=>{const d=document.documentElement;d.classList.add('js')
 const renderers = { home, about, services, service: serviceDetail, blog, article: articleDetail, contact, faq, '404': missing };
 export function renderPage(page) {
   return `<!doctype html>
-<html lang="tr" data-page="${page.kind}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="tr" data-page="${page.kind}"><head>
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-NCCW83LW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <script>${bootScript}</script>
 ${metadata(page)}
 <meta name="theme-color" content="#0e1513"><link rel="icon" href="/favicon-square.png" type="image/png"><link rel="apple-touch-icon" href="/favicon-square.png"><link rel="manifest" href="/manifest.json">
